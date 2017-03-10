@@ -1,0 +1,27 @@
+<%= form_for(inspector) do |f| %>
+  <% if inspector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inspector.errors.count, "error") %> prohibited this inspector from being saved:</h2>
+
+      <ul>
+      <% inspector.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

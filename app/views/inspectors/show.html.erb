@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @inspector.name %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @inspector.position %>
+</p>
+
+<%= link_to 'Edit', edit_inspector_path(@inspector) %> |
+<%= link_to 'Back', inspectors_path %>
