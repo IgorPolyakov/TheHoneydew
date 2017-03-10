@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: 1
+  dead_line: 2017-03-10 21:46:10
+  inspector: one
+
+two:
+  number: 1
+  dead_line: 2017-03-10 21:46:10
+  inspector: two
