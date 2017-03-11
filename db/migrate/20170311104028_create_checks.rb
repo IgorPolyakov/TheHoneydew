@@ -2,7 +2,7 @@ class CreateChecks < ActiveRecord::Migration[5.0]
   def change
     create_table :checks do |t|
       t.integer :count
-      t.stirng :name
+      t.string :name
       t.datetime :deadline
       t.string :object
       t.string :category
