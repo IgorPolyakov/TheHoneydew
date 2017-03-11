@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :checks
   resources :organizations
   resources :people
   resources :reports

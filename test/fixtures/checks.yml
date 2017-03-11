@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  count: 1
+  name: 
+  deadline: 2017-03-11 17:40:29
+  object: MyString
+  category: MyString
+  tom: 1
+  dsp: MyString
+
+two:
+  count: 1
+  name: 
+  deadline: 2017-03-11 17:40:29
+  object: MyString
+  category: MyString
+  tom: 1
+  dsp: MyString

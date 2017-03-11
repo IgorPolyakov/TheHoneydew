@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Count:</strong>
+  <%= @check.count %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @check.name %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @check.deadline %>
+</p>
+
+<p>
+  <strong>Object:</strong>
+  <%= @check.object %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @check.category %>
+</p>
+
+<p>
+  <strong>Tom:</strong>
+  <%= @check.tom %>
+</p>
+
+<p>
+  <strong>Dsp:</strong>
+  <%= @check.dsp %>
+</p>
+
+<%= link_to 'Edit', edit_check_path(@check) %> |
+<%= link_to 'Back', checks_path %>
