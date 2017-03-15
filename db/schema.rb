@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315205334) do
+ActiveRecord::Schema.define(version: 20170315223052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20170315205334) do
   end
 
   create_table "checks_people", id: false, force: :cascade do |t|
-    t.integer "person_id", null: false
-    t.integer "check_id",  null: false
+    t.integer "check_id"
+    t.integer "person_id"
   end
 
   create_table "inspectors", force: :cascade do |t|
@@ -48,7 +48,8 @@ ActiveRecord::Schema.define(version: 20170315205334) do
   end
 
   create_table "people", force: :cascade do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
