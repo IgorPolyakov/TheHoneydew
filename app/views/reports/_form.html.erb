@@ -1,32 +1,35 @@
 <%= form_for(report) do |f| %>
-  <% if report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+<% if report.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(report.errors.count, "error") %>
+        prohibited this report from being saved:</h2>
 
-      <ul>
-      <% report.errors.full_messages.each do |message| %>
+    <ul>
+        <% report.errors.full_messages.each do |message| %>
         <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <% end %>
+    </ul>
+</div>
+<% end %>
 
-  <div class="field">
+<div class="field">
     <%= f.label :number %>
     <%= f.number_field :number %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :dead_line %>
     <%= f.datetime_select :dead_line %>
-  </div>
+</div>
 
-  <div class="field">
+<div class="field">
     <%= f.label :inspector_id %>
-    <%= f.text_field :inspector_id %>
-  </div>
+    <!-- <%= f.text_field :inspector_id %> -->
+    <%= f.select :inspector_id , options_for_select(Inspector.all.map{|s|[s.name, s.id]}) %>
 
-  <div class="actions">
+</div>
+
+<div class="actions">
     <%= f.submit %>
-  </div>
+</div>
 <% end %>

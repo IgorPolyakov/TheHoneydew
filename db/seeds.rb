@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Inspector.destroy_all
+Inspector.create(name: 'Ифанов Иван', position: 'Старший инспектор')
+Inspector.create(name: 'Петров Олег', position: 'Младший инспектор')
