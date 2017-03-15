@@ -11,18 +11,18 @@ class ReportsController < ApplicationController
     # GET /reports/1
     # GET /reports/1.json
     def show
-        @inspectors = Inspector.all.map { |s| [s.name, s.id] }
+        @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
     end
 
     # GET /reports/new
     def new
         @report = Report.new
-        @inspectors = Inspector.all.map { |s| [s.name, s.id] }
+        @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
     end
 
     # GET /reports/1/edit
     def edit
-        @inspectors = Inspector.all.map { |s| [s.name, s.id] }
+        @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
     end
 
     # POST /reports

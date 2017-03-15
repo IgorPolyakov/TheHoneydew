@@ -12,7 +12,7 @@
 
 <p>
     <strong>Inspector:</strong>
-    <%= Inspector.find(@report.inspector_id).name; %>
+    <%= Inspector.find(@report.inspector_id).last_name; %>
 </p>
 
 <%= link_to 'Edit', edit_report_path(@report) %>

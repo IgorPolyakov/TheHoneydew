@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 Inspector.destroy_all
-Inspector.create(name: 'Ифанов Иван', position: 'Старший инспектор')
-Inspector.create(name: 'Петров Олег', position: 'Младший инспектор')
+# Inspector.create(name: 'Петров Олег', position: 'Младший инспектор')
+10.times do
+    Inspector.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, position: 'Старший инспектор')
+end
+# Faker::Name.first_name
+# Faker::Name.last_name

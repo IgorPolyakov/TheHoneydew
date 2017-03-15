@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @inspector.name %>
+    <strong>First Name:</strong>
+    <%= @inspector.first_name %>
+</p>
+<p>
+    <strong>Last Name:</strong>
+    <%= @inspector.last_name %>
 </p>
 
 <p>
-  <strong>Position:</strong>
-  <%= @inspector.position %>
+    <strong>Position:</strong>
+    <%= @inspector.position %>
 </p>
 
-<%= link_to 'Edit', edit_inspector_path(@inspector) %> |
+<%= link_to 'Edit', edit_inspector_path(@inspector) %>
+|
 <%= link_to 'Back', inspectors_path %>
