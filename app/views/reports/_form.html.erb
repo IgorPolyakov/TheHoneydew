@@ -24,9 +24,7 @@
 
 <div class="field">
     <%= f.label :inspector_id %>
-    <!-- <%= f.text_field :inspector_id %> -->
-    <%= f.select :inspector_id , options_for_select(Inspector.all.map{|s|[s.name, s.id]}) %>
-
+    <%= f.select :inspector_id , options_for_select(@inspectors) %>
 </div>
 
 <div class="actions">
