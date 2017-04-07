@@ -24,10 +24,9 @@ default: &default
 development:
   <<: *default
   database: TheHoneydew_development
-  password: shine
   host: localhost
-  username: fox
-  password: fox
+  username: vexare
+  password: vexarr
 
 
   # The specified database role being used to connect to postgres.
