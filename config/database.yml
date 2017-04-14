@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: TheHoneydew_production
-  username: TheHoneydew
-  password: <%= ENV['THEHONEYDEW_DATABASE_PASSWORD'] %>
+  username: deploy
+  password: deploy
