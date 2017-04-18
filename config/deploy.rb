@@ -1,6 +1,8 @@
 require 'mina/rails'
 require 'mina/git'
-# require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
+# require 'mina/rvm'
+
+require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 # require 'mina/rvm'    # for rvm support. (https://rvm.io)
 
 # Basic settings:
@@ -10,7 +12,7 @@ require 'mina/git'
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'TheHoneydew'
-set :domain, '185.111.219.56'
+set :domain, 'aiskru.keva.su'
 set :deploy_to, '/var/www/project'
 set :repository, 'git@github.com:IgorPolyakov/TheHoneydew.git'
 set :branch, 'master'
@@ -29,16 +31,17 @@ set :user, 'deploy'          # Username in the server to SSH to.
 task :environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
-  # invoke :'rbenv:load'
+  invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
+  # set :rvm_path, '/usr/local/rvm/scripts/rvm'
+  # invoke :'rvm:use', 'ruby-2.4.1'
 end
 
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
-  # command %{rbenv install 2.3.0}
+  command %{rbenv install 2.4.1}
 end
 
 desc "Deploys the current version to the server."
