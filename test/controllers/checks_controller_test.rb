@@ -17,7 +17,7 @@ class ChecksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create check" do
     assert_difference('Check.count') do
-      post checks_url, params: { check: { category: @check.category, count: @check.count, deadline: @check.deadline, dsp: @check.dsp, name: @check.name, object: @check.object, tom: @check.tom } }
+      post checks_url, params: { check: { amount: @check.amount, case_number: @check.case_number, category: @check.category, checks_number: @check.checks_number, deadline: @check.deadline, direction: @check.direction, for_office: @check.for_office, number_of_volumes: @check.number_of_volumes, reason: @check.reason, response_measure: @check.response_measure, term: @check.term, violation: @check.violation } }
     end
 
     assert_redirected_to check_url(Check.last)
@@ -34,7 +34,7 @@ class ChecksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update check" do
-    patch check_url(@check), params: { check: { category: @check.category, count: @check.count, deadline: @check.deadline, dsp: @check.dsp, name: @check.name, object: @check.object, tom: @check.tom } }
+    patch check_url(@check), params: { check: { amount: @check.amount, case_number: @check.case_number, category: @check.category, checks_number: @check.checks_number, deadline: @check.deadline, direction: @check.direction, for_office: @check.for_office, number_of_volumes: @check.number_of_volumes, reason: @check.reason, response_measure: @check.response_measure, term: @check.term, violation: @check.violation } }
     assert_redirected_to check_url(@check)
   end
 

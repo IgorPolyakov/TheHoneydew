@@ -5,13 +5,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Count</th>
-      <th>Name</th>
+      <th>Amount</th>
+      <th>Checks number</th>
       <th>Deadline</th>
-      <th>Object</th>
+      <th>Reason</th>
       <th>Category</th>
-      <th>Tom</th>
-      <th>Dsp</th>
+      <th>Violation</th>
+      <th>Response measure</th>
+      <th>Direction</th>
+      <th>Term</th>
+      <th>Case number</th>
+      <th>Number of volumes</th>
+      <th>For office</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +24,18 @@
   <tbody>
     <% @checks.each do |check| %>
       <tr>
-        <td><%= check.count %></td>
-        <td><%= check.name %></td>
+        <td><%= check.amount %></td>
+        <td><%= check.checks_number %></td>
         <td><%= check.deadline %></td>
-        <td><%= check.object %></td>
+        <td><%= check.reason %></td>
         <td><%= check.category %></td>
-        <td><%= check.tom %></td>
-        <td><%= check.dsp %></td>
+        <td><%= check.violation %></td>
+        <td><%= check.response_measure %></td>
+        <td><%= check.direction %></td>
+        <td><%= check.term %></td>
+        <td><%= check.case_number %></td>
+        <td><%= check.number_of_volumes %></td>
+        <td><%= check.for_office %></td>
         <td><%= link_to 'Show', check %></td>
         <td><%= link_to 'Edit', edit_check_path(check) %></td>
         <td><%= link_to 'Destroy', check, method: :delete, data: { confirm: 'Are you sure?' } %></td>

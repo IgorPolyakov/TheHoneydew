@@ -10,21 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315223052) do
+ActiveRecord::Schema.define(version: 20170420131448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "checks", force: :cascade do |t|
-    t.integer  "count"
-    t.string   "name"
-    t.datetime "deadline"
-    t.string   "object"
+    t.integer  "amount"
+    t.string   "checks_number"
+    t.date     "deadline"
+    t.string   "reason"
     t.string   "category"
-    t.integer  "tom"
-    t.string   "dsp"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "violation"
+    t.string   "response_measure"
+    t.string   "direction"
+    t.string   "term"
+    t.string   "case_number"
+    t.integer  "number_of_volumes"
+    t.boolean  "for_office"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "checks_people", id: false, force: :cascade do |t|
@@ -35,23 +40,28 @@ ActiveRecord::Schema.define(version: 20170315223052) do
   create_table "inspectors", force: :cascade do |t|
     t.string   "first_name"
     t.string   "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "last_name"
+    t.string   "middle_name"
   end
 
   create_table "organizations", force: :cascade do |t|
-    t.string   "name"
-    t.string   "boss"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "company_name"
+    t.string   "first_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "middle_name"
+    t.string   "second_name"
+    t.string   "position"
   end
 
   create_table "people", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "middle_name"
   end
 
   create_table "reports", force: :cascade do |t|

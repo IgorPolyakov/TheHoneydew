@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Count:</strong>
-  <%= @check.count %>
+  <strong>Amount:</strong>
+  <%= @check.amount %>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @check.name %>
+  <strong>Checks number:</strong>
+  <%= @check.checks_number %>
 </p>
 
 <p>
@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Object:</strong>
-  <%= @check.object %>
+  <strong>Reason:</strong>
+  <%= @check.reason %>
 </p>
 
 <p>
@@ -26,13 +26,38 @@
 </p>
 
 <p>
-  <strong>Tom:</strong>
-  <%= @check.tom %>
+  <strong>Violation:</strong>
+  <%= @check.violation %>
 </p>
 
 <p>
-  <strong>Dsp:</strong>
-  <%= @check.dsp %>
+  <strong>Response measure:</strong>
+  <%= @check.response_measure %>
+</p>
+
+<p>
+  <strong>Direction:</strong>
+  <%= @check.direction %>
+</p>
+
+<p>
+  <strong>Term:</strong>
+  <%= @check.term %>
+</p>
+
+<p>
+  <strong>Case number:</strong>
+  <%= @check.case_number %>
+</p>
+
+<p>
+  <strong>Number of volumes:</strong>
+  <%= @check.number_of_volumes %>
+</p>
+
+<p>
+  <strong>For office:</strong>
+  <%= @check.for_office %>
 </p>
 
 <%= link_to 'Edit', edit_check_path(@check) %> |

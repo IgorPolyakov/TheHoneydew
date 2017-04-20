@@ -11,7 +11,7 @@ Inspector.destroy_all
 10.times do
     Inspector.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, position: 'Старший инспектор')
     Person.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-    Organization.create(name: Faker::Company.name, boss: (Faker::Name.first_name + ' ' + Faker::Name.last_name).to_s)
+    Organization.create(company_name: Faker::Company.name, first_name: Faker::Name.first_name, second_name: Faker::Name.last_name)
 end
 # Faker::Name.first_name
 # Faker::Name.last_name

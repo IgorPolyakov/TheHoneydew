@@ -1,19 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  count: 1
-  name: 
-  deadline: 2017-03-11 17:40:29
-  object: MyString
+  amount: 1
+  checks_number: MyString
+  deadline: 2017-04-20
+  reason: MyString
   category: MyString
-  tom: 1
-  dsp: MyString
+  violation: MyString
+  response_measure: MyString
+  direction: MyString
+  term: MyString
+  case_number: MyString
+  number_of_volumes: 1
+  for_office: false
 
 two:
-  count: 1
-  name: 
-  deadline: 2017-03-11 17:40:29
-  object: MyString
+  amount: 1
+  checks_number: MyString
+  deadline: 2017-04-20
+  reason: MyString
   category: MyString
-  tom: 1
-  dsp: MyString
+  violation: MyString
+  response_measure: MyString
+  direction: MyString
+  term: MyString
+  case_number: MyString
+  number_of_volumes: 1
+  for_office: false
