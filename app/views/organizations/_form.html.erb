@@ -12,15 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= f.label :boss %>
-    <%= f.text_field :boss %>
+    <%= f.label :middle_name %>
+    <%= f.text_field :middle_name %>
   </div>
-
+  <div class="field">
+    <%= f.label :second_name %>
+    <%= f.text_field :second_name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

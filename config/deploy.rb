@@ -12,7 +12,7 @@ require 'mina/rbenv'  # for rbenv support. (https://rbenv.org)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'TheHoneydew'
-set :domain, 'aiskru.keva.su'
+set :domain, 'kru.keva.su'
 set :deploy_to, '/var/www/project'
 set :repository, 'git@github.com:IgorPolyakov/TheHoneydew.git'
 set :branch, 'master'
