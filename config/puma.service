@@ -1,0 +1,17 @@
+[Unit]
+Description=Puma HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+
+User=deployer
+
+WorkingDirectory=/var/www/project/current
+
+ExecStart=/bin/bash -lc 'bundle exec rails server -e production'
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
