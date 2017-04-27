@@ -40,8 +40,12 @@ end
 
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
+set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 task :setup do
   command %{rbenv install 2.4.1}
+  command %{touch "/var/www/project/current/config/database.yml"}
+  command %{touch "/var/www/project/current/config/secrets.yml"}
+  command %{echo "-----> Be sure to edit '/var/www/project/current/config/database.yml and secrets.yml'."}
 end
 
 desc "Deploys the current version to the server."
@@ -62,6 +66,7 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %{mkdir -p tmp/}
         command %{touch tmp/restart.txt}
+        # command %{rails server -}
       end
     end
   end
