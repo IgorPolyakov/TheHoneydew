@@ -25,8 +25,8 @@ development:
   <<: *default
   database: TheHoneydew_development
   host: localhost
-  username: fox
-  password: fox
+  username: RENAME_DATABASE_EXAMPLE.YML
+  password: RENAME_DATABASE_EXAMPLE.YML
 
 
   # The specified database role being used to connect to postgres.
