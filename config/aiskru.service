@@ -1,0 +1,19 @@
+[Unit]
+Description=AISKRU
+
+Requires=network.target
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=deploy
+Group=deploy
+WorkingDirectory=/var/www/project/current
+PIDFile=/var/www/project/tmp/unicorn.pid
+ExecStart=/bin/bash -lc 'bundle exec rails server -e production --pid=/var/www/project/tmp/webrick.pid'
+TimeoutSec=30
+RestartSec=15s
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
