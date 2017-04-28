@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170428083715) do
     t.index ["organization_id"], name: "index_checks_on_organization_id", using: :btree
   end
 
-  create_table "checks_and_organizations", force: :cascade do |t|
+  create_table "checks_and_organizations", id: false, force: :cascade do |t|
     t.integer "check_id"
     t.integer "organization_id"
     t.index ["check_id"], name: "index_checks_and_organizations_on_check_id", using: :btree
