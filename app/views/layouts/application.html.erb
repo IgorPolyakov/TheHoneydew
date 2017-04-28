@@ -14,26 +14,30 @@
                 <div class="navbar-header">
                     <%= link_to "Checking system", root_path, class: "navbar-brand" %>
                 </div>
-                <ul class="nav navbar-nav">
-                    <li class="active">
+                <% if user_signed_in? %>
+                    <ul class="nav navbar-nav">
+                        <li>
                         <%= link_to "Inspector", inspectors_path %>
-                    </li>
-                    <li>
+                        </li>
+                        <li>
                         <%= link_to "Person", people_path %>
-                    </li>
-                    <li>
+                        </li>
+                        <li>
                         <%= link_to "Organigation", organizations_path %>
-                    </li>
-                    <li>
+                        </li>
+                        <li>
                         <%= link_to "Checks", checks_path %>
-                    </li>
-                    <li>
+                        </li>
+                        <li>
                         <%= link_to "Report", reports_path %>
-                    </li>
-                    <li>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav right">
+                        <li>
                         <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                    </li>>
-                </ul>
+                        </li>
+                    </ul>
+                <% end %>
             </div>
         </nav>
         <div class="container">
