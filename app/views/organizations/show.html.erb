@@ -1,14 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @organization.name %>
+  <strong>Company name:</strong>
+  <%= @organization.company_name %>
 </p>
 
 <p>
-  <strong>Boss:</strong>
-  <%= @organization.boss %>
+  <strong>First name:</strong>
+  <%= @organization.first_name %>
 </p>
-
+<p>
+  <strong>Second name:</strong>
+  <%= @organization.second_name %>
+</p>
+<p>
+  <strong>Middle name:</strong>
+  <%= @organization.middle_name %>
+</p>
+<p>
+  <strong>Position:</strong>
+  <%= @organization.position %>
+</p>
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
 <%= link_to 'Back', organizations_path %>

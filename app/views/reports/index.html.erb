@@ -19,6 +19,7 @@
         <tr>
             <td><%= report.number %></td>
             <td><%= report.dead_line %></td>
+            <td><%= report.inspector %></td>
             <td><%= report.reason %></td>
             <td><%= report.result %></td>
             <td><%= Inspector.find(report.inspector_id).last_name; %></td>
