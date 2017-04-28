@@ -1,3 +1,3 @@
 class Inspector < ApplicationRecord
-    has_many :report
+    has_many :reports
 end

@@ -1,3 +1,3 @@
 class Report < ApplicationRecord
-    belongs_to :inspector
+    belongs_to :inspectors
 end
