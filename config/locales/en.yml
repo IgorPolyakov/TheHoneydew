@@ -21,3 +21,42 @@
 
 en:
   hello: "Hello world"
+  checking_system: "Checking system"
+  inspector: "Inspector"
+  person: "Person"
+  organigation: "Organigation"
+  checks: "Checks"
+  report: "Report"
+  expand: "Expand"
+
+  title: "TheHoneydew"
+  back: "Back"
+  save: "Save"
+  show: "Show"
+  edit: "Edit"
+  destroy: "Destroy"
+
+  amount: "Amount"
+  deadline: "Deadline"
+  reason: "Reason"
+  category: "Category"
+  violation: "Violation"
+  direction: "Direction"
+  term: "Term"
+  checks_number: "Checks number"
+  response_measure: "Response measure"
+  case_number: "Case number"
+  number_of_volumes: "Number of volumes"
+  for_office: "For office"
+
+  first_name: "First name"
+  last_name: "Last name"
+  position: "Position"
+
+  number: "Number"
+  company_name: "Company name"
+  second_name: "Second name"
+  middle_name: "Middle name"
+  position: "Position"
+
+  result: "Result"

@@ -5,9 +5,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Position</th>
+            <th><%= t(:first_name)%></th>
+            <th><%= t(:last_name)%></th>
+            <th><%= t(:position)%></th>
             <th colspan="4"></th>
         </tr>
     </thead>
@@ -18,9 +18,9 @@
             <td><%= inspector.first_name %></td>
             <td><%= inspector.last_name %></td>
             <td><%= inspector.position %></td>
-            <td><%= link_to 'Show', inspector %></td>
-            <td><%= link_to 'Edit', edit_inspector_path(inspector) %></td>
-            <td><%= link_to 'Destroy', inspector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t(:show), inspector %></td>
+            <td><%= link_to t(:edit), edit_inspector_path(inspector) %></td>
+            <td><%= link_to t(:destroy), inspector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
         <% end %>
     </tbody>
