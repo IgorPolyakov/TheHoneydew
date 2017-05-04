@@ -7,6 +7,7 @@
         <tr>
             <th><%= t(:first_name)%></th>
             <th><%= t(:last_name)%></th>
+            <th><%= t(:middle_name)%></th>
             <th><%= t(:position)%></th>
             <th colspan="4"></th>
         </tr>
@@ -17,6 +18,7 @@
         <tr>
             <td><%= inspector.first_name %></td>
             <td><%= inspector.last_name %></td>
+            <td><%= inspector.middle_name %></td>
             <td><%= inspector.position %></td>
             <td><%= link_to t(:show), inspector %></td>
             <td><%= link_to t(:edit), edit_inspector_path(inspector) %></td>
