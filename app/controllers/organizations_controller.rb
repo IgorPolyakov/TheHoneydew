@@ -69,6 +69,6 @@ class OrganizationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def organization_params
-      params.require(:organization).permit(:company_name, :first_name, :second_name, :middle_name, :position)
+      params.require(:organization).permit(:company_name, :first_name, :last_name, :middle_name, :position)
     end
 end
