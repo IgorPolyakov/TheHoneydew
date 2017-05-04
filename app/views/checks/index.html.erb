@@ -20,7 +20,7 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-Response measure
+<%= t(:response_measure)%>
   <tbody>
     <% @checks.each do |check| %>
       <tr>
@@ -38,7 +38,7 @@ Response measure
         <td><%= check.for_office %></td>
         <td><%= link_to t(:show), check %></td>
         <td><%= link_to t(:edit), edit_check_path(check) %></td>
-        <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +46,4 @@ Response measure
 
 <br>
 
-<%= link_to 'New Check', new_check_path %>
+<%= link_to t(:new_check), new_check_path %>

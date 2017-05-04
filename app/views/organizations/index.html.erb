@@ -24,7 +24,7 @@
         <td><%= organization.position %></td>
         <td><%= link_to t(:show), organization %></td>
         <td><%= link_to t(:edit), edit_organization_path(organization) %></td>
-        <td><%= link_to t(:destroy), organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:destroy), organization, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Organization', new_organization_path %>
+<%= link_to t(:new_organization), new_organization_path %>
