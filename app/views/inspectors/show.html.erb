@@ -1,16 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-    <strong>First Name:</strong>
+    <strong><%= t(:first_name) %>:</strong>
     <%= @inspector.first_name %>
 </p>
 <p>
-    <strong>Last Name:</strong>
+    <strong><%= t(:last_name) %>:</strong>
     <%= @inspector.last_name %>
+</p>
+<p>
+    <strong><%= t(:middle_name) %>:</strong>
+    <%= @inspector.middle_name %>
 </p>
 
 <p>
-    <strong>Position:</strong>
+    <strong><%= t(:position) %>:</strong>
     <%= @inspector.position %>
 </p>
 
