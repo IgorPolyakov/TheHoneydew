@@ -670,7 +670,7 @@ if (typeof jQuery === 'undefined') {
   }
 
   Collapse.prototype.toggle = function () {
-    this[this.$element.hasClass('in') ? 'hide' : 'show']()
+    this[this.$element.hasClass('in') ? 'hide' : t(:show)]()
   }
 
   Collapse.prototype.getParent = function () {
@@ -2204,7 +2204,7 @@ if (typeof jQuery === 'undefined') {
 
   var clickHandler = function (e) {
     e.preventDefault()
-    Plugin.call($(this), 'show')
+    Plugin.call($(this), t(:show))
   }
 
   $(document)
