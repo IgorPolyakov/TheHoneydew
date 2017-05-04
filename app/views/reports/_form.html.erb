@@ -2,7 +2,7 @@
 <% if report.errors.any? %>
 <div id="error_explanation">
     <h2><%= pluralize(report.errors.count, "error") %>
-        prohibited this report from being saved:</h2>
+        <%= t(:prohibited_this_report_from_being_saved) %>:</h2>
 
     <ul>
         <% report.errors.full_messages.each do |message| %>

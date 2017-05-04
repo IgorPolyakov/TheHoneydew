@@ -18,7 +18,7 @@
             <td><%= person.last_name %></td>
             <td><%= link_to t(:show), person %></td>
             <td><%= link_to t(:edit), edit_person_path(person) %></td>
-            <td><%= link_to t(:destroy), person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t(:destroy), person, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
         </tr>
         <% end %>
     </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Person', new_person_path %>
+<%= link_to t(:new_person), new_person_path %>
