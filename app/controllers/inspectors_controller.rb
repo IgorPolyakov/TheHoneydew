@@ -69,6 +69,6 @@ class InspectorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspector_params
-      params.require(:inspector).permit(:first_name, :last_name, :position)
+      params.require(:inspector).permit(:first_name, :last_name, :middle_name, :position)
     end
 end
