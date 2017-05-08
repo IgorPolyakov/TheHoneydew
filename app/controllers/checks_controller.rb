@@ -15,6 +15,9 @@ class ChecksController < ApplicationController
   # GET /checks/new
   def new
     @check = Check.new
+    @supervisors = Supervisor.all
+    @visors = Visor.all
+
   end
 
   # GET /checks/1/edit
@@ -69,6 +72,6 @@ class ChecksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def check_params
-      params.require(:check).permit(:amount, :checks_number, :deadline, :reason, :category, :violation, :response_measure, :direction, :term, :case_number, :number_of_volumes, :for_office)
+      params.require(:check).permit(:amount, :checks_number, :deadline, :reason, :category, :violation, :response_measure, :direction, :term, :case_number, :number_of_volumes, :for_office, :supervisor_id, :visor_id)
     end
 end

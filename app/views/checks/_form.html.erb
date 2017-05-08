@@ -67,6 +67,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :supervisor_id %>
+    <%= f.collection_select :supervisor_id, Inspector.all, :id, :last_name, multiple: true  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :visor_id %>
+    <%= f.collection_select :visor_id, Inspector.all, :id, :last_name, multiple: true  %>
+  </div>
+
+  <div class="field">
     <%= f.label :for_office %>
     <%= f.check_box :for_office %>
   </div>

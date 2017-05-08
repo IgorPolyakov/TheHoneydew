@@ -32,6 +32,7 @@ ru:
   people: "Персоны"
   person: "Персона"
   prohibited_this_check_from_being_saved: "запрет сохранения этой проверки:"
+  prohibited_this_person_from_being_saved: "запрет сохранения этой проверки:"
   position: "Должность"
   reason: "Причина"
   response_measure: "Мера реагирования"
