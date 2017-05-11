@@ -15,9 +15,6 @@ class ChecksController < ApplicationController
   # GET /checks/new
   def new
     @check = Check.new
-    @supervisors = Supervisor.all
-    @visors = Visor.all
-
   end
 
   # GET /checks/1/edit
