@@ -13,25 +13,25 @@
 <% end %>
 
 <div class="field">
-    <%= f.label :number %>
+    <%= f.label t(:number) %>
     <%= f.number_field :number %>
 </div>
 
 <div class="field">
-    <%= f.label :deadline %>
+    <%= f.label t(:deadline) %>
     <%= f.datetime_select :deadline %>
 </div>
 <div class="field">
-    <%= f.label :reason %>
+    <%= f.label t(:reason) %>
     <%= f.text_field :reason %>
 </div>
 <div class="field">
-    <%= f.label :result %>
+    <%= f.label t(:result) %>
     <%= f.text_field :result %>
 </div>
 
 <div class="field">
-    <%= f.label :inspector_id %>
+    <%= f.label t(:inspector_id) %>
     <%= f.select :inspector_id , options_for_select(@inspectors) %>
 </div>
 
