@@ -3,7 +3,7 @@
     <head>
         <title><%= t(:title) %></title>
         <%= csrf_meta_tags %>
-
+        <%= favicon_link_tag 'favicon.ico' %>
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
@@ -12,6 +12,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
+                    <%= image_tag("logo.png", :alt => "logo", class: "navbar-brand") %>
                     <%= link_to t(:checking_system), root_path, class: "navbar-brand" %>
                 </div>
                 <ul class="nav navbar-nav">
