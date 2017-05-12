@@ -12,72 +12,72 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :amount %>
+    <%= f.label t(:amount) %>
     <%= f.number_field :amount %>
   </div>
 
   <div class="field">
-    <%= f.label :checks_number %>
+    <%= f.label t(:checks_number) %>
     <%= f.text_field :checks_number %>
   </div>
 
   <div class="field">
-    <%= f.label :deadline %>
+    <%= f.label t(:deadline) %>
     <%= f.date_select :deadline %>
   </div>
 
   <div class="field">
-    <%= f.label :reason %>
+    <%= f.label t(:reason) %>
     <%= f.text_field :reason %>
   </div>
 
   <div class="field">
-    <%= f.label :category %>
+    <%= f.label t(:category) %>
     <%= f.text_field :category %>
   </div>
 
   <div class="field">
-    <%= f.label :violation %>
+    <%= f.label t(:violation) %>
     <%= f.text_field :violation %>
   </div>
 
   <div class="field">
-    <%= f.label :response_measure %>
+    <%= f.label t(:response_measure) %>
     <%= f.text_field :response_measure %>
   </div>
 
   <div class="field">
-    <%= f.label :direction %>
+    <%= f.label t(:direction) %>
     <%= f.text_field :direction %>
   </div>
 
   <div class="field">
-    <%= f.label :term %>
+    <%= f.label t(:term) %>
     <%= f.text_field :term %>
   </div>
 
   <div class="field">
-    <%= f.label :case_number %>
+    <%= f.label t(:case_number) %>
     <%= f.text_field :case_number %>
   </div>
 
   <div class="field">
-    <%= f.label :number_of_volumes %>
+    <%= f.label t(:number_of_volumes) %>
     <%= f.number_field :number_of_volumes %>
   </div>
 
   <div class="field">
-    <%= f.label :supervisor_id %>
+    <%= f.label t(:supervisor_id) %>
     <%= f.collection_select :supervisor_id, Inspector.all, :id, :last_name, multiple: true  %>
   </div>
 
   <div class="field">
-    <%= f.label :visor_id %>
+    <%= f.label t(:visor_id) %>
     <%= f.collection_select :visor_id, Inspector.all, :id, :last_name, multiple: true  %>
   </div>
 
   <div class="field">
-    <%= f.label :for_office %>
+    <%= f.label t(:for_office) %>
     <%= f.check_box :for_office %>
   </div>
 
