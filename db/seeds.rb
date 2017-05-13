@@ -24,5 +24,6 @@ Inspector.create(last_name: 'Панькова', first_name: 'Олеся', middle
 Inspector.create(last_name: 'Трубина', first_name: 'Полина', middle_name: 'Ивановна', position: 'Консультант')
 Inspector.create(last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
 
+
 Role.create(status: 'Visor')
 Role.create(status: 'SuperVisor')
