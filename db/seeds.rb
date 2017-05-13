@@ -1,6 +1,5 @@
 require 'faker'
 Inspector.destroy_all
-Role.destroy_all
 #data from URL:https://kru.tomsk.gov.ru/phonebook/department
 Inspector.create(last_name: 'Аксиненко', first_name: 'Сергей', middle_name: 'Владимирович', position: 'Председатель комитета - заместитель начальника управления')
 Inspector.create(last_name: 'Маляр', first_name: 'Павел', middle_name: 'Иванович', position: 'Председатель комитета')
@@ -23,7 +22,3 @@ Inspector.create(last_name: 'Пономарева', first_name: 'Алия', midd
 Inspector.create(last_name: 'Панькова', first_name: 'Олеся', middle_name: 'Васильвена', position: 'Консультант')
 Inspector.create(last_name: 'Трубина', first_name: 'Полина', middle_name: 'Ивановна', position: 'Консультант')
 Inspector.create(last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
-
-
-Role.create(status: 'Visor')
-Role.create(status: 'SuperVisor')
