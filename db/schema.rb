@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509081717) do
+ActiveRecord::Schema.define(version: 20170513083646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "check_positions", force: :cascade do |t|
+    t.integer  "check_id"
+    t.integer  "position_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["check_id"], name: "index_check_positions_on_check_id", using: :btree
+    t.index ["position_id"], name: "index_check_positions_on_position_id", using: :btree
+  end
 
   create_table "checks", force: :cascade do |t|
     t.integer  "amount"
@@ -75,9 +84,10 @@ ActiveRecord::Schema.define(version: 20170509081717) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.integer  "number"
-    t.datetime "deadline"
+    t.string   "number"
+    t.date     "deadline"
     t.integer  "inspector_id"
+    t.string   "executive"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "reason"

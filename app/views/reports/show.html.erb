@@ -1,18 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-    <strong><%= t(:number) %>:</strong>
-    <%= @report.number %>
+  <strong><%= t(:number) %>:</strong>
+  <%= @report.number %>
 </p>
-
 <p>
-    <strong><%= t(:deadline) %>:</strong>
-    <%= @report.deadline %>
+  <strong><%= t(:deadline) %>:</strong>
+  <%= @report.deadline %>
 </p>
-
 <p>
-    <strong><%= t(:inspector) %>:</strong>
-    <%= Inspector.find(@report.inspector_id).last_name; %>
+  <strong><%= t(:inspector) %>:</strong>
+  <%= Inspector.find(@report.inspector_id).last_name; %>
+</p>
+<p>
+  <strong><%= t(:executive) %>:</strong>
+  <%= @report.executive %>
+</p>
+<p>
+  <strong><%= t(:reason) %>:</strong>
+  <%= @report.reason %>
+</p>
+<p>
+  <strong><%= t(:result) %>:</strong>
+  <%= @report.result %>
 </p>
 
 <%= link_to t(:edit), edit_report_path(@report) %>

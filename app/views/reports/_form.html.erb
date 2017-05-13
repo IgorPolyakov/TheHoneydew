@@ -14,25 +14,30 @@
 
 <div class="field">
     <%= f.label t(:number) %>
-    <%= f.number_field :number %>
+    <%= f.text_field :number %>
 </div>
 
 <div class="field">
     <%= f.label t(:deadline) %>
-    <%= f.datetime_select :deadline %>
+    <%= f.date_select :deadline %>
 </div>
 <div class="field">
     <%= f.label t(:reason) %>
-    <%= f.text_field :reason %>
+    <%= f.select :reason, [t(:plan_job_KK_KCO), t(:plan_job_KK_KCO), t(:plan_job_KK_KCO),t(:plan_job_KK_KCO),t(:plan_job_KK_KCO),t(:plan_job_KK_KCO)]%>
 </div>
 <div class="field">
     <%= f.label t(:result) %>
-    <%= f.text_field :result %>
+    <%= f.select :result, [t(:off_control), t(:move_to_inner_control)] %>
 </div>
 
 <div class="field">
-    <%= f.label t(:inspector_id) %>
+    <%= f.label t(:inspector) %>
     <%= f.select :inspector_id , options_for_select(@inspectors) %>
+</div>
+
+<div class="field">
+    <%= f.label t(:executive) %>
+    <%= f.text_field :executive %>
 </div>
 
 <div class="actions">
