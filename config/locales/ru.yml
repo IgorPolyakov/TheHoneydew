@@ -37,6 +37,7 @@ ru:
   organizations: "Организации"
   people: "Должностные лица"
   person: "Должностное лицо"
+  edit_person: "Izmenit dannye dolzhnostnogo lica"
   plan_job_KK_KCO: "план работы КК и ОАР"
   position: "Должность"
   prohibited_this_check_from_being_saved: "запрет сохранения этой проверки:"

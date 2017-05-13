@@ -10,19 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513083646) do
+ActiveRecord::Schema.define(version: 20170420131448) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "check_positions", force: :cascade do |t|
-    t.integer  "check_id"
-    t.integer  "position_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["check_id"], name: "index_check_positions_on_check_id", using: :btree
-    t.index ["position_id"], name: "index_check_positions_on_position_id", using: :btree
-  end
 
   create_table "checks", force: :cascade do |t|
     t.integer  "amount"
@@ -75,30 +66,16 @@ ActiveRecord::Schema.define(version: 20170513083646) do
     t.string   "middle_name"
   end
 
-  create_table "positions", force: :cascade do |t|
-    t.integer  "inspector_id"
-    t.integer  "role_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["inspector_id", "role_id"], name: "index_positions_on_inspector_id_and_role_id", using: :btree
-  end
-
   create_table "reports", force: :cascade do |t|
     t.string   "number"
     t.date     "deadline"
     t.integer  "inspector_id"
     t.string   "executive"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
     t.string   "reason"
     t.string   "result"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.index ["inspector_id"], name: "index_reports_on_inspector_id", using: :btree
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "reports", "inspectors"

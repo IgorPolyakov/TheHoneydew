@@ -1,27 +1,28 @@
 <%= form_for(person) do |f| %>
-  <% if person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(person.errors.count, "error") %> <%= t(:prohibited_this_person_from_being_saved) %>:</h2>
+<% if person.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(person.errors.count, "error") %>
+    <%= t(:prohibited_this_person_from_being_saved) %>:</h2>
 
-      <ul>
-      <% person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% person.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label t(:first_name) %>
-    <%= f.text_field :first_name %>
-  </div>
+<div class="field">
+  <%= f.label t(:first_name) %>
+  <%= f.text_field :first_name %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:last_name) %>
-    <%= f.text_field :last_name %>
-  </div>
+<div class="field">
+  <%= f.label t(:last_name) %>
+  <%= f.text_field :last_name %>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

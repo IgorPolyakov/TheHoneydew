@@ -5,6 +5,8 @@ class CreateReports < ActiveRecord::Migration[5.0]
       t.date :deadline
       t.references :inspector, foreign_key: true
       t.string :executive
+      t.string :reason
+      t.string :result
       t.timestamps
     end
   end
