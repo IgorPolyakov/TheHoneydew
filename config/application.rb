@@ -13,5 +13,7 @@ module TheHoneydew
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
+    # force HTTPS on all environments
+    config.force_ssl = true
   end
 end
