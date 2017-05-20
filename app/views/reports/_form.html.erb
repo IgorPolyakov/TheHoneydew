@@ -1,46 +1,46 @@
 <%= form_for(report) do |f| %>
 <% if report.errors.any? %>
 <div id="error_explanation">
-    <h2><%= pluralize(report.errors.count, "error") %>
-        <%= t(:prohibited_this_report_from_being_saved) %>:</h2>
+  <h2><%= pluralize(report.errors.count, "error") %>
+    <%= t(:prohibited_this_report_from_being_saved) %>:</h2>
 
-    <ul>
-        <% report.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
+  <ul>
+    <% report.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
 </div>
 <% end %>
 
 <div class="field">
-    <%= f.label t(:number) %>
-    <%= f.text_field :number %>
+  <%= f.label t(:number) %>
+  <%= f.text_field :number %>
 </div>
 
 <div class="field">
-    <%= f.label t(:deadline) %>
-    <%= f.date_select :deadline %>
+  <%= f.label t(:deadline) %>
+  <%= f.date_select :deadline %>
 </div>
 <div class="field">
-    <%= f.label t(:reason) %>
-    <%= f.select :reason, [t(:plan_job_KK_KCO), t(:plan_job_KK_KCO), t(:plan_job_KK_KCO),t(:plan_job_KK_KCO),t(:plan_job_KK_KCO),t(:plan_job_KK_KCO)]%>
+  <%= f.label t(:reason) %>
+  <%= f.select :reason, [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
 </div>
 <div class="field">
-    <%= f.label t(:result) %>
-    <%= f.select :result, [t(:off_control), t(:move_to_inner_control)] %>
-</div>
-
-<div class="field">
-    <%= f.label t(:inspector) %>
-    <%= f.select :inspector_id , options_for_select(@inspectors) %>
+  <%= f.label t(:result) %>
+  <%= f.select :result, [t(:off_control), t(:move_to_inner_control)] %>
 </div>
 
 <div class="field">
-    <%= f.label t(:executive) %>
-    <%= f.text_field :executive %>
+  <%= f.label t(:inspector) %>
+  <%= f.select :inspector_id , options_for_select(@inspectors) %>
+</div>
+
+<div class="field">
+  <%= f.label t(:executive) %>
+  <%= f.text_field :executive %>
 </div>
 
 <div class="actions">
-    <%= f.submit %>
+  <%= f.submit %>
 </div>
 <% end %>
