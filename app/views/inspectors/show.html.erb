@@ -1,23 +1,23 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="well well-sm">
+  <p>
     <strong><%= t(:first_name) %>:</strong>
     <%= @inspector.first_name %>
-</p>
-<p>
+  </p>
+  <p>
     <strong><%= t(:last_name) %>:</strong>
     <%= @inspector.last_name %>
-</p>
-<p>
+  </p>
+  <p>
     <strong><%= t(:middle_name) %>:</strong>
     <%= @inspector.middle_name %>
-</p>
+  </p>
 
-<p>
+  <p>
     <strong><%= t(:position) %>:</strong>
     <%= @inspector.position %>
-</p>
-
+  </p>
+</div>
 <%= link_to t(:edit), edit_inspector_path(@inspector) %>
 |
 <%= link_to t(:back), inspectors_path %>

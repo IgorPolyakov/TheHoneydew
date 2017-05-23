@@ -1,64 +1,65 @@
 <p id="notice"><%= notice %></p>
+<div class="well well-sm">
+  <p>
+    <strong><%= t(:amount)%>:</strong>
+    <%= @check.amount %>
+  </p>
 
-<p>
-  <strong><%= t(:amount)%>:</strong>
-  <%= @check.amount %>
-</p>
+  <p>
+    <strong><%= t(:checks_number)%>:</strong>
+    <%= @check.checks_number %>
+  </p>
 
-<p>
-  <strong><%= t(:checks_number)%>:</strong>
-  <%= @check.checks_number %>
-</p>
+  <p>
+    <strong><%= t(:deadline)%>:</strong>
+    <%= @check.deadline %>
+  </p>
 
-<p>
-  <strong><%= t(:deadline)%>:</strong>
-  <%= @check.deadline %>
-</p>
+  <p>
+    <strong><%= t(:reason)%>:</strong>
+    <%= @check.reason %>
+  </p>
 
-<p>
-  <strong><%= t(:reason)%>:</strong>
-  <%= @check.reason %>
-</p>
+  <p>
+    <strong><%= t(:category)%>:</strong>
+    <%= @check.category %>
+  </p>
 
-<p>
-  <strong><%= t(:category)%>:</strong>
-  <%= @check.category %>
-</p>
+  <p>
+    <strong><%= t(:violation)%>:</strong>
+    <%= @check.violation %>
+  </p>
 
-<p>
-  <strong><%= t(:violation)%>:</strong>
-  <%= @check.violation %>
-</p>
+  <p>
+    <strong><%= t(:response_measure)%>:</strong>
+    <%= @check.response_measure %>
+  </p>
 
-<p>
-  <strong><%= t(:response_measure)%>:</strong>
-  <%= @check.response_measure %>
-</p>
+  <p>
+    <strong><%= t(:direction)%>:</strong>
+    <%= @check.direction %>
+  </p>
 
-<p>
-  <strong><%= t(:direction)%>:</strong>
-  <%= @check.direction %>
-</p>
+  <p>
+    <strong><%= t(:term)%>:</strong>
+    <%= @check.term %>
+  </p>
 
-<p>
-  <strong><%= t(:term)%>:</strong>
-  <%= @check.term %>
-</p>
+  <p>
+    <strong><%= t(:case_number)%>:</strong>
+    <%= @check.case_number %>
+  </p>
 
-<p>
-  <strong><%= t(:case_number)%>:</strong>
-  <%= @check.case_number %>
-</p>
+  <p>
+    <strong><%= t(:number_of_volumes)%>:</strong>
+    <%= @check.number_of_volumes %>
+  </p>
 
-<p>
-  <strong><%= t(:number_of_volumes)%>:</strong>
-  <%= @check.number_of_volumes %>
-</p>
-
-<p>
-  <strong><%= t(:for_office)%>:</strong>
-  <%= @check.for_office %>
-</p>
-
-<%= link_to t(:edit), edit_check_path(@check) %> |
+  <p>
+    <strong><%= t(:for_office)%>:</strong>
+    <%= @check.for_office %>
+  </p>
+</div>
+<%= link_to t(:edit), edit_check_path(@check) %>
+|
 <%= link_to t(:back), checks_path %>

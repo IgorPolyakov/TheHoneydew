@@ -14,6 +14,6 @@ module TheHoneydew
     config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ru
     # force HTTPS on all environments
-    config.force_ssl = true
+    # config.force_ssl = true
   end
 end
