@@ -9,8 +9,7 @@ class InspectorsController < ApplicationController
 
   # GET /inspectors/1
   # GET /inspectors/1.json
-  def show
-  end
+  def show; end
 
   # GET /inspectors/new
   def new
@@ -18,8 +17,7 @@ class InspectorsController < ApplicationController
   end
 
   # GET /inspectors/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /inspectors
   # POST /inspectors.json
@@ -62,13 +60,14 @@ class InspectorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_inspector
-      @inspector = Inspector.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def inspector_params
-      params.require(:inspector).permit(:first_name, :last_name, :middle_name, :position)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_inspector
+    @inspector = Inspector.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def inspector_params
+    params.require(:inspector).permit(:first_name, :last_name, :middle_name, :position)
+  end
 end

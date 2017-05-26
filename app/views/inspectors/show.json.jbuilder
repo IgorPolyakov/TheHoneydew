@@ -1,1 +1,1 @@
-json.partial! "inspectors/inspector", inspector: @inspector
+json.partial! 'inspectors/inspector', inspector: @inspector

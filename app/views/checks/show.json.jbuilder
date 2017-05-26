@@ -1,1 +1,1 @@
-json.partial! "checks/check", check: @check
+json.partial! 'checks/check', check: @check

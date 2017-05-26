@@ -9,8 +9,7 @@ class ChecksController < ApplicationController
 
   # GET /checks/1
   # GET /checks/1.json
-  def show
-  end
+  def show; end
 
   # GET /checks/new
   def new
@@ -18,8 +17,7 @@ class ChecksController < ApplicationController
   end
 
   # GET /checks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /checks
   # POST /checks.json
@@ -62,13 +60,14 @@ class ChecksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_check
-      @check = Check.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def check_params
-      params.require(:check).permit(:amount, :checks_number, :deadline, :reason, :category, :violation, :response_measure, :direction, :term, :case_number, :number_of_volumes, :for_office, :supervisor_id, :visor_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_check
+    @check = Check.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def check_params
+    params.require(:check).permit(:amount, :checks_number, :deadline, :reason, :category, :violation, :response_measure, :direction, :term, :case_number, :number_of_volumes, :for_office, :supervisor_id, :visor_id)
+  end
 end
