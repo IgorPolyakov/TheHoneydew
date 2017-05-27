@@ -29,27 +29,29 @@
 
 <div class="field">
   <%= f.label t(:reason) %>
-  <%= f.text_field :reason %>
+  <%= f.select :reason, [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
 </div>
 
 <div class="field">
   <%= f.label t(:category) %>
-  <%= f.text_field :category %>
+  <%= f.select :category, [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds), t(:challenging_the_actions_of_officials),
+  t(:others)] %>
 </div>
 
 <div class="field">
   <%= f.label t(:violation) %>
-  <%= f.text_field :violation %>
+  <%= f.select :violation, [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)] %>
 </div>
 
 <div class="field">
   <%= f.label t(:response_measure) %>
-  <%= f.text_field :response_measure %>
+  <%= f.select :response_measure, [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)] %>
 </div>
 
 <div class="field">
   <%= f.label t(:direction) %>
-  <%= f.text_field :direction %>
+  <%= f.select :direction, [t(:name_and_position), t(:for_information), t(:for_accept), t(:for_removal)] %>
+
 </div>
 
 <div class="field">
