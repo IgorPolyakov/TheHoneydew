@@ -39,6 +39,7 @@ gem 'rails-i18n'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'mina'
+gem 'devise'
 
 gem 'listen'
 group :development, :test do
