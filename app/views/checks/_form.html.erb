@@ -1,87 +1,88 @@
 <%= form_for(check) do |f| %>
-  <% if check.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(check.errors.count, "error") %> <%=t(:prohibited_this_check_from_being_saved)%></h2>
+<% if check.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(check.errors.count, "error") %>
+    <%=t(:prohibited_this_check_from_being_saved)%></h2>
 
-      <ul>
-      <% check.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% check.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label t(:amount) %>
-    <%= f.number_field :amount %>
-  </div>
+<div class="field">
+  <%= f.label t(:amount) %>
+  <%= f.number_field :amount %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:checks_number) %>
-    <%= f.text_field :checks_number %>
-  </div>
+<div class="field">
+  <%= f.label t(:checks_number) %>
+  <%= f.text_field :checks_number %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:deadline) %>
-    <%= f.date_select :deadline %>
-  </div>
+<div class="field">
+  <%= f.label t(:deadline) %>
+  <%= f.date_select :deadline %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:reason) %>
-    <%= f.text_field :reason %>
-  </div>
+<div class="field">
+  <%= f.label t(:reason) %>
+  <%= f.text_field :reason %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:category) %>
-    <%= f.text_field :category %>
-  </div>
+<div class="field">
+  <%= f.label t(:category) %>
+  <%= f.text_field :category %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:violation) %>
-    <%= f.text_field :violation %>
-  </div>
+<div class="field">
+  <%= f.label t(:violation) %>
+  <%= f.text_field :violation %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:response_measure) %>
-    <%= f.text_field :response_measure %>
-  </div>
+<div class="field">
+  <%= f.label t(:response_measure) %>
+  <%= f.text_field :response_measure %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:direction) %>
-    <%= f.text_field :direction %>
-  </div>
+<div class="field">
+  <%= f.label t(:direction) %>
+  <%= f.text_field :direction %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:term) %>
-    <%= f.text_field :term %>
-  </div>
+<div class="field">
+  <%= f.label t(:term) %>
+  <%= f.text_field :term %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:case_number) %>
-    <%= f.text_field :case_number %>
-  </div>
+<div class="field">
+  <%= f.label t(:case_number) %>
+  <%= f.text_field :case_number %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:number_of_volumes) %>
-    <%= f.number_field :number_of_volumes %>
-  </div>
+<div class="field">
+  <%= f.label t(:number_of_volumes) %>
+  <%= f.number_field :number_of_volumes %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:supervisor_id) %>
-    <%= f.collection_select :supervisor_id, Inspector.all, :id, :last_name, multiple: true  %>
-  </div>
+<div class="field">
+  <%= f.label t(:inspector) %>
+  <%= f.select :inspector_id , options_for_select(@inspectors) %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:visor_id) %>
-    <%= f.collection_select :visor_id, Inspector.all, :id, :last_name, multiple: true  %>
-  </div>
+<div class="field">
+  <%= f.label t(:executive) %>
+  <%= f.text_field :executive %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:for_office) %>
-    <%= f.check_box :for_office %>
-  </div>
+<div class="field">
+  <%= f.label t(:for_office) %>
+  <%= f.check_box :for_office %>
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>
