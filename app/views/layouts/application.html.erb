@@ -16,24 +16,29 @@
                     <%= link_to t(:checking_system), root_path, class: "navbar-brand" %>
                 </div>
                 <% if user_signed_in? %>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <%= link_to t(:inspectors), inspectors_path %>
-                    </li>
-                    <li>
-                        <%= link_to t(:people), people_path %>
-                    </li>
-                    <li>
-                        <%= link_to t(:organization), organizations_path %>
-                    </li>
-                    <li>
-                        <%= link_to t(:checks), checks_path %>
-                    </li>
-                    <li>
-                        <%= link_to t(:reports), reports_path %>
-                    </li>
-                </ul>
-                <% end %>    
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <%= link_to t(:inspectors), inspectors_path %>
+                        </li>
+                        <li>
+                            <%= link_to t(:people), people_path %>
+                        </li>
+                        <li>
+                            <%= link_to t(:organization), organizations_path %>
+                        </li>
+                        <li>
+                            <%= link_to t(:checks), checks_path %>
+                        </li>
+                        <li>
+                            <%= link_to t(:reports), reports_path %>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                        </li>
+                    </ul>
+                <% end %>
             </div>
         </nav>
         <div class="container">
