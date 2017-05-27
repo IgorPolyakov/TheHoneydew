@@ -1,5 +1,6 @@
 require 'faker'
 Inspector.destroy_all
+Organization.destroy_all
 # data from URL:https://kru.tomsk.gov.ru/phonebook/department
 Inspector.create(last_name: 'Аксиненко', first_name: 'Сергей', middle_name: 'Владимирович', position: 'Председатель комитета - заместитель начальника управления')
 Inspector.create(last_name: 'Маляр', first_name: 'Павел', middle_name: 'Иванович', position: 'Председатель комитета')
@@ -22,3 +23,9 @@ Inspector.create(last_name: 'Пономарева', first_name: 'Алия', midd
 Inspector.create(last_name: 'Панькова', first_name: 'Олеся', middle_name: 'Васильвена', position: 'Консультант')
 Inspector.create(last_name: 'Трубина', first_name: 'Полина', middle_name: 'Ивановна', position: 'Консультант')
 Inspector.create(last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
+User.create(email:'keva@keva.su', encrypted_password: '$2a$11$rRKdHLgFeSQYK9wCc1gasurBqwq4XOtUavLMApjvWX3eQJD9kOD62')
+User.create(email:'user@keva.su', encrypted_password: '$2a$11$rRKdHLgFeSQYK9wCc1gasurBqwq4XOtUavLMApjvWX3eQJD9kOD62')
+Organization.create(company_name: 'ЗАО «Томский подшипник',last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Дитектор')
+Organization.create(company_name: 'Группа компаний «Томский инструмент', last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Дитектор')
+Organization.create(company_name: 'ФГУП «Томский электротехнический завод',last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Дитектор')
+Organization.create(company_name: 'ОАО «Томский завод им. В.В. Вахрушева',last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
