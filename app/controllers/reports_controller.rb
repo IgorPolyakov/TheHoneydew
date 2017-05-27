@@ -12,17 +12,20 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # GET /reports/new
   def new
     @report = Report.new
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # GET /reports/1/edit
   def edit
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # POST /reports
@@ -51,7 +54,7 @@ class ReportsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @report.errors, status: :unprocessable_entity }
-        end
+      end
     end
   end
 
@@ -74,6 +77,6 @@ class ReportsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
-    params.require(:report).permit(:number, :deadline, :inspector_id, :executive, :result, :reason)
+    params.require(:report).permit(:number, :deadline, :inspector_id, :organization_id, :executive, :result, :reason)
   end
 end

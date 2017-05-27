@@ -21,13 +21,20 @@
   <%= f.label t(:deadline) %>
   <%= f.date_select :deadline %>
 </div>
+
 <div class="field">
   <%= f.label t(:reason) %>
   <%= f.select :reason, [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
 </div>
+
 <div class="field">
   <%= f.label t(:result) %>
   <%= f.select :result, [t(:off_control), t(:move_to_inner_control)] %>
+</div>
+
+<div class="field">
+  <%= f.label t(:organization) %>
+  <%= f.select :organization_id , options_for_select(@organizations) %>
 </div>
 
 <div class="field">
