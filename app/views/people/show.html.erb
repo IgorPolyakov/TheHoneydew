@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
+<div class="well well-sm">
+  <p>
+    <strong><%= t(:first_name) %>:</strong>
+    <%= @person.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @person.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @person.last_name %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+  <p>
+    <strong><%= t(:last_name) %>:</strong>
+    <%= @person.last_name %>
+  </p>
+</div>
+<%= link_to t(:edit), edit_person_path(@person) %>
+|
+<%= link_to t(:back), people_path %>

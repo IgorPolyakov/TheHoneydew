@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Checks</h1>
+<h1><%= t(:checks) %></h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Amount</th>
-      <th>Checks number</th>
-      <th>Deadline</th>
-      <th>Reason</th>
-      <th>Category</th>
-      <th>Violation</th>
-      <th>Response measure</th>
-      <th>Direction</th>
-      <th>Term</th>
-      <th>Case number</th>
-      <th>Number of volumes</th>
-      <th>For office</th>
+      <th><%= t(:amount)%></th>
+      <th><%= t(:checks_number)%></th>
+      <th><%= t(:deadline)%></th>
+      <th><%= t(:reason)%></th>
+      <th><%= t(:category)%></th>
+      <th><%= t(:violation)%></th>
+      <th><%= t(:response_measure)%></th>
+      <th><%= t(:direction)%></th>
+      <th><%= t(:term)%></th>
+      <th><%= t(:case_number)%></th>
+      <th><%= t(:number_of_volumes)%></th>
+      <th><%= t(:for_office)%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+<%= t(:response_measure)%>
   <tbody>
     <% @checks.each do |check| %>
       <tr>
@@ -36,9 +36,9 @@
         <td><%= check.case_number %></td>
         <td><%= check.number_of_volumes %></td>
         <td><%= check.for_office %></td>
-        <td><%= link_to 'Show', check %></td>
-        <td><%= link_to 'Edit', edit_check_path(check) %></td>
-        <td><%= link_to 'Destroy', check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t(:show), check %></td>
+        <td><%= link_to t(:edit), edit_check_path(check) %></td>
+        <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +46,4 @@
 
 <br>
 
-<%= link_to 'New Check', new_check_path %>
+<%= link_to t(:new_check), new_check_path %>

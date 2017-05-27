@@ -1,7 +1,7 @@
 <%= form_for(organization) do |f| %>
   <% if organization.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(organization.errors.count, "error") %> prohibited this organization from being saved:</h2>
+      <h2><%= pluralize(organization.errors.count, "error") %> <%= t(:prohibited_this_organization_from_being_saved) %></h2>
 
       <ul>
       <% organization.errors.full_messages.each do |message| %>
@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :company_name %>
+    <%= f.label t(:company_name) %>
     <%= f.text_field :company_name %>
   </div>
   <br>
   <div class="field">
-    <%= f.label :first_name %>
+    <%= f.label t(:first_name) %>
     <%= f.text_field :first_name %>
   </div>
 
   <div class="field">
-    <%= f.label :middle_name %>
+    <%= f.label t(:middle_name) %>
     <%= f.text_field :middle_name %>
   </div>
   <div class="field">
-    <%= f.label :second_name %>
-    <%= f.text_field :second_name %>
+    <%= f.label t(:last_name) %>
+    <%= f.text_field :last_name %>
   </div>
   <br>
   <div class="field">
-    <%= f.label :position %>
+    <%= f.label t(:position) %>
     <%= f.text_field :position %>
   </div>
   <div class="actions">

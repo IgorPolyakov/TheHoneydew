@@ -1,23 +1,51 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  amount: "Amount"
+  are_you_sure: "Are you sure?"
+  back: "Back"
+  case_number: "Case number"
+  category: "Category"
+  check: "Check"
+  checking_system: "Checking system"
+  checks: "Checks"
+  checks_number: "Checks number"
+  company_name: "Company name"
+  deadline: "Deadline"
+  destroy: "Destroy"
+  direction: "Direction"
+  edit: "Edit"
+  editing_check: "Editing Check"
+  expand: "Expand"
+  first_name: "First name"
+  for_office: "For office"
+  inspector: "Inspector"
+  inspectors: "Inspectors"
+  last_name: "Last name"
+  middle_name: "Middle name"
+  new_check: "New Check"
+  new_inspector: "New Inspector"
+  new_organization: "New Organization"
+  new_person: "New Person"
+  new_report: "New Report"
+  number: "Number"
+  number_of_volumes: "Number of volumes"
+  organigation: "Organigation"
+  organigations: "Organigations"
+  people: "People"
+  person: "Person"
+  plan_job_KK_KCO: "план работы КК и ОАР"
+  off_control: "off_control"
+  move_to_inner_control: "move_to_inner_control"
+  prohibited_this_check_from_being_saved: "prohibited this check from being saved"
+  prohibited_this_person_from_being_saved: "prohibited this person from being saved"
+  position: "Position"
+  reason: "Reason"
+  response_measure: "Response measure"
+  report: "Report"
+  reports: "Reports"
+  result: "Result"
+  save: "Save"
+  last_name: "Last name"
+  show: "Show"
+  term: "Term"
+  title: "TheHoneydew"
+  violation: "Violation"

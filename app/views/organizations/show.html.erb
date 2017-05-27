@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
+<div class="well well-sm">
+  <p>
+    <strong><%= t(:company_name)%>:
+    </strong>
+    <%= @organization.company_name %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @organization.name %>
-</p>
-
-<p>
-  <strong>Boss:</strong>
-  <%= @organization.boss %>
-</p>
-
-<%= link_to 'Edit', edit_organization_path(@organization) %> |
-<%= link_to 'Back', organizations_path %>
+  <p>
+    <strong><%= t(:first_name) %>:</strong>
+    <%= @organization.first_name %>
+  </p>
+  <p>
+    <strong><%= t(:last_name)%>:</strong>
+    <%= @organization.last_name %>
+  </p>
+  <p>
+    <strong><%= t(:middle_name) %>:</strong>
+    <%= @organization.middle_name %>
+  </p>
+  <p>
+    <strong><%= t(:position) %>:</strong>
+    <%= @organization.position %>
+  </p>
+</div>
+<%= link_to t(:edit), edit_organization_path(@organization) %>
+|
+<%= link_to t(:back), organizations_path %>

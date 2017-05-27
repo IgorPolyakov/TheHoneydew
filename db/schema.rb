@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427131431) do
+ActiveRecord::Schema.define(version: 20170513114819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,11 +30,8 @@ ActiveRecord::Schema.define(version: 20170427131431) do
     t.boolean  "for_office"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "checks_people", id: false, force: :cascade do |t|
-    t.integer "check_id"
-    t.integer "person_id"
+    t.integer  "inspector_id"
+    t.index ["inspector_id"], name: "index_checks_on_inspector_id", using: :btree
   end
 
   create_table "inspectors", force: :cascade do |t|
@@ -52,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170427131431) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "middle_name"
-    t.string   "second_name"
+    t.string   "last_name"
     t.string   "position"
   end
 
@@ -65,9 +62,12 @@ ActiveRecord::Schema.define(version: 20170427131431) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.integer  "number"
-    t.datetime "dead_line"
+    t.string   "number"
+    t.date     "deadline"
     t.integer  "inspector_id"
+    t.string   "executive"
+    t.string   "reason"
+    t.string   "result"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["inspector_id"], name: "index_reports_on_inspector_id", using: :btree
@@ -90,5 +90,6 @@ ActiveRecord::Schema.define(version: 20170427131431) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "checks", "inspectors"
   add_foreign_key "reports", "inspectors"
 end

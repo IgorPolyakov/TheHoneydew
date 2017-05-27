@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Inspectors</h1>
+<h1><%= t(:inspectors) %></h1>
 
 <table class="table">
     <thead>
         <tr>
-            <th>First name</th>
-            <th>Lastname</th>
-            <th>Position</th>
+            <th><%= t(:first_name)%></th>
+            <th><%= t(:last_name)%></th>
+            <th><%= t(:middle_name)%></th>
+            <th><%= t(:position)%></th>
             <th colspan="4"></th>
         </tr>
     </thead>
@@ -17,10 +18,11 @@
         <tr>
             <td><%= inspector.first_name %></td>
             <td><%= inspector.last_name %></td>
+            <td><%= inspector.middle_name %></td>
             <td><%= inspector.position %></td>
-            <td><%= link_to 'Show', inspector %></td>
-            <td><%= link_to 'Edit', edit_inspector_path(inspector) %></td>
-            <td><%= link_to 'Destroy', inspector, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to t(:show), inspector %></td>
+            <td><%= link_to t(:edit), edit_inspector_path(inspector) %></td>
+            <td><%= link_to t(:destroy), inspector, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
         </tr>
         <% end %>
     </tbody>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Inspector', new_inspector_path %>
+<%= link_to t(:new_inspector), new_inspector_path %>

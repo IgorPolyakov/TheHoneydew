@@ -2,11 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :checks
   resources :people
-    get 'dashboard/index'
+  get 'dashboard/index'
 
-    root 'dashboard#index'
-      resources :organizations
-      resources :reports
-    resources :inspectors
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'dashboard#index'
+  resources :organizations
+  resources :reports
+  resources :inspectors
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

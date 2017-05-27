@@ -1,5 +1,5 @@
-<h1>New Person</h1>
+<h1><%= t(:new_person)%></h1>
 
 <%= render 'form', person: @person %>
 
-<%= link_to 'Back', people_path %>
+<%= link_to t(:back), people_path %>

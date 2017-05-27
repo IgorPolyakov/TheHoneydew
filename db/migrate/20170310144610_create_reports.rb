@@ -1,10 +1,12 @@
 class CreateReports < ActiveRecord::Migration[5.0]
   def change
     create_table :reports do |t|
-      t.integer :number
-      t.datetime :dead_line
+      t.string :number
+      t.date :deadline
       t.references :inspector, foreign_key: true
-
+      t.string :executive
+      t.string :reason
+      t.string :result
       t.timestamps
     end
   end

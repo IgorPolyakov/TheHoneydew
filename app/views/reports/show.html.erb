@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-    <strong>Number:</strong>
+<div class="well well-sm">
+  <p>
+    <strong><%= t(:number) %>:</strong>
     <%= @report.number %>
-</p>
-
-<p>
-    <strong>Dead line:</strong>
-    <%= @report.dead_line %>
-</p>
-
-<p>
-    <strong>Inspector:</strong>
+  </p>
+  <p>
+    <strong><%= t(:deadline) %>:</strong>
+    <%= @report.deadline %>
+  </p>
+  <p>
+    <strong><%= t(:inspector) %>:</strong>
     <%= Inspector.find(@report.inspector_id).last_name; %>
-</p>
-
-<%= link_to 'Edit', edit_report_path(@report) %>
+  </p>
+  <p>
+    <strong><%= t(:executive) %>:</strong>
+    <%= @report.executive %>
+  </p>
+  <p>
+    <strong><%= t(:reason) %>:</strong>
+    <%= @report.reason %>
+  </p>
+  <p>
+    <strong><%= t(:result) %>:</strong>
+    <%= @report.result %>
+  </p>
+</div>
+<%= link_to t(:edit), edit_report_path(@report) %>
 |
-<%= link_to 'Back', reports_path %>
+<%= link_to t(:back), reports_path %>

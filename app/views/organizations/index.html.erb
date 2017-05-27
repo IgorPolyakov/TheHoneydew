@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Organizations</h1>
+<h1><%= t(:organizations) %></h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Boss</th>
+      <th><%= t(:company_name) %></th>
+      <th><%= t(:first_name) %></th>
+      <th><%= t(:last_name) %></th>
+      <th><%= t(:middle_name) %></th>
+      <th><%= t(:position) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,11 +17,14 @@
   <tbody>
     <% @organizations.each do |organization| %>
       <tr>
-        <td><%= organization.name %></td>
-        <td><%= organization.boss %></td>
-        <td><%= link_to 'Show', organization %></td>
-        <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
-        <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= organization.company_name %></td>
+        <td><%= organization.first_name %></td>
+        <td><%= organization.last_name %></td>
+        <td><%= organization.middle_name %></td>
+        <td><%= organization.position %></td>
+        <td><%= link_to t(:show), organization %></td>
+        <td><%= link_to t(:edit), edit_organization_path(organization) %></td>
+        <td><%= link_to t(:destroy), organization, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Organization', new_organization_path %>
+<%= link_to t(:new_organization), new_organization_path %>
