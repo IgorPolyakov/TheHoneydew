@@ -1,0 +1,14 @@
+                 List of relations
+ Schema |           Name           | Type  | Owner 
+--------+--------------------------+-------+-------
+ public | ar_internal_metadata     | table | vexar
+ public | checks                   | table | vexar
+ public | checks_and_organizations | table | vexar
+ public | inspectors               | table | vexar
+ public | organizations            | table | vexar
+ public | people                   | table | vexar
+ public | reports                  | table | vexar
+ public | schema_migrations        | table | vexar
+ public | users                    | table | vexar
+(9 rows)
+
