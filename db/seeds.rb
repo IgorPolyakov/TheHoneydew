@@ -22,3 +22,6 @@ Inspector.create(last_name: 'Пономарева', first_name: 'Алия', midd
 Inspector.create(last_name: 'Панькова', first_name: 'Олеся', middle_name: 'Васильвена', position: 'Консультант')
 Inspector.create(last_name: 'Трубина', first_name: 'Полина', middle_name: 'Ивановна', position: 'Консультант')
 Inspector.create(last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
+
+User.create(email:'keva@keva.su', encrypted_password: '$2a$11$rRKdHLgFeSQYK9wCc1gasurBqwq4XOtUavLMApjvWX3eQJD9kOD62')
+User.create(email:'user@keva.su', encrypted_password: '$2a$11$rRKdHLgFeSQYK9wCc1gasurBqwq4XOtUavLMApjvWX3eQJD9kOD62')
