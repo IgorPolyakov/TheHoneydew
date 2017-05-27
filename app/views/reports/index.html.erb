@@ -33,28 +33,6 @@
 </table>
 
 
-
-<ol class="list-group">
-    <% @reports.each do |report| %>
-        <li class="list-group-item clearfix">
-            <h3 class="pull-right">
-                <small class="text-uppercase">Окончание</small>
-                <%= report.deadline %>
-            </h3>
-            <h2 class="h3">
-                <%= report.number %> <%= Inspector.find(report.inspector_id).last_name; %>
-            </h2>
-            <h4 class="pull-right"><%= report.reason %></h4>
-            <h4><%= report.executive %></h4>
-            <h6>
-                <%= link_to t(:show), report %>
-                <%= link_to t(:edit), edit_report_path(report) %>
-                <%= link_to t(:destroy), report, method: :delete, data: { confirm: t(:are_you_sure) } %>
-            </h6>
-        </li>
-    <% end %>
-</ol>
-
 <br>
 
 <%= link_to t(:new_report), new_report_path %>
