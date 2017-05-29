@@ -38,4 +38,6 @@
 
 <br>
 
-<%= link_to t(:new_report), new_report_path %>
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:new_report), new_report_path %>
+<% end %>

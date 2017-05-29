@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to t(:new_inspector), new_inspector_path %>
+<% if current_user.is_admin == 1 %>
+    <%= link_to t(:new_inspector), new_inspector_path %>
+<% end %>

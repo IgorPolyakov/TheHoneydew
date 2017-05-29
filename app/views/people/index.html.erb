@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to t(:new_person), new_person_path %>
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:new_person), new_person_path %>
+<% end %>

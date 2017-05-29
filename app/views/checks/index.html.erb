@@ -57,4 +57,6 @@
 
 <br>
 
-<%= link_to t(:new_check), new_check_path %>
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:new_check), new_check_path %>
+<% end %>
