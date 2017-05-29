@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527091734) do
+ActiveRecord::Schema.define(version: 20170527115406) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20170527091734) do
     t.datetime "updated_at",        null: false
     t.integer  "inspector_id"
     t.integer  "organization_id"
+    t.string   "executive"
     t.index ["inspector_id"], name: "index_checks_on_inspector_id", using: :btree
     t.index ["organization_id"], name: "index_checks_on_organization_id", using: :btree
   end
@@ -41,6 +42,13 @@ ActiveRecord::Schema.define(version: 20170527091734) do
     t.integer "organization_id"
     t.index ["check_id"], name: "index_checks_and_organizations_on_check_id", using: :btree
     t.index ["organization_id"], name: "index_checks_and_organizations_on_organization_id", using: :btree
+  end
+
+  create_table "checks_and_people", id: false, force: :cascade do |t|
+    t.integer "check_id"
+    t.integer "person_id"
+    t.index ["check_id"], name: "index_checks_and_people_on_check_id", using: :btree
+    t.index ["person_id"], name: "index_checks_and_people_on_person_id", using: :btree
   end
 
   create_table "inspectors", force: :cascade do |t|
