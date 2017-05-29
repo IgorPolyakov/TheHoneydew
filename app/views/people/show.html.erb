@@ -14,6 +14,8 @@
     <%= @person.middle_name %>
   </p>
 </div>
-<%= link_to t(:edit), edit_person_path(@person) %>
-|
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:edit), edit_person_path(@person) %>
+  |
+<% end %>
 <%= link_to t(:back), people_path %>

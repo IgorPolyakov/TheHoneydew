@@ -23,6 +23,8 @@
     <%= @organization.position %>
   </p>
 </div>
-<%= link_to t(:edit), edit_organization_path(@organization) %>
-|
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:edit), edit_organization_path(@organization) %>
+  |
+<% end %>
 <%= link_to t(:back), organizations_path %>

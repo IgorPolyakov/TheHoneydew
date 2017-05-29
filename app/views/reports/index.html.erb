@@ -27,8 +27,10 @@
       <td><%= report.reason %></td>
       <td><%= report.result %></td>
       <td><%= link_to t(:show), report %></td>
-      <td><%= link_to t(:edit), edit_report_path(report) %></td>
-      <td><%= link_to t(:destroy), report, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+      <% if current_user.is_admin == 1 %>
+        <td><%= link_to t(:edit), edit_report_path(report) %></td>
+        <td><%= link_to t(:destroy), report, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
@@ -36,4 +38,6 @@
 
 <br>
 
-<%= link_to t(:new_report), new_report_path %>
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:new_report), new_report_path %>
+<% end %>
