@@ -60,6 +60,8 @@
     <%= @check.for_office %>
   </p>
 </div>
-<%= link_to t(:edit), edit_check_path(@check) %>
-|
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:edit), edit_check_path(@check) %>
+  |
+<% end %>
 <%= link_to t(:back), checks_path %>

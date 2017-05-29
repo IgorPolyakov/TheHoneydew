@@ -30,6 +30,8 @@
     <%= @report.result %>
   </p>
 </div>
-<%= link_to t(:edit), edit_report_path(@report) %>
-|
+<% if current_user.is_admin == 1 %>
+  <%= link_to t(:edit), edit_report_path(@report) %>
+  |
+<% end %>
 <%= link_to t(:back), reports_path %>
