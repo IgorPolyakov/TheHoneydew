@@ -10,7 +10,7 @@ User=deploy
 Group=deploy
 WorkingDirectory=/var/www/project/current
 PIDFile=/var/www/project/tmp/unicorn.pid
-ExecStart=/bin/bash -lc 'bundle exec rails server -e production --pid=/var/www/project/tmp/webrick.pid'
+ExecStart=/bin/bash -lc 'RAILS_ENV=production bundle exec puma -e production -d -b unix:///var/www/project/shared/tmp/sockets/puma.sock --pidfile /var/www/project/tmp/webrick.pid'
 TimeoutSec=30
 RestartSec=15s
 Restart=always
