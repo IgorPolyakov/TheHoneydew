@@ -1,6 +1,7 @@
 require 'faker'
 Inspector.destroy_all
 Organization.destroy_all
+User.destroy_all
 # data from URL:https://kru.tomsk.gov.ru/phonebook/department
 Inspector.create(last_name: 'Аксиненко', first_name: 'Сергей', middle_name: 'Владимирович', position: 'Председатель комитета - заместитель начальника управления')
 Inspector.create(last_name: 'Маляр', first_name: 'Павел', middle_name: 'Иванович', position: 'Председатель комитета')
