@@ -19,7 +19,9 @@ class ChecksController < ApplicationController
   end
 
   # GET /checks/1/edit
-  def edit; end
+  def edit
+    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+  end
 
   # POST /checks
   # POST /checks.json
