@@ -5,14 +5,13 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @reports = Report.all
-    @inspectors = Inspector.all # find(:all, order: 'name')
   end
 
   # GET /reports/1
   # GET /reports/1.json
   def show
-    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
-    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
+    @inspectors = Inspector.find(@report.inspector_id).last_name
+    @organizations = Organization.find(@report.organization_id).company_name
   end
 
   # GET /reports/new

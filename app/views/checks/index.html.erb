@@ -32,7 +32,7 @@
       <td><%= check.checks_number %></td>
       <td><%= check.deadline %></td>
       <td><%= check.reason %></td>
-      <td><%=  %></td>
+      <td><%= %></td>
       <td><%= %></td>
       <td><%= %></td>
       <td><%= check.category %></td>
@@ -47,8 +47,8 @@
       <td><%= check.for_office %></td>
       <td><%= link_to t(:show), check %></td>
       <% if current_user.is_admin == 1 %>
-          <td><%= link_to t(:edit), edit_check_path(check) %></td>
-          <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+      <td><%= link_to t(:edit), edit_check_path(check) %></td>
+      <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
     </tr>
     <% end %>
@@ -58,5 +58,5 @@
 <br>
 
 <% if current_user.is_admin == 1 %>
-  <%= link_to t(:new_check), new_check_path %>
+<%= link_to t(:new_check), new_check_path %>
 <% end %>

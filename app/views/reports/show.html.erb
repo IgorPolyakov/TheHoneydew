@@ -11,11 +11,11 @@
   </p>
   <p>
     <strong><%= t(:inspector) %>:</strong>
-    <%= Inspector.find(@report.inspector_id).last_name; %>
+    <%= @inspectors %>
   </p>
   <p>
     <strong><%= t(:organization) %>:</strong>
-    <%= Organization.find(@report.organization_id).company_name; %>
+    <%= @organizations %>
   </p>
   <p>
     <strong><%= t(:executive) %>:</strong>
@@ -31,7 +31,7 @@
   </p>
 </div>
 <% if current_user.is_admin == 1 %>
-  <%= link_to t(:edit), edit_report_path(@report) %>
-  |
+<%= link_to t(:edit), edit_report_path(@report) %>
+|
 <% end %>
 <%= link_to t(:back), reports_path %>
