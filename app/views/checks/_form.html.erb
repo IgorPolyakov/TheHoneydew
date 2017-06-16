@@ -29,6 +29,7 @@
 
 <div class="field">
   <%= f.label t(:reason) %>
+
   <%= f.select :reason, [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
 </div>
 
@@ -50,7 +51,13 @@
 
 <div class="field">
   <%= f.label t(:direction) %>
-  <%= f.select :direction, [t(:name_and_position), t(:for_information), t(:for_accept), t(:for_removal)] %>
+  <select id="fuck" multiple="multiple">
+    <option value="cheese"><%= t(:name_and_position) %></option>
+    <option value="tomatoes"><%= t(:for_information) %></option>
+    <option value="mozarella"><%= t(:for_accept) %></option>
+    <option value="mushrooms"><%= t(:for_removal) %></option>
+  </select>
+  <%= f.select :direction, [t(:name_and_position), t(:for_information), t(:for_accept), t(:for_removal)] , multiple: "multiple" %>
 
 </div>
 
@@ -87,4 +94,13 @@
 <div class="actions">
   <%= f.submit %>
 </div>
+
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#direction').multiselect();
+  });
+  $(document).ready(function () {
+    $('#fuck').multiselect();
+  });
+</script>
