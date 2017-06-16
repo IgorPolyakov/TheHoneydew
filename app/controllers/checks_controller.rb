@@ -20,6 +20,7 @@ class ChecksController < ApplicationController
 
   # GET /checks/1/edit
   def edit
+    # TODO: Return first Inspector, but need read value from DB
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
   end
 

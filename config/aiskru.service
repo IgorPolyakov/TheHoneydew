@@ -11,11 +11,9 @@ Group=deploy
 WorkingDirectory=/var/www/project/current
 Environment=RAILS_ENV=production
 PIDFile=/var/www/project/shared/tmp/pids/puma.pid
-ExecStart=/home/deploy/.rbenv/shims/bundle exec puma  -e production -C ./config/puma.rb config.ru
+ExecStart=/home/deploy/.rbenv/shims/bundle exec puma -e production  ./config.ru --pidfile /var/www/project/shared/tmp/pids/puma.pid -t 1:5
 TimeoutSec=15
-
 Restart=always
 
 [Install]
 WantedBy=multi-user.target
-
