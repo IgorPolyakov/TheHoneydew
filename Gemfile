@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 gem 'bootstrap-multiselect-rails'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
@@ -20,6 +20,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '~> 5.0.2'
 gem 'rails-i18n'
+gem 'simple_form'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'turbolinks', '~> 5'

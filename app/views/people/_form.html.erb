@@ -1,33 +1,7 @@
-<%= form_for(person) do |f| %>
-<% if person.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(person.errors.count, "error") %>
-    <%= t(:prohibited_this_person_from_being_saved) %>:</h2>
-
-  <ul>
-    <% person.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="field">
-  <%= f.label t(:first_name) %>
-  <%= f.text_field :first_name %>
-</div>
-
-<div class="field">
-  <%= f.label t(:last_name) %>
-  <%= f.text_field :last_name %>
-</div>
-
-<div class="field">
-  <%= f.label t(:middle_name) %>
-  <%= f.text_field :middle_name %>
-</div>
-
-<div class="actions">
-  <%= f.submit class: "btn btn-default"%>
-</div>
+<%= simple_form_for @person, url: people_path, as: 'person' do |f| %>
+<%= f.error_notification %>
+<%= f.input :first_name, placeholder: t(:first_name) %>
+<%= f.input :last_name, placeholder: t(:last_name) %>
+<%= f.input :middle_name, placeholder: t(:middle_name) %>
+<%= f.button :submit %>
 <% end %>

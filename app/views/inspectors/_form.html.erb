@@ -1,38 +1,8 @@
-<%= form_for(inspector) do |f| %>
-<% if inspector.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(inspector.errors.count, "error") %>
-    prohibited this inspector from being saved:</h2>
-
-  <ul>
-    <% inspector.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="field">
-  <%= f.label t(:first_name) %>
-  <%= f.text_field :first_name %>
-</div>
-
-<div class="field">
-  <%= f.label t(:last_name) %>
-  <%= f.text_field :last_name %>
-</div>
-
-<div class="field">
-  <%= f.label t(:middle_name) %>
-  <%= f.text_field :middle_name %>
-</div>
-
-<div class="field">
-  <%= f.label t(:position) %>
-  <%= f.text_field :position %>
-</div>
-
-<div class="actions">
-  <%= f.submit class: "btn btn-default" %>
-</div>
+<%= simple_form_for @inspector, url: inspectors_url, as: 'inspector' do |f| %>
+<%= f.error_notification %>
+<%= f.input :first_name, placeholder: t(:first_name) %>
+<%= f.input :last_name, placeholder: t(:last_name) %>
+<%= f.input :middle_name, placeholder: t(:middle_name) %>
+<%= f.input :position, placeholder: t(:position) %>
+<%= f.button :submit %>
 <% end %>

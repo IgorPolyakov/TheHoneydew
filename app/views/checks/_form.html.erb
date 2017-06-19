@@ -12,95 +12,29 @@
 </div>
 <% end %>
 
-<div class="field">
-  <%= f.label t(:amount) %>
-  <%= f.number_field :amount %>
-</div>
-
-<div class="field">
-  <%= f.label t(:checks_number) %>
-  <%= f.text_field :checks_number %>
-</div>
-
-<div class="field">
-  <%= f.label t(:deadline) %>
-  <%= f.date_select :deadline %>
-</div>
-
-<div class="field">
-  <%= f.label t(:reason) %>
-
-  <%= f.select :reason, [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
-</div>
-
-<div class="field">
-  <%= f.label t(:category) %>
-  <%= f.select :category, [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds), t(:challenging_the_actions_of_officials),
-  t(:others)] %>
-</div>
-
-<div class="field">
-  <%= f.label t(:violation) %>
-  <%= f.select :violation, [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)] %>
-</div>
-
-<div class="field">
-  <%= f.label t(:response_measure) %>
-  <%= f.select :response_measure, [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)] %>
-</div>
-
-<div class="field">
-  <%= f.label t(:direction) %>
-  <select id="fuck" multiple="multiple">
-    <option value="cheese"><%= t(:name_and_position) %></option>
-    <option value="tomatoes"><%= t(:for_information) %></option>
-    <option value="mozarella"><%= t(:for_accept) %></option>
-    <option value="mushrooms"><%= t(:for_removal) %></option>
-  </select>
-  <%= f.select :direction, [t(:name_and_position), t(:for_information), t(:for_accept), t(:for_removal)] , multiple: "multiple" %>
-
-</div>
-
-<div class="field">
-  <%= f.label t(:term) %>
-  <%= f.text_field :term %>
-</div>
-
-<div class="field">
-  <%= f.label t(:case_number) %>
-  <%= f.text_field :case_number %>
-</div>
-
-<div class="field">
-  <%= f.label t(:number_of_volumes) %>
-  <%= f.number_field :number_of_volumes %>
-</div>
-
-<div class="field">
+<div class="form-group">
   <%= f.label t(:inspector) %>
   <%= f.select :inspector_id , options_for_select(@inspectors) %>
 </div>
 
-<div class="field">
-  <%= f.label t(:executive) %>
-  <%= f.text_field :executive %>
-</div>
-
-<div class="field">
-  <%= f.label t(:for_office) %>
-  <%= f.check_box :for_office %>
-</div>
-
-<div class="actions">
-  <%= f.submit class: "btn btn-default"%>
-</div>
-
 <% end %>
-<script type="text/javascript">
-  $(document).ready(function () {
-    $('#direction').multiselect();
-  });
-  $(document).ready(function () {
-    $('#fuck').multiselect();
-  });
-</script>
+
+<%= simple_form_for @check, url: checks_path, as: 'check' do |f| %>
+<%= f.error_notification %>
+<%= f.input :amount, placeholder: t(:amount) %>
+<%= f.input :checks_number, placeholder: t(:checks_number) %>
+<%= f.input :deadline %>
+<%= f.input :reason, as: :check_boxes, collection: [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
+<%= f.input :response_measure, as: :check_boxes, collection: [ t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others) ] %>
+<%= f.input :violation, as: :check_boxes, collection: [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)] %>
+<%= f.input :category, as: :check_boxes, collection: [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds),
+t(:challenging_the_actions_of_officials), t(:others)] %>
+
+<%= f.input :direction, as: :check_boxes, collection: [t(:for_information), t(:for_accept), t(:for_removal)] %>
+<%= f.input :term, placeholder: t(:term) %>
+<%= f.input :case_number, placeholder: t(:case_number) %>
+<%= f.input :number_of_volumes, placeholder: t(:number_of_volumes) %>
+<%= f.input :executive, placeholder: t(:executive) %>
+<%= f.input :for_office %>
+<%= f.button :submit %>
+<% end %>
