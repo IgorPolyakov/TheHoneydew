@@ -1,40 +1,41 @@
 <%= form_for(organization) do |f| %>
-  <% if organization.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(organization.errors.count, "error") %> <%= t(:prohibited_this_organization_from_being_saved) %></h2>
+<% if organization.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(organization.errors.count, "error") %>
+    <%= t(:prohibited_this_organization_from_being_saved) %></h2>
 
-      <ul>
-      <% organization.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% organization.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label t(:company_name) %>
-    <%= f.text_field :company_name %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label t(:first_name) %>
-    <%= f.text_field :first_name %>
-  </div>
+<div class="field">
+  <%= f.label t(:company_name) %>
+  <%= f.text_field :company_name %>
+</div>
+<br>
+<div class="field">
+  <%= f.label t(:first_name) %>
+  <%= f.text_field :first_name %>
+</div>
 
-  <div class="field">
-    <%= f.label t(:middle_name) %>
-    <%= f.text_field :middle_name %>
-  </div>
-  <div class="field">
-    <%= f.label t(:last_name) %>
-    <%= f.text_field :last_name %>
-  </div>
-  <br>
-  <div class="field">
-    <%= f.label t(:position) %>
-    <%= f.text_field :position %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+  <%= f.label t(:middle_name) %>
+  <%= f.text_field :middle_name %>
+</div>
+<div class="field">
+  <%= f.label t(:last_name) %>
+  <%= f.text_field :last_name %>
+</div>
+<br>
+<div class="field">
+  <%= f.label t(:position) %>
+  <%= f.text_field :position %>
+</div>
+<div class="actions">
+  <%= f.submit class: "btn btn-default"%>
+</div>
 <% end %>
