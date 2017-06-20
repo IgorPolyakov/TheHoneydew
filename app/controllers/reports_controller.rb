@@ -17,13 +17,13 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
-    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @inspectors =  Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
     @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # GET /reports/1/edit
   def edit
-    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @inspectors =  Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
     @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
