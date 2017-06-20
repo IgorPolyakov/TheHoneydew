@@ -3,7 +3,7 @@
 <%= f.input :amount, placeholder: t(:amount) %>
 <%= f.input :checks_number, placeholder: t(:checks_number) %>
 <%= f.input :deadline %>
-<%= f.input :inspector, collection: @inspectors %>
+<%= f.input :inspector_id, collection: @inspectors %>
 <%= f.input :reason, as: :check_boxes, collection: [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
 <%= f.input :response_measure, as: :check_boxes, collection: [ t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others) ] %>
 <%= f.input :violation, as: :check_boxes, collection: [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)] %>

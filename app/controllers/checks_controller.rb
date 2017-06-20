@@ -15,7 +15,7 @@ class ChecksController < ApplicationController
   # GET /checks/new
   def new
     @check = Check.new
-    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @inspectors = Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
   end
 
   # GET /checks/1/edit
