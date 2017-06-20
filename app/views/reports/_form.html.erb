@@ -1,53 +1,11 @@
-<%= form_for(report) do |f| %>
-<% if report.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(report.errors.count, "error") %>
-    <%= t(:prohibited_this_report_from_being_saved) %>:</h2>
-
-  <ul>
-    <% report.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="field">
-  <%= f.label t(:case_number) %>
-  <%= f.text_field :number %>
-</div>
-
-<div class="field">
-  <%= f.label t(:deadline) %>
-  <%= f.date_select :deadline %>
-</div>
-
-<div class="field">
-  <%= f.label t(:reason) %>
-  <%= f.select :reason, [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]%>
-</div>
-
-<div class="field">
-  <%= f.label t(:result) %>
-  <%= f.select :result, [t(:off_control), t(:move_to_inner_control)] %>
-</div>
-
-<div class="field">
-  <%= f.label t(:organization) %>
-  <%= f.select :organization_id , options_for_select(@organizations) %>
-</div>
-
-<div class="field">
-  <%= f.label t(:inspector) %>
-  <%= f.select :inspector_id , options_for_select(@inspectors) %>
-</div>
-
-<div class="field">
-  <%= f.label t(:executive) %>
-  <%= f.text_field :executive %>
-</div>
-
-<div class="actions">
-  <%= f.submit class: "btn btn-default"%>
-</div>
+<%= simple_form_for @report, url: reports_path, as: 'report' do |f| %>
+<%= f.error_notification %>
+<%= f.input :number, placeholder: t(:number) %>
+<%= f.input :deadline %>
+<%= f.input :reason, as: :check_boxes, collection: [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)] %>
+<%= f.input :result, as: :check_boxes, collection: [t(:off_control), t(:move_to_inner_control)] %>
+<%= f.input :inspector_id, collection: @inspectors %>
+<%= f.input :organization_id, collection: @organizations %>
+<%= f.input :executive, placeholder: t(:executive) %>
+<%= f.button :submit %>
 <% end %>
