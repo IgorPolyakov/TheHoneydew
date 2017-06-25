@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170527115406) do
+ActiveRecord::Schema.define(version: 20170625162347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170527115406) do
     t.integer  "inspector_id"
     t.integer  "organization_id"
     t.string   "executive"
+    t.boolean  "controll"
     t.index ["inspector_id"], name: "index_checks_on_inspector_id", using: :btree
     t.index ["organization_id"], name: "index_checks_on_organization_id", using: :btree
   end

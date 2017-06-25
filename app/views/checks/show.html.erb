@@ -59,6 +59,11 @@
     <strong><%= t(:for_office)%>:</strong>
     <%= @check.for_office %>
   </p>
+
+  <p>
+    <strong><%= t(:controll)%>:</strong>
+    <%= @check.controll %>
+  </p>
 </div>
 <% if current_user.is_admin == 1 %>
   <%= link_to t(:edit), edit_check_path(@check) %>
