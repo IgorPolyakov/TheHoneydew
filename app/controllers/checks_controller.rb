@@ -1,5 +1,5 @@
 class ChecksController < ApplicationController
-  before_action :set_check, only: [:show, :edit, :update, :destroy]
+  before_action :set_check, only: %i[show edit update destroy]
 
   # GET /checks
   # GET /checks.json
@@ -15,6 +15,11 @@ class ChecksController < ApplicationController
   # GET /checks/new
   def new
     @check = Check.new
+    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission), t(:appeal_of_applicant_organization), t(:other)]
+    @category = [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds), t(:challenging_the_actions_of_officials), t(:others)]
+    @violation = [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)]
+    @response_measure = [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)]
+    @direction = [t(:for_information), t(:for_accept), t(:for_removal)]
     @inspectors = Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
   end
 
@@ -73,6 +78,6 @@ class ChecksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def check_params
-    params.require(:check).permit(:amount, :checks_number, :deadline, :reason, :category, :violation, :response_measure, :direction, :term, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id)
+    params.require(:check).permit(:amount, :checks_number, :deadline, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction: [] }, :term, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id)
   end
 end
