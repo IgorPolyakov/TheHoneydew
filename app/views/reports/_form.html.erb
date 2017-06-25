@@ -1,11 +1,11 @@
 <%= simple_form_for @report, url: reports_path, as: 'report' do |f| %>
 <%= f.error_notification %>
-<%= f.input :number, placeholder: t(:number) %>
-<%= f.input :deadline %>
-<%= f.input :reason, as: :check_boxes, collection: [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)] %>
-<%= f.input :result, as: :check_boxes, collection: [t(:off_control), t(:move_to_inner_control)] %>
-<%= f.input :inspector_id, collection: @inspectors %>
-<%= f.input :organization_id, collection: @organizations %>
-<%= f.input :executive, placeholder: t(:executive) %>
+<%= f.input :number, placeholder: t(:number), label: t(:number) %>
+<%= f.input :deadline, label: t(:deadline) %>
+<%= f.input :reason, as: :check_boxes, collection: @reason, label: t(:reason), include_blank: false, include_hidden: false %>
+<%= f.input :result, as: :check_boxes, collection: @result, label: t(:result), include_blank: false, include_hidden: false %>
+<%= f.input :inspector_id, label: t(:inspector), collection: @inspectors %>
+<%= f.input :organization_id, label: t(:organization), collection: @organizations %>
+<%= f.input :executive, label: t(:executive), placeholder: t(:executive) %>
 <%= f.button :submit %>
 <% end %>

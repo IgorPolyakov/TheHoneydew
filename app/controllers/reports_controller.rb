@@ -17,12 +17,16 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
+    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]
+    @result = [t(:off_control), t(:move_to_inner_control)]
     @inspectors =  Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
     @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # GET /reports/1/edit
   def edit
+    @result = [t(:off_control), t(:move_to_inner_control)]
+    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]
     @inspectors =  Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
     @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
@@ -76,6 +80,6 @@ class ReportsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
-    params.require(:report).permit(:number, :deadline, :inspector_id, :organization_id, :executive, :result, :reason)
+    params.require(:report).permit(:number, :deadline, :inspector_id, :organization_id, :executive, result:[], reason:[])
   end
 end
