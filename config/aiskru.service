@@ -11,7 +11,7 @@ Group=deploy
 WorkingDirectory=/var/www/project/current
 Environment=RAILS_ENV=production
 PIDFile=/var/www/project/shared/tmp/pids/puma.pid
-ExecStart=/home/deploy/.rbenv/shims/bundle exec puma -e production  ./config.ru --pidfile /var/www/project/shared/tmp/pids/puma.pid -t 1:5
+ExecStart=/home/deploy/.rbenv/shims/bundle exec puma -e production  ./config.ru --pidfile /var/www/project/shared/tmp/pids/puma.pid -t 2:5 -b unix:///var/www/project/shared/tmp/sockets/puma.sock
 TimeoutSec=15
 Restart=always
 
