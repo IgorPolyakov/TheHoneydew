@@ -1,4 +1,3 @@
-require 'faker'
 Inspector.destroy_all
 Organization.destroy_all
 User.destroy_all

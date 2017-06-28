@@ -6,16 +6,13 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
-gem 'bootstrap-multiselect-rails'
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
-gem 'faker'
 gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'listen'
-gem 'mina'
 gem 'pg'
 gem 'puma'
 gem 'rails', '~> 5.0.2'
@@ -32,6 +29,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'mina'
   gem "bullet"
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
