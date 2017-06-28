@@ -45,10 +45,17 @@
     <%= Inspector.find_by(id: @check.inspector_id).last_name %>
   </p>
 
-  <strong><%= t(:organizations)%>:</strong>
+  <strong><%= t(:checks_organizations)%>:</strong>
   <ul>
     <% @check.organizations.each do |var| %>
       <li class=""><%= var.company_name %></li>
+    <% end %>
+  </ul>
+
+  <strong><%= t(:checks_people_organizations)%>:</strong>
+  <ul>
+    <% @check.people.each do |var| %>
+      <li class=""><%= var.last_name %></li>
     <% end %>
   </ul>
 

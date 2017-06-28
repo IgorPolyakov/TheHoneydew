@@ -4,7 +4,8 @@
 <%= f.input :checks_number, placeholder: t(:checks_number), label: t(:checks_number) %>
 <%= f.input :deadline, label: t(:deadline) %>
 <%= f.input :inspector_id, label: t(:inspector), collection: @inspectors %>
-<%= f.association :organizations, as: :select,label_method: :company_name, label: t(:organization)%>
+<%= f.association :organizations, as: :select,label_method: :company_name, label: t(:checks_organizations)%>
+<%= f.association :people, as: :select,label_method: :last_name, label: t(:checks_people_organizations)%>
 <%= f.input :reason, label: t(:reason), as: :check_boxes, collection: @reason, include_blank: false, include_hidden: false %>
 <%= f.input :response_measure,label: t(:response_measure), as: :check_boxes, collection: @response_measure, include_blank: false, include_hidden: false  %>
 <%= f.input :violation,label: t(:violation), as: :check_boxes, collection: @violation, include_blank: false, include_hidden: false  %>
