@@ -21,6 +21,7 @@ class ChecksController < ApplicationController
     @response_measure = [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)]
     @direction = [t(:for_information), t(:for_accept), t(:for_removal)]
     @inspectors = Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
+    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # GET /checks/1/edit
@@ -78,6 +79,6 @@ class ChecksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def check_params
-    params.require(:check).permit(:amount, :checks_number, :deadline, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction: [] }, :term, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id)
+    params.require(:check).permit(:amount, :checks_number, :deadline, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction: [] }, :term, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id, organization_ids: [])
   end
 end

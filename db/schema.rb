@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170625162347) do
+ActiveRecord::Schema.define(version: 20170628200536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,18 +31,9 @@ ActiveRecord::Schema.define(version: 20170625162347) do
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
     t.integer  "inspector_id"
-    t.integer  "organization_id"
     t.string   "executive"
     t.boolean  "controll"
     t.index ["inspector_id"], name: "index_checks_on_inspector_id", using: :btree
-    t.index ["organization_id"], name: "index_checks_on_organization_id", using: :btree
-  end
-
-  create_table "checks_and_organizations", id: false, force: :cascade do |t|
-    t.integer "check_id"
-    t.integer "organization_id"
-    t.index ["check_id"], name: "index_checks_and_organizations_on_check_id", using: :btree
-    t.index ["organization_id"], name: "index_checks_and_organizations_on_organization_id", using: :btree
   end
 
   create_table "checks_and_people", id: false, force: :cascade do |t|
@@ -50,6 +41,11 @@ ActiveRecord::Schema.define(version: 20170625162347) do
     t.integer "person_id"
     t.index ["check_id"], name: "index_checks_and_people_on_check_id", using: :btree
     t.index ["person_id"], name: "index_checks_and_people_on_person_id", using: :btree
+  end
+
+  create_table "checks_organizations", id: false, force: :cascade do |t|
+    t.integer "check_id",        null: false
+    t.integer "organization_id", null: false
   end
 
   create_table "inspectors", force: :cascade do |t|
@@ -109,7 +105,6 @@ ActiveRecord::Schema.define(version: 20170625162347) do
   end
 
   add_foreign_key "checks", "inspectors"
-  add_foreign_key "checks", "organizations"
   add_foreign_key "reports", "inspectors"
   add_foreign_key "reports", "organizations"
 end
