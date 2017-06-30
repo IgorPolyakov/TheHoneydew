@@ -3,7 +3,7 @@
 
 <table class="table">
   <thead>
-    <tr>
+    <tr class ="first_tr">
 
       <!--
       <th><%= t(:amount)%></th>
@@ -13,6 +13,7 @@
       <th><%= t(:deadline)%></th>
       <th><%= t(:reason)%></th>
       <th><%= t(:organization)%></th>
+
 
       <!--
       <th><%= t(:checks_organizations)%></th>
@@ -47,7 +48,7 @@
   </thead>
   <tbody>
     <% @checks.each do |check| %>
-    <tr>
+    <tr class="green">
       <td><%= check.amount %></td>
       <td><%= check.checks_number %></td>
       <td><%= check.deadline %></td>
@@ -80,3 +81,74 @@
 <% if current_user.is_admin == 1 %>
 <%= link_to t(:new_check), new_check_path %>
 <% end %>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  $("table.table tr").each(function() {
+    if($(this).hasClass("green")) {
+$(".table tr:not(.first_tr)").addClass("colors1");
+
+$(".colors1:last").css("background-color", "#7be072");
+var tr_clr1=$(".colors1:last").css("background-color");
+$(".colors1:last").css("background-color", "white");
+
+$(".colors1").hover(function(){
+ if ($(this).css("background-color")!=tr_clr1)
+  $(this).css("background-color", "green")},function(){
+ if ($(this).css("background-color")!=tr_clr1)
+  $(this).css("background-color", "white")
+});
+
+$(".colors1").click(function(){
+ if ($(this).css("background-color")!=tr_clr1)
+  $(this).css("background-color",tr_clr1)
+ else $(this).css("background-color","green")
+ });
+}
+   if($(this).hasClass("red"))  {   
+  
+$(".table tr:not(.first_tr)").addClass("colors2");
+
+$(".colors2:last").css("background-color", "#ef7f56");
+var tr_clr2=$(".colors2:last").css("background-color");
+$(".colors2:last").css("background-color", "white");
+
+$(".colors2").hover(function(){
+ if ($(this).css("background-color")!=tr_clr2)
+  $(this).css("background-color", "red")},function(){
+ if ($(this).css("background-color")!=tr_clr2)
+  $(this).css("background-color", "white")
+});
+
+$(".colors2").click(function(){
+ if ($(this).css("background-color")!=tr_clr2)
+  $(this).css("background-color",tr_clr2)
+ else $(this).css("background-color","red")
+ });
+}
+   
+  if($(this).hasClass("yellow")) {      
+$(".table tr:not(.first_tr)").addClass("colors3");
+
+$(".colors3:last").css("background-color", "#efea5d");
+var tr_clr3=$(".colors3:last").css("background-color");
+$(".colors3:last").css("background-color", "white");
+
+$(".colors3").hover(function(){
+ if ($(this).css("background-color")!=tr_clr3)
+  $(this).css("background-color", "yellow")},function(){
+ if ($(this).css("background-color")!=tr_clr3)
+  $(this).css("background-color", "white")
+});
+
+$(".colors3").click(function(){
+ if ($(this).css("background-color")!=tr_clr3)
+  $(this).css("background-color",tr_clr3)
+ else $(this).css("background-color","yellow")
+ });
+   }
+});
+});
+</script>
