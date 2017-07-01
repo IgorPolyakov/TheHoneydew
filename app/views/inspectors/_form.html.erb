@@ -1,4 +1,4 @@
-<%= simple_form_for @inspector, url: inspectors_url, as: 'inspector' do |f| %>
+<%= simple_form_for @inspector do |f| %>
 <%= f.error_notification %>
 <%= f.input :first_name, placeholder: t(:first_name) %>
 <%= f.input :last_name, placeholder: t(:last_name) %>

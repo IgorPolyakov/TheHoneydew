@@ -1,4 +1,4 @@
-<%= simple_form_for @check, url: checks_path, as: 'check' do |f| %>
+<%= simple_form_for @check do |f| %>
 <%= f.error_notification %>
 <%= f.input :amount, placeholder: t(:amount), label: t(:amount) %>
 <%= f.input :checks_number, placeholder: t(:checks_number), label: t(:checks_number) %>
@@ -17,5 +17,5 @@
 <%= f.input :executive, placeholder: t(:executive), label: t(:executive) %>
 <%= f.input :for_office, label: t(:for_office) %>
 <%= f.input :controll, label: t(:controll) %>
-<%= f.button :submit %>
+<%= f.button :submit, methods: :patch %>
 <% end %>

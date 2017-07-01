@@ -1,4 +1,4 @@
-<%= simple_form_for @organization, url: organizations_path, as: 'organization' do |f| %>
+<%= simple_form_for @organization do |f| %>
 <%= f.error_notification %>
 <%= f.input :company_name, placeholder: t(:company_name) %>
 <%= f.input :first_name, placeholder: t(:first_name) %>
