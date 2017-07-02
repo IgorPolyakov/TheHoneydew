@@ -87,6 +87,7 @@ ru:
   violation: "Установленные нарушения"
   zgto_commission: "поручение ЗГТО"
   sign_in: "Вход в систему"
+  sign_out: "Выйти из системы"
   login: "Имя пользователя"
   password: "Пароль"
   remember_me: "Запомнить меня"
