@@ -3,8 +3,9 @@
 <%= f.input :amount, placeholder: t(:amount), label: t(:amount) %>
 <%= f.input :checks_number, placeholder: t(:checks_number), label: t(:checks_number) %>
 <%= f.input :deadline, label: t(:deadline) %>
-<%= f.input :inspector_id, label: t(:inspector), collection: @inspectors %>
-<%= f.association :organizations, as: :select,label_method: :company_name, label: t(:checks_organizations)%>
+<%= f.association :inspector, label: t(:inspector), :label_method  => lambda { |s| "#{s.last_name} #{s.first_name} - #{s.position}" } %>
+<%= f.input :executive, placeholder: t(:executive), label: t(:executive) %>
+<%= f.association :organizations, as: :select, label_method: :company_name, label: t(:checks_organizations)%>
 <%= f.association :people, as: :select,label_method: :last_name, label: t(:checks_people_organizations)%>
 <%= f.input :reason, label: t(:reason), as: :check_boxes, collection: @reason, include_blank: false, include_hidden: false %>
 <%= f.input :response_measure,label: t(:response_measure), as: :check_boxes, collection: @response_measure, include_blank: false, include_hidden: false  %>
@@ -14,7 +15,6 @@
 <%= f.input :term, placeholder: t(:term), label: t(:term) %>
 <%= f.input :case_number, placeholder: t(:case_number), label: t(:case_number) %>
 <%= f.input :number_of_volumes, placeholder: t(:number_of_volumes), label: t(:number_of_volumes) %>
-<%= f.input :executive, placeholder: t(:executive), label: t(:executive) %>
 <%= f.input :for_office, label: t(:for_office) %>
 <%= f.input :controll, label: t(:controll) %>
 <%= f.button :submit %>

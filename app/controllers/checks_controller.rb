@@ -12,7 +12,8 @@ class ChecksController < ApplicationController
   # GET /checks/1.json
   def show; end
 
-  # GET /checks/new
+  # GET /checks/new    # TODO: Return first Inspector, but need read value from DB
+    # @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
   def new
     @check = Check.new
     @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission), t(:appeal_of_applicant_organization), t(:other)]
@@ -20,15 +21,10 @@ class ChecksController < ApplicationController
     @violation = [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)]
     @response_measure = [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)]
     @direction = [t(:for_information), t(:for_accept), t(:for_removal)]
-    @inspectors = Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
-    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
   end
 
   # GET /checks/1/edit
-  def edit
-    # TODO: Return first Inspector, but need read value from DB
-    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
-  end
+  def edit; end
 
   # POST /checks
   # POST /checks.json
