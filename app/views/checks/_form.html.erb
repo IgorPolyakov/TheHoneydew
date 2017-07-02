@@ -2,7 +2,9 @@
 <%= f.error_notification %>
 <%= f.input :amount, placeholder: t(:amount), label: t(:amount) %>
 <%= f.input :checks_number, placeholder: t(:checks_number), label: t(:checks_number) %>
-<%= f.input :deadline, label: t(:deadline) %>
+<%= f.input :check_start, label: t(:check_start) %>
+<%= f.input :check_finish, label: t(:check_finish) %>
+<%= f.input :check_remark_destroy, label: t(:check_remark_destroy) %>
 <%= f.association :inspector, label: t(:inspector), :label_method  => lambda { |s| "#{s.last_name} #{s.first_name} - #{s.position}" } %>
 <%= f.input :executive, placeholder: t(:executive), label: t(:executive) %>
 <%= f.association :organizations, as: :select, label_method: :company_name, label: t(:checks_organizations)%>
