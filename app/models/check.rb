@@ -5,7 +5,7 @@ class Check < ApplicationRecord
     category.gsub!(/[\[\]\"]/, '') if attribute_present?('category')
     violation.gsub!(/[\[\]\"]/, '') if attribute_present?('violation')
     response_measure.gsub!(/[\[\]\"]/, '') if attribute_present?('response_measure')
-    direction.gsub!(/[\[\]\"]/, '') if attribute_present?('direction')
+    direction_status.gsub!(/[\[\]\"]/, '') if attribute_present?('direction_status')
   end
   belongs_to :inspector, dependent: :destroy
   has_and_belongs_to_many :organizations

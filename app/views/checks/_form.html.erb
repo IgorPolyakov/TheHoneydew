@@ -11,7 +11,9 @@
 <%= f.input :response_measure,label: t(:response_measure), as: :check_boxes, collection: @response_measure, include_blank: false, include_hidden: false  %>
 <%= f.input :violation,label: t(:violation), as: :check_boxes, collection: @violation, include_blank: false, include_hidden: false  %>
 <%= f.input :category,label: t(:category), as: :check_boxes, collection: @category, include_blank: false, include_hidden: false %>
-<%= f.input :direction,label: t(:direction), as: :check_boxes, collection: @direction, include_blank: false, include_hidden: false %>
+<%= f.input :direction_author, label: t(:direction_author) %>
+<%= f.input :direction_where, label: t(:direction_where) %>
+<%= f.input :direction_status,label: t(:direction_status), as: :check_boxes, collection: @direction_status, include_blank: false, include_hidden: false %>
 <%= f.input :term, placeholder: t(:term), label: t(:term) %>
 <%= f.input :case_number, placeholder: t(:case_number), label: t(:case_number) %>
 <%= f.input :number_of_volumes, placeholder: t(:number_of_volumes), label: t(:number_of_volumes) %>

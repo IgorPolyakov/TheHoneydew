@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628212310) do
+ActiveRecord::Schema.define(version: 20170702063352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170628212310) do
     t.string   "category"
     t.string   "violation"
     t.string   "response_measure"
-    t.string   "direction"
+    t.string   "direction_status"
     t.string   "term"
     t.string   "case_number"
     t.integer  "number_of_volumes"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170628212310) do
     t.integer  "inspector_id"
     t.string   "executive"
     t.boolean  "controll"
+    t.string   "direction_author"
+    t.string   "direction_where"
     t.index ["inspector_id"], name: "index_checks_on_inspector_id", using: :btree
   end
 

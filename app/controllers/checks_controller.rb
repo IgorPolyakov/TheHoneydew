@@ -20,7 +20,7 @@ class ChecksController < ApplicationController
     @category = [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds), t(:challenging_the_actions_of_officials), t(:others)]
     @violation = [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)]
     @response_measure = [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)]
-    @direction = [t(:for_information), t(:for_accept), t(:for_removal)]
+    @direction_status = [t(:for_information), t(:for_accept), t(:for_removal)]
   end
 
   # GET /checks/1/edit
@@ -75,6 +75,6 @@ class ChecksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def check_params
-    params.require(:check).permit(:amount, :checks_number, :deadline, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction: [] }, :term, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id, organization_ids: [], person_ids: [])
+    params.require(:check).permit(:amount, :checks_number, :deadline, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction_status: [] }, :direction_author, :direction_where, :term, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id, organization_ids: [], person_ids: [])
   end
 end
