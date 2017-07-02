@@ -84,3 +84,7 @@ en:
   title: "AIS KRU"
   violation: "Confirmed violations"
   zgto_commission: "order ZGTO"
+  log_in: "Log in"
+  login: "Login"
+  password: "Password"
+  remember_me: "Remember me"
