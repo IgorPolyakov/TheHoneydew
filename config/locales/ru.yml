@@ -86,7 +86,7 @@ ru:
   title: "АИС КРУ"
   violation: "Установленные нарушения"
   zgto_commission: "поручение ЗГТО"
-  log_in: "Вход"
+  sign_in: "Вход в систему"
   login: "Имя пользователя"
   password: "Пароль"
   remember_me: "Запомнить меня"
