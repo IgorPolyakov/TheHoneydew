@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170702063352) do
+ActiveRecord::Schema.define(version: 20170702090854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170702063352) do
   create_table "checks", force: :cascade do |t|
     t.integer  "amount"
     t.string   "checks_number"
-    t.date     "deadline"
+    t.date     "check_finish"
     t.string   "reason"
     t.string   "category"
     t.string   "violation"
@@ -28,13 +28,15 @@ ActiveRecord::Schema.define(version: 20170702063352) do
     t.string   "case_number"
     t.integer  "number_of_volumes"
     t.boolean  "for_office"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.integer  "inspector_id"
     t.string   "executive"
     t.boolean  "controll"
     t.string   "direction_author"
     t.string   "direction_where"
+    t.date     "check_start"
+    t.date     "check_remark_destroy"
     t.index ["inspector_id"], name: "index_checks_on_inspector_id", using: :btree
   end
 
