@@ -33,7 +33,7 @@ class ChecksController < ApplicationController
 
     respond_to do |format|
       if @check.save
-        format.html { redirect_to @check, notice: 'Check was successfully created.' }
+        format.html { redirect_to @check, notice: t(:check_created) }
         format.json { render :show, status: :created, location: @check }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class ChecksController < ApplicationController
   def update
     respond_to do |format|
       if @check.update(check_params)
-        format.html { redirect_to @check, notice: 'Check was successfully updated.' }
+        format.html { redirect_to @check, notice: t(:check_updated) }
         format.json { render :show, status: :ok, location: @check }
       else
         format.html { render :edit }
@@ -61,7 +61,7 @@ class ChecksController < ApplicationController
   def destroy
     @check.destroy
     respond_to do |format|
-      format.html { redirect_to checks_url, notice: 'Check was successfully destroyed.' }
+      format.html { redirect_to checks_url, notice: t(:check_destroyed) }
       format.json { head :no_content }
     end
   end

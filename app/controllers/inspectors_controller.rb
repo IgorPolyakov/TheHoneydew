@@ -26,7 +26,7 @@ class InspectorsController < ApplicationController
 
     respond_to do |format|
       if @inspector.save
-        format.html { redirect_to @inspector, notice: 'Inspector was successfully created.' }
+        format.html { redirect_to @inspector, notice: t(:inspector_created) }
         format.json { render :show, status: :created, location: @inspector }
       else
         format.html { render :new }
@@ -40,7 +40,7 @@ class InspectorsController < ApplicationController
   def update
     respond_to do |format|
       if @inspector.update(inspector_params)
-        format.html { redirect_to @inspector, notice: 'Inspector was successfully updated.' }
+        format.html { redirect_to @inspector, notice: t(:inspector_updated) }
         format.json { render :show, status: :ok, location: @inspector }
       else
         format.html { render :edit }
@@ -54,7 +54,7 @@ class InspectorsController < ApplicationController
   def destroy
     @inspector.destroy
     respond_to do |format|
-      format.html { redirect_to inspectors_url, notice: 'Inspector was successfully destroyed.' }
+      format.html { redirect_to inspectors_url, notice: t(:inspector_destroyed) }
       format.json { head :no_content }
     end
   end
