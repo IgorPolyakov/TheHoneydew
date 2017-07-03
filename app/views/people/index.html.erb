@@ -19,7 +19,7 @@
       <td><%= person.last_name %></td>
       <td><%= person.middle_name %></td>
       <td><%= link_to t(:show), person %></td>
-      <% if current_user.is_admin == 1 %>
+      <% if current_user.is_admin == true %>
         <td><%= link_to t(:edit), edit_person_path(person) %></td>
         <td><%= link_to t(:destroy), person, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
@@ -30,6 +30,6 @@
 
 <br>
 
-<% if current_user.is_admin == 1 %>
+<% if current_user.is_admin == true %>
   <%= link_to t(:new_person), new_person_path %>
 <% end %>

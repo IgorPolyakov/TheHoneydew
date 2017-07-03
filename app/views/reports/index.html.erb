@@ -27,7 +27,7 @@
       <td><%= report.reason %></td>
       <td><%= report.result %></td>
       <td><%= link_to t(:show), report %></td>
-      <% if current_user.is_admin == 1 %>
+      <% if current_user.is_admin == true %>
         <td><%= link_to t(:edit), edit_report_path(report) %></td>
         <td><%= link_to t(:destroy), report, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
@@ -38,6 +38,6 @@
 
 <br>
 
-<% if current_user.is_admin == 1 %>
+<% if current_user.is_admin == true %>
   <%= link_to t(:new_report), new_report_path %>
 <% end %>

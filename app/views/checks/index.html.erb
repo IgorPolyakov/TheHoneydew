@@ -67,7 +67,7 @@
       <td><%= %></td>
       <td><%= check.for_office %></td>
       <td><%= link_to t(:show), check %></td>
-      <% if current_user.is_admin == 1 %>
+      <% if current_user.is_admin == true %>
       <td><%= link_to t(:edit), edit_check_path(check) %></td>
       <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
@@ -78,7 +78,7 @@
 
 <br>
 
-<% if current_user.is_admin == 1 %>
+<% if current_user.is_admin == true %>
 <%= link_to t(:new_check), new_check_path %>
 <% end %>
 

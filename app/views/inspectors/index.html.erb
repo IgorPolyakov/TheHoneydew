@@ -21,7 +21,7 @@
             <td><%= inspector.middle_name %></td>
             <td><%= inspector.position %></td>
             <td><%= link_to t(:show), inspector %></td>
-            <% if current_user.is_admin == 1 %>
+            <% if current_user.is_admin == true %>
                 <td><%= link_to t(:edit), edit_inspector_path(inspector) %></td>
                 <td><%= link_to t(:destroy), inspector, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
             <% end %>
@@ -32,6 +32,6 @@
 
 <br>
 
-<% if current_user.is_admin == 1 %>
+<% if current_user.is_admin == true %>
     <%= link_to t(:new_inspector), new_inspector_path %>
 <% end %>

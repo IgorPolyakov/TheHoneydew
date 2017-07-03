@@ -23,7 +23,7 @@
         <td><%= organization.middle_name %></td>
         <td><%= organization.position %></td>
         <td><%= link_to t(:show), organization %></td>
-        <% if current_user.is_admin == 1 %>
+        <% if current_user.is_admin == true %>
           <td><%= link_to t(:edit), edit_organization_path(organization) %></td>
           <td><%= link_to t(:destroy), organization, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
         <% end %>
@@ -34,6 +34,6 @@
 
 <br>
 
-<% if current_user.is_admin == 1 %>
+<% if current_user.is_admin == true %>
   <%= link_to t(:new_organization), new_organization_path %>
 <% end %>
