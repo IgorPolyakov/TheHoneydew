@@ -20,5 +20,5 @@ end
 
 
 def test_function!
-  redirect_to :signin unless user_signed_in?, :notice => 'Sign in!'
+  redirect_to :signin unless user_signed_in?
 end
