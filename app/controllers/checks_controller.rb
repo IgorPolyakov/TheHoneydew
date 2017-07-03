@@ -24,7 +24,13 @@ class ChecksController < ApplicationController
   end
 
   # GET /checks/1/edit
-  def edit; end
+  def edit
+    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission), t(:appeal_of_applicant_organization), t(:other)]
+    @category = [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds), t(:challenging_the_actions_of_officials), t(:others)]
+    @violation = [t(:labor_legislation), t(:legislation_on_state_and_municipal_services), t(:legislation_on_the_contract_system), t(:budget_legislation), t(:departmental_legislation), t(:others)]
+    @response_measure = [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)]
+    @direction_status = [t(:for_information), t(:for_accept), t(:for_removal)]
+  end
 
   # POST /checks
   # POST /checks.json
