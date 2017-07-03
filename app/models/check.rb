@@ -7,7 +7,7 @@ class Check < ApplicationRecord
     response_measure.gsub!(/[\[\]\"]/, '') if attribute_present?('response_measure')
     direction_status.gsub!(/[\[\]\"]/, '') if attribute_present?('direction_status')
   end
-  belongs_to :inspector, dependent: :destroy
+  belongs_to :inspector#, dependent: :destroy удаляет все проверки с этим проверяющим
   has_and_belongs_to_many :organizations
   has_and_belongs_to_many :people
 end
