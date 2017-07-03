@@ -9,7 +9,6 @@ class CreateChecks < ActiveRecord::Migration[5.0]
       t.string :violation
       t.string :response_measure
       t.string :direction
-      t.string :term
       t.string :case_number
       t.integer :number_of_volumes
       t.boolean :for_office

@@ -61,28 +61,25 @@
   </p>
 
   <p>
-    <strong><%= t(:inspector)%>:</strong>
+    <strong><%= t(:executive)%>:</strong>
     <%= Inspector.find_by(id: @check.inspector_id).last_name %>
   </p>
 
-  <strong><%= t(:checks_organizations)%>:</strong>
+  <p>
+    <strong><%= t(:checks_organizations)%>:</strong></p>
   <ul>
     <% @check.organizations.each do |var| %>
       <li class=""><%= var.company_name %></li>
     <% end %>
   </ul>
 
-  <strong><%= t(:checks_people_organizations)%>:</strong>
+  <p>
+    <strong><%= t(:checks_people_organizations)%>:</strong></p>
   <ul>
     <% @check.people.each do |var| %>
       <li class=""><%= var.last_name %></li>
     <% end %>
   </ul>
-
-  <p>
-    <strong><%= t(:term)%>:</strong>
-    <%= @check.term %>
-  </p>
 
   <p>
     <strong><%= t(:case_number)%>:</strong>

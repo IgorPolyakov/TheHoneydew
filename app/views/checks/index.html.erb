@@ -5,71 +5,41 @@
   <thead>
     <tr class ="first_tr">
 
-      <!--
-      <th><%= t(:amount)%></th>
-      -->
-
-      <th><%= t(:checks_number)%></th>
+      <th>#</th>
+      <th><%= t(:case_number)%></th>
+      <th><%= t(:check_start)%></th>
       <th><%= t(:check_finish)%></th>
+      <th><%= t(:check_remark_destroy)%></th>
       <th><%= t(:reason)%></th>
-      <th><%= t(:organization)%></th>
-
-
-      <!--
-      <th><%= t(:checks_organizations)%></th>
-      -->
-      <!--
-      <th><%= t(:checks_people_organizations)%></th>
-      -->
-      <!--
-      <th><%= t(:category)%></th>
-      -->
       <th><%= t(:violation)%></th>
       <th><%= t(:response_measure)%></th>
-      <!--
-      <th><%= t(:direction_status)%></th>
-      -->
-      <th><%= t(:term)%></th>
-      <th><%= t(:case_number)%></th>
-
-      <!--
-      <th><%= t(:number_of_volumes)%></th>
-      -->
-
       <th><%= t(:inspector)%></th>
       <th><%= t(:executive)%></th>
+      <% if current_user.is_admin == true %>
+        <th colspan="3"></th>
+        <% else %>
+        <th colspan="1"></th>
+      <% end %>
 
-      <!--
-      <th><%= t(:for_office)%></th>
-      -->
-
-      <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @checks.each do |check| %>
     <tr class="green">
-      <td><%= check.amount %></td>
-      <td><%= check.checks_number %></td>
-      <td><%= check.check_finish %></td>
-      <td><%= check.reason %></td>
-      <td><%= %></td>
-      <td><%= %></td>
-      <td><%= %></td>
-      <td><%= check.category %></td>
-      <td><%= check.violation %></td>
-      <td><%= check.response_measure %></td>
-      <td><%= check.direction_status %></td>
-      <td><%= check.term %></td>
-      <td><%= check.case_number %></td>
-      <td><%= check.number_of_volumes %></td>
-      <td><%= %></td>
-      <td><%= %></td>
-      <td><%= check.for_office %></td>
+      <th> <%= check.case_number %></th>
+      <th> <%= check.checks_number %></th>
+      <th> <%= check.check_start %></th>
+      <th> <%= check.check_finish %></th>
+      <th> <%= check.check_remark_destroy %></th>
+      <th> <%= check.reason %></th>
+      <th> <%= check.violation %></th>
+      <th> <%= check.response_measure %></th>
+      <th> <%= Inspector.find_by(id: check.inspector_id).last_name %></th>
+      <th> <%= check.executive %></th>
       <td><%= link_to t(:show), check %></td>
       <% if current_user.is_admin == true %>
-      <td><%= link_to t(:edit), edit_check_path(check) %></td>
-      <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+        <td><%= link_to t(:edit), edit_check_path(check) %></td>
+        <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
     </tr>
     <% end %>
@@ -107,8 +77,8 @@ $(".colors1").click(function(){
  else $(this).css("background-color","green")
  });
 }
-   if($(this).hasClass("red"))  {   
-  
+   if($(this).hasClass("red"))  {
+
 $(".table tr:not(.first_tr)").addClass("colors2");
 
 $(".colors2:last").css("background-color", "#ef7f56");
@@ -128,8 +98,8 @@ $(".colors2").click(function(){
  else $(this).css("background-color","red")
  });
 }
-   
-  if($(this).hasClass("yellow")) {      
+
+  if($(this).hasClass("yellow")) {
 $(".table tr:not(.first_tr)").addClass("colors3");
 
 $(".colors3:last").css("background-color", "#efea5d");
