@@ -19,9 +19,11 @@ module TheHoneydew
 end
 
 
-def test_function!
+def auth!
   if user_signed_in?
+
   elsif request.original_fullpath == '/sign_in'
+  
   else
     redirect_to :signin
   end
