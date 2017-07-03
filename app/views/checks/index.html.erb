@@ -26,16 +26,16 @@
   <tbody>
     <% @checks.each do |check| %>
     <tr class="green">
-      <th> <%= check.case_number %></th>
-      <th> <%= check.checks_number %></th>
-      <th> <%= check.check_start %></th>
-      <th> <%= check.check_finish %></th>
-      <th> <%= check.check_remark_destroy %></th>
-      <th> <%= check.reason %></th>
-      <th> <%= check.violation %></th>
-      <th> <%= check.response_measure %></th>
-      <th> <%= Inspector.find_by(id: check.inspector_id).last_name %></th>
-      <th> <%= check.executive %></th>
+      <td> <%= check.case_number %></td>
+      <td> <%= check.checks_number %></td>
+      <td> <%= check.check_start %></td>
+      <td> <%= check.check_finish %></td>
+      <td> <%= check.check_remark_destroy %></td>
+      <td> <%= check.reason %></td>
+      <td> <%= check.violation %></td>
+      <td> <%= check.response_measure %></td>
+      <td> <%= Inspector.find_by(id: check.inspector_id).last_name %></td>
+      <td> <%= check.executive %></td>
       <td><%= link_to t(:show), check %></td>
       <% if current_user.is_admin == true %>
         <td><%= link_to t(:edit), edit_check_path(check) %></td>
