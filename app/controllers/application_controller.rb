@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  before_action :test_function!
   protect_from_forgery with: :exception
   # force_ssl if: :ssl_configured?
   # def ssl_configured?

@@ -17,3 +17,8 @@ module TheHoneydew
     # config.force_ssl = true
   end
 end
+
+
+def test_function!
+  redirect_to :signin unless user_signed_in?, :notice => 'Sign in!'
+end
