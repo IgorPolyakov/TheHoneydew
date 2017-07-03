@@ -2,14 +2,18 @@
 
 <h1><%= t(:inspectors) %></h1>
 
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th><%= t(:first_name)%></th>
             <th><%= t(:last_name)%></th>
             <th><%= t(:middle_name)%></th>
             <th><%= t(:position)%></th>
-            <th colspan="4"></th>
+            <% if current_user.is_admin == true %>
+              <th colspan="3"></th>
+              <% else %>
+              <th colspan="1"></th>
+            <% end %>
         </tr>
     </thead>
 
