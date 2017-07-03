@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
-  devise_scope :user do
-  get '/sign_in' => 'devise/sessions#new', :as => :signin
+  devise_for :users, skip: [:sessions] 
+  as :user do
+    get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
+    post 'sign_in', to: 'devise/sessions#create', as: :user_session
+    delete 'sign_out', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
-
-  devise_for :users
   
   authenticate :user, lambda {|u| u.is_admin == true} do
     resources :checks
