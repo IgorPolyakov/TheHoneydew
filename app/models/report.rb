@@ -3,6 +3,6 @@ class Report < ApplicationRecord
     self.result.gsub!(/[\[\]\"]/, '') if attribute_present?("result")
     self.reason.gsub!(/[\[\]\"]/, '') if attribute_present?("reason")
   end
-  belongs_to :inspector, dependent: :destroy
-  belongs_to :organization, dependent: :destroy
+  belongs_to :inspector#, dependent: :destroy
+  belongs_to :organization#, dependent: :destroy иначе удаляет больше одной записи
 end
