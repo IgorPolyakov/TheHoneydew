@@ -7,12 +7,12 @@ Rails.application.routes.draw do
       post '', to: 'devise/sessions#create', as: :user_session
     end
   end
-
-  as :user do
-    delete '', to: 'devise/sessions#destroy', as: :destroy_user_session
+  
+  authenticated do
+    as :user do
+      delete '', to: 'devise/sessions#destroy', as: :destroy_user_session
+    end
   end
-
-
 
   authenticate :user, lambda {|u| u.is_admin == true} do
     resources :checks
