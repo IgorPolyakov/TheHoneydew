@@ -7,5 +7,5 @@
 <%= f.association :inspector, label: t(:inspector), :label_method  => lambda { |s| "#{s.last_name} #{s.first_name} - #{s.position}" } %>
 <%= f.association :organization, label: t(:organization), label_method:  :company_name  %>
 <%= f.input :executive, label: t(:executive), placeholder: t(:executive) %>
-<%= f.button :submit, t(:save) %>
+<%= f.button :submit, t(:save), class: "btn btn-inverse" %>
 <% end %>
