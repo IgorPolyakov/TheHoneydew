@@ -8,8 +8,8 @@
               <i class="fa fa-address-card-o fa-5x"></i>
             </div>
             <div class="col-xs-6 text-right">
-              <p class="announcement-heading"><%= @inspector_count %></p>
-              <p class="announcement-text"><%= t(:inspector)%></p>
+              <p class="announcement-text "><%= t(:inspectors)%></p>
+              <p class="announcement-heading"><strong><%= @inspector_count %></strong></p>
             </div>
           </div>
         </div>
@@ -35,8 +35,8 @@
               <i class="fa fa-barcode fa-5x"></i>
             </div>
             <div class="col-xs-6 text-right">
-              <p class="announcement-heading"><%= @report_count %></p>
-              <p class="announcement-text"><%= t(:report)%></p>
+              <p class="announcement-text"><%= t(:reports)%></p>
+              <p class="announcement-heading"><strong><%= @report_count %></strong></p>
             </div>
           </div>
         </div>
@@ -62,8 +62,8 @@
               <i class="fa fa-users fa-5x"></i>
             </div>
             <div class="col-xs-6 text-right">
-              <p class="announcement-heading"><%= @organization_count %></p>
-              <p class="announcement-text"><%= t(:organization)%></p>
+              <p class="announcement-text"><%= t(:organizations)%></p>
+              <p class="announcement-heading"><strong><%= @organization_count %></strong></p>
             </div>
           </div>
         </div>
@@ -89,10 +89,10 @@
               <i class="fa fa-comments fa-5x"></i>
             </div>
             <div class="col-xs-6 text-right">
-              <p class="announcement-heading"><%= @check_count %></p>
               <p class="announcement-text">
-                <%= t(:check) %></p>
-            </div>
+                <%= t(:checks) %></p>
+              <p class="announcement-heading"><strong><%= @check_count %></strong></p>
+          </div>
           </div>
         </div>
         <a href="#">
