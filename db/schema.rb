@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170702090854) do
     t.string   "violation"
     t.string   "response_measure"
     t.string   "direction_status"
-    t.string   "term"
     t.string   "case_number"
     t.integer  "number_of_volumes"
     t.boolean  "for_office"
