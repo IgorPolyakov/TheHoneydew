@@ -10,5 +10,5 @@ class Check < ApplicationRecord
   belongs_to :inspector#, dependent: :destroy удаляет все проверки с этим проверяющим
   has_and_belongs_to_many :organizations
   has_and_belongs_to_many :people
-  validates :checks_number, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+  validates :amount, numericality: { greater_than_or_equal_to: 1, only_integer: true }
 end
