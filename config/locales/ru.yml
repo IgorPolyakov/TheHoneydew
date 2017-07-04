@@ -20,7 +20,7 @@ ru:
   control_committee: "административные наказания :: контрольный комитет КРУ"
   check_start: "Дата начала проверки"
   check_finish: "Дата окончания проверки (дата подписания справки)"
-  check_remark_destroy: "Дата устранения нарушений"
+  check_remark_destroy: "Контрольная дата устранения нарушений"
   departmental_legislation: "ведомственное законодательство"
   destroy: "Уничтожить"
   determination_of_contracts: "расторжение трудовых договоров"

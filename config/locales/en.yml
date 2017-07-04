@@ -106,3 +106,4 @@ en:
   report_created: "Report was successfully created."
   report_updated: "Report was successfully updated."
   report_destroyed: "Report was successfully destroyed."
+  check_remark_destroy: "Check date for eliminate violations"
