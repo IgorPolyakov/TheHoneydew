@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= t(:case_number) %></th>
+      <th><%= t(:title_report) %></th>
       <th><%= t(:deadline) %></th>
       <th><%= t(:inspector) %></th>
       <th><%= t(:organization) %></th>
@@ -24,6 +25,7 @@
     <% @reports.each do |report| %>
     <tr>
       <td><%= report.number %></td>
+      <td><%= report.title_report %></td>
       <td><%= report.deadline %></td>
       <td><%= Inspector.find(report.inspector_id).last_name; %></td>
       <td><%= Organization.find(report.organization_id).company_name; %></td>
