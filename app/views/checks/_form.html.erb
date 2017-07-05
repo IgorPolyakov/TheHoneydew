@@ -1,6 +1,6 @@
 <%= simple_form_for @check do |f| %>
 <%= f.error_notification %>
-<%= f.input :amount, placeholder: t(:amount), label: t(:amount), input_html: { min: 1 } %>
+<%= f.input :amount, placeholder: t(:amount), label: t(:amount), input_html: { min: 1, value: 1 } %>
 <%= f.input :checks_number, placeholder: t(:checks_number), label: t(:checks_number) %>
 <%= f.input :check_start, label: t(:check_start) %>
 <%= f.input :check_finish, label: t(:check_finish) %>
