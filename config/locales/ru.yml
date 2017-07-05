@@ -1,113 +1,105 @@
+---
 ru:
-  amount: "Количество проверок"
-  anti_corruption: "противодействие коррупции"
-  appeal_of_applicant_organization: "обращение заявителя/организации"
-  are_you_sure: "Вы уверены?"
-  back: "Назад"
-  budget_legislation: "бюджетное законодательство"
-  case_number: "Номер контрольного дела"
-  category: "Категория проверки"
-  challenging_the_actions_of_officials: "для обращений :: оспаривание действий должностных лиц"
-  check: "Проверка"
-  checking_system: "АИС КРУ"
-  checks: "Проверки"
-  checks_number: "Номер дела проверки"
-  checks_organizations: "Организации, охваченные проверкой"
-  checks_people_organizations: "Лица, охваченные проверкой"
-  company_name: "Название компании"
-  contract_system: "контрактная система"
-  controll: "Контроль проверки"
-  control_committee: "административные наказания :: контрольный комитет КРУ"
-  check_start: "Дата начала проверки"
-  check_finish: "Дата окончания проверки (дата подписания справки)"
-  check_remark_destroy: "Контрольная дата устранения нарушений"
-  departmental_legislation: "ведомственное законодательство"
-  destroy: "Уничтожить"
-  determination_of_contracts: "расторжение трудовых договоров"
-  direction_author: "Направление материалов дела проверки/информационных писем, от кого"
-  direction_status: "Направление материалов дела проверки/информационных писем, тип"
-  direction_where: "Направление материалов дела проверки/информационных писем, куда"
-  disciplinary_action: "дисциплинарные взыскания"
-  edit: "Редактировать"
-  edit_organization: "Редактирование данных организации"
-  edit_inspector: "Редактирование данныx проверяющего"
-  edit_person: "Редактирование данных должностного лица"
-  edit_report: "Редактирование отчета"
-  editing_check: "Редактирование данных проверки"
-  eogv: "административные наказания :: ИОГВ"
-  executive: "Ответственный исполнитель"
-  expand: "Расширить"
-  false_facts: "факты не подтвердились"
-  first_name: "Имя"
-  for_accept: "Для принятия мер реагирования"
-  for_calls: "для обращений"
-  for_calls_inappropriate_use_of_budgetary_funds: "для обращений :: нецелевое использование бюджетных средств"
-  for_information: "Для сведения"
-  for_office: "Для служебного пользования"
-  for_removal: "Для устранения нарушений"
-  gto_commission: "поручение ГТО"
-  inappropriate_use_of_budgetary_funds: "нецелевое использование бюджетных средств"
-  inspector: "ФИО проверяющего"
-  inspectors: "Проверяющие"
-  labor_legislation: "трудовое законодательство"
-  last_name: "Фамилия"
-  legislation_on_state_and_municipal_services: "законодательство о государственных и муниципальных услугах"
-  legislation_on_the_contract_system: "законодательство о контрактной системе"
-  middle_name: "Отчество"
-  move_to_inner_control: "переведено на внутренний контроль"
-  name_and_position: "ФИО, должность адресата"
-  new_check: "Новая проверка"
-  new_inspector: "Добавить проверяющего"
-  new_organization: "Новая организация"
-  new_person: "Новая личность"
-  new_report: "Добавить контрольное дело"
-  number: "Номер контрольного дела"
-  number_of_volumes: "Количество томов"
-  off_control: "снято с контроля"
-  organization: "Организация"
-  organizations: "Организации"
-  other: "иное"
-  others: "иные"
-  people: "Должностные лица"
-  performance: "эффективность деятельности"
-  person: "Должностное лицо"
-  position: "Должность"
-  preservation_and_use_of_property: "сохранение и использование имущества"
-  procuracy: "административные наказания :: прокуратура"
-  prohibited_this_check_from_being_saved: "запрет сохранения этой проверки:"
-  prohibited_this_person_from_being_saved: "запрет сохранения этой проверки:"
-  reason: "Основание проверки"
-  repayment_of_funds: "возвращение денежных средств в бюджет"
-  report: "Отчет"
-  reports: "Контрольные дела"
-  response_measure: "Меры реагирования"
-  result: "Результат"
-  save: "Сохранить"
-  show: "Показать"
-  state_municipal_services: "государственные/муниципальные услуги"
-  the_qa_and_sar_work_plan: "план работы КК и ОАР"
-  title: "АИС КРУ"
-  violation: "Установленные нарушения"
-  zgto_commission: "поручение ЗГТО"
-  sign_in: "Вход в систему"
-  sign_out: "Выйти из системы"
-  login: "Имя пользователя"
-  password: "Пароль"
-  remember_me: "Запомнить меня"
-  deadline: "Срок"
-  check_created: "Проверка успешно создана."
-  check_updated: "Данные проверки успешно обновлены."
-  check_destroyed: "Проверка успешно удалена."
-  inspector_created: "Проверяющий успешно создан."
-  inspector_updated: "Данные проверяющего успешно обновлены."
-  inspector_destroyed: "Проверяющий успешно удален."
-  organization_created: "Организация успешно создана."
-  organization_updated: "Данные организации успешно обновлены."
-  organization_destroyed: "Организация успешно удалена."
-  person_created: "Должностное лицо успешно создано."
-  person_updated: "Данные должностного лица успешно обновлены."
-  person_destroyed: "Должностное лицо успешно удалено."
-  report_created: "Контрольное дело успешно создано."
-  report_updated: "Данные контрольного дела успешно обновлены."
-  report_destroyed: "Контрольное дело успешно удалено."
-  title_report: "Название дела"
+  amount: Количество проверок
+  anti_corruption: противодействие коррупции
+  appeal_of_applicant_organization: обращение заявителя/организации
+  are_you_sure: Вы уверены?
+  back: Назад
+  budget_legislation: бюджетное законодательство
+  case_number: Номер контрольного дела
+  category: Категория проверки
+  challenging_the_actions_of_officials: 'для обращений :: оспаривание действий должностных лиц'
+  check_created: Проверка успешно создана.
+  check_destroyed: Проверка успешно удалена.
+  check_finish: Дата окончания проверки (дата подписания справки)
+  check_remark_destroy: Контрольная дата устранения нарушений
+  check_start: Дата начала проверки
+  check_updated: Данные проверки успешно обновлены.
+  checks: Проверки
+  checks_number: Номер дела проверки
+  checks_organizations: Организации, охваченные проверкой
+  checks_people_organizations: Лица, охваченные проверкой
+  company_name: Название компании
+  contract_system: контрактная система
+  control_committee: 'административные наказания :: контрольный комитет КРУ'
+  controll: Контроль проверки
+  deadline: Срок
+  departmental_legislation: ведомственное законодательство
+  destroy: Уничтожить
+  determination_of_contracts: расторжение трудовых договоров
+  direction_author: Направление материалов дела проверки/информационных писем, от кого
+  direction_status: Направление материалов дела проверки/информационных писем, тип
+  direction_where: Направление материалов дела проверки/информационных писем, куда
+  disciplinary_action: дисциплинарные взыскания
+  edit: Редактировать
+  edit_inspector: Редактирование данныx проверяющего
+  edit_organization: Редактирование данных организации
+  edit_person: Редактирование данных должностного лица
+  edit_report: Редактирование отчета
+  editing_check: Редактирование данных проверки
+  eogv: 'административные наказания :: ИОГВ'
+  executive: Ответственный исполнитель
+  expand: Расширить
+  false_facts: факты не подтвердились
+  first_name: Имя
+  for_accept: Для принятия мер реагирования
+  for_calls_inappropriate_use_of_budgetary_funds: 'для обращений :: нецелевое использование бюджетных средств'
+  for_information: Для сведения
+  for_office: Для служебного пользования
+  for_removal: Для устранения нарушений
+  gto_commission: поручение ГТО
+  inspector: ФИО проверяющего
+  inspector_created: Проверяющий успешно создан.
+  inspector_destroyed: Проверяющий успешно удален.
+  inspector_updated: Данные проверяющего успешно обновлены.
+  inspectors: Проверяющие
+  labor_legislation: трудовое законодательство
+  last_name: Фамилия
+  legislation_on_state_and_municipal_services: законодательство о государственных и муниципальных услугах
+  legislation_on_the_contract_system: законодательство о контрактной системе
+  login: Имя пользователя
+  middle_name: Отчество
+  move_to_inner_control: переведено на внутренний контроль
+  new_check: Новая проверка
+  new_inspector: Добавить проверяющего
+  new_organization: Новая организация
+  new_person: Новая личность
+  new_report: Добавить контрольное дело
+  number: Номер контрольного дела
+  number_of_volumes: Количество томов
+  off_control: снято с контроля
+  organization: Организация
+  organization_created: Организация успешно создана.
+  organization_destroyed: Организация успешно удалена.
+  organization_updated: Данные организации успешно обновлены.
+  organizations: Организации
+  other: иное
+  others: иные
+  password: Пароль
+  people: Должностные лица
+  performance: эффективность деятельности
+  person_created: Должностное лицо успешно создано.
+  person_destroyed: Должностное лицо успешно удалено.
+  person_updated: Данные должностного лица успешно обновлены.
+  position: Должность
+  preservation_and_use_of_property: сохранение и использование имущества
+  procuracy: 'административные наказания :: прокуратура'
+  reason: Основание проверки
+  remember_me: Запомнить меня
+  repayment_of_funds: возвращение денежных средств в бюджет
+  report_created: Контрольное дело успешно создано.
+  report_destroyed: Контрольное дело успешно удалено.
+  report_updated: Данные контрольного дела успешно обновлены.
+  reports: Контрольные дела
+  response_measure: Меры реагирования
+  result: Результат
+  save: Сохранить
+  show: Показать
+  sign_in: Вход в систему
+  sign_out: Выйти из системы
+  state_municipal_services: государственные/муниципальные услуги
+  the_qa_and_sar_work_plan: план работы КК и ОАР
+  title: АИС КРУ
+  title_report: Название дела
+  violation: Установленные нарушения
+  zgto_commission: поручение ЗГТО

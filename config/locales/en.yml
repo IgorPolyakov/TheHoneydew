@@ -1,109 +1,105 @@
+---
 en:
-  amount: "Number of verifications"
-  anti_corruption: "combating corruption"
-  appeal_of_applicant_organization: "treatment of applicant/organization"
-  are_you_sure: "Are you sure?"
-  back: "Back"
-  budget_legislation: "budget legislation"
-  case_number: "Id control case"
-  category: "Category validation"
+  amount: Number of verifications
+  anti_corruption: combating corruption
+  appeal_of_applicant_organization: treatment of applicant/organization
+  are_you_sure: Are you sure?
+  back: Back
+  budget_legislation: budget legislation
+  case_number: Id control case
+  category: Category validation
   challenging_the_actions_of_officials: 'for references: challenging the actions of officials'
-  check: "Checking"
-  checking_system: "AIS KRU"
-  checks: "Check"
-  checks_number: "Case number verification"
-  checks_organizations: "Organizations covered by the test"
-  checks_people_organizations: "Persons covered by the test"
-  company_name: "The name of the company"
-  contract_system: "the contract system"
-  controll: "Validation control"
+  check_created: Check was successfully created.
+  check_destroyed: Check was successfully destroyed.
+  check_finish: Check finish date
+  check_remark_destroy: Check date for eliminate violations
+  check_start: Check start date
+  check_updated: Check was successfully updated.
+  checks: Check
+  checks_number: Case number verification
+  checks_organizations: Organizations covered by the test
+  checks_people_organizations: Persons covered by the test
+  company_name: The name of the company
+  contract_system: the contract system
   control_committee: 'administrative penalties: KRU Supervisory Committee'
-  deadline: "Check expiration date (date of signature)"
-  departmental_legislation: "departmental legislation"
-  destroy: "Destroy"
-  determination_of_contracts: "termination of employment contracts"
-  direction_status: "Direction of the case review/newsletters"
-  disciplinary_action: "disciplinary sanctions"
-  edit: "Change"
-  edit_organization: "Editing Organization"
-  edit_inspector: "Editing Inspector"
-  edit_person: "Change the data officer"
-  edit_report: "Edit a report"
-  editing_check: "Edit checking"
+  controll: Validation control
+  deadline: Check expiration date (date of signature)
+  departmental_legislation: departmental legislation
+  destroy: Destroy
+  determination_of_contracts: termination of employment contracts
+  direction_author: Direction of the case, author
+  direction_status: Direction of the case review/newsletters
+  direction_where: Direction of the case, where
+  disciplinary_action: disciplinary sanctions
+  edit: Change
+  edit_inspector: Editing Inspector
+  edit_organization: Editing Organization
+  edit_person: Change the data officer
+  edit_report: Edit a report
+  editing_check: Edit checking
   eogv: 'administrative punishment: IOGV'
-  executive: "Champion"
-  expand: "Expand"
-  false_facts: "the facts were not confirmed"
-  first_name: "Name"
-  for_accept: "For response"
-  for_calls: "for references"
+  executive: Champion
+  expand: Expand
+  false_facts: the facts were not confirmed
+  first_name: Name
+  for_accept: For response
   for_calls_inappropriate_use_of_budgetary_funds: 'for references: diversion of budgetary funds'
-  for_information: "For information"
-  for_office: "For official use only"
-  for_removal: "To resolve violations"
-  gto_commission: "order GTO"
-  inappropriate_use_of_budgetary_funds: "diversion of budgetary funds"
-  inspector: "Reviewer NAME"
-  inspectors: "Validation"
-  labor_legislation: "labour legislation"
-  last_name: "Surname"
-  legislation_on_state_and_municipal_services: "legislation on the State and municipal services"
-  legislation_on_the_contract_system: "legislation on contract system"
-  middle_name: "Middle name"
-  move_to_inner_control: "translated into internal control"
-  name_and_position: "Name, title of the addressee"
-  new_check: "New check"
-  new_inspector: "Add reviewer"
-  new_organization: "The new organization"
-  new_person: "New identity"
-  new_report: "Add watch case"
-  number: "Id control case"
-  number_of_volumes: "Number of volumes"
-  off_control: "discontinued controls"
-  organization: "Organization"
-  organizations: "Organization"
-  other: "otherwise"
-  others: "other"
-  people: "Officials"
-  performance: "effectiveness"
-  person: "Official"
-  position: "Post"
-  preservation_and_use_of_property: "preservation and use of property"
+  for_information: For information
+  for_office: For official use only
+  for_removal: To resolve violations
+  gto_commission: order GTO
+  inspector: Reviewer NAME
+  inspector_created: Inspector was successfully created.
+  inspector_destroyed: Inspector was successfully destroyed.
+  inspector_updated: Inspector was successfully updated.
+  inspectors: Validation
+  labor_legislation: labour legislation
+  last_name: Surname
+  legislation_on_state_and_municipal_services: legislation on the State and municipal services
+  legislation_on_the_contract_system: legislation on contract system
+  login: Login
+  middle_name: Middle name
+  move_to_inner_control: translated into internal control
+  new_check: New check
+  new_inspector: Add reviewer
+  new_organization: The new organization
+  new_person: New identity
+  new_report: Add watch case
+  number: Id control case
+  number_of_volumes: Number of volumes
+  off_control: discontinued controls
+  organization: Organization
+  organization_created: Organization was successfully created.
+  organization_destroyed: Organization was successfully destroyed.
+  organization_updated: Organization was successfully updated.
+  organizations: Organization
+  other: otherwise
+  others: other
+  password: Password
+  people: Officials
+  performance: effectiveness
+  person_created: Person was successfully created.
+  person_destroyed: Person was successfully destroyed.
+  person_updated: Person was successfully updated.
+  position: Post
+  preservation_and_use_of_property: preservation and use of property
   procuracy: 'administrative penalties: prosecutor'
-  prohibited_this_check_from_being_saved: "the prohibition of retaining this scan:"
-  prohibited_this_person_from_being_saved: "the prohibition of retaining this scan:"
-  reason: "Base inspection"
-  repayment_of_funds: "return of funds in budget"
-  report: "Report"
-  reports: "Reports"
-  response_measure: "Response measures"
-  result: "Result"
-  save: "Save"
-  show: "Show"
-  state_municipal_services: "government/municipal services"
-  the_qa_and_sar_work_plan: "the work plan of the QC and SAR"
-  title: "AIS KRU"
-  violation: "Confirmed violations"
-  zgto_commission: "order ZGTO"
-  sign_in: "Sign in"
-  sign_out: "Sign out"
-  login: "Login"
-  password: "Password"
-  remember_me: "Remember me"
-  check_created: "Check was successfully created."
-  check_updated: "Check was successfully updated."
-  check_destroyed: "Check was successfully destroyed."
-  inspector_created: "Inspector was successfully created."
-  inspector_updated: "Inspector was successfully updated."
-  inspector_destroyed: "Inspector was successfully destroyed."
-  organization_created: "Organization was successfully created."
-  organization_updated: "Organization was successfully updated."
-  organization_destroyed: "Organization was successfully destroyed."
-  person_created: "Person was successfully created."
-  person_updated: "Person was successfully updated."
-  person_destroyed: "Person was successfully destroyed."
-  report_created: "Report was successfully created."
-  report_updated: "Report was successfully updated."
-  report_destroyed: "Report was successfully destroyed."
-  check_remark_destroy: "Check date for eliminate violations"
-  title_report: "Report name"
+  reason: Base inspection
+  remember_me: Remember me
+  repayment_of_funds: return of funds in budget
+  report_created: Report was successfully created.
+  report_destroyed: Report was successfully destroyed.
+  report_updated: Report was successfully updated.
+  reports: Reports
+  response_measure: Response measures
+  result: Result
+  save: Save
+  show: Show
+  sign_in: Sign in
+  sign_out: Sign out
+  state_municipal_services: government/municipal services
+  the_qa_and_sar_work_plan: the work plan of the QC and SAR
+  title: AIS KRU
+  title_report: Report name
+  violation: Confirmed violations
+  zgto_commission: order ZGTO
