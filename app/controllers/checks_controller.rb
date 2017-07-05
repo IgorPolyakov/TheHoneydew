@@ -1,7 +1,7 @@
 class ChecksController < ApplicationController
   before_action :set_check, only: %i[show edit update destroy]
 
-  before_filter :foo
+  before_action :foo
   def foo
     @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission), t(:appeal_of_applicant_organization), t(:other)]
     @category = [t(:performance), t(:preservation_and_use_of_property), t(:state_municipal_services), t(:contract_system), t(:anti_corruption), t(:for_calls_inappropriate_use_of_budgetary_funds), t(:challenging_the_actions_of_officials), t(:others)]
