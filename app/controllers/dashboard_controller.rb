@@ -1,4 +1,7 @@
 class DashboardController < ApplicationController
+  def report
+  end
+  
   def index
     @check_count = Check.count
     @report_count = Report.count

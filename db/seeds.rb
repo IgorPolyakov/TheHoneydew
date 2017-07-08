@@ -1,31 +1,65 @@
+require 'ffaker'
+Report.destroy_all
+Person.destroy_all
+Check.destroy_all
 Inspector.destroy_all
 Organization.destroy_all
 User.destroy_all
+def create_inspector(last, first, middle, position)
+  Inspector.create(last_name: last, first_name: first, middle_name: middle, position: position)
+end
+
+def create_organization(company, last, first, middle, position)
+  Organization.create(company_name: company, last_name: last, first_name: first, middle_name: middle, position: position)
+end
+
+def create_person
+  Person.create!(last_name:  FFaker::NameRU.last_name, first_name: FFaker::NameRU.first_name, middle_name:  FFaker::NameRU.patronymic)
+end
+
+def create_check
+  a = Check.new(amount: rand(1..10) ,checks_number: FFaker::Product.model, check_finish: FFaker::Time.date, reason: 'nill', category: 'nill', violation: 'nill', response_measure: 'nill', direction_status: 'nill', case_number: rand(100..999), number_of_volumes: rand(1..12), for_office: true, executive: 'Anonimus', controll: false, direction_author: 'Anonimus', direction_where: '/dev/null', check_start: FFaker:: Time.date, check_remark_destroy: FFaker::Time.date)
+  a.inspector = Inspector.find_by(id: rand(Inspector.first.id..Inspector.last.id))
+  a.organizations << Organization.find_by(id: rand(Organization.first.id..Organization.last.id))
+  a.people << Person.find_by(id: rand(Person.first.id..Person.last.id))
+  a.save
+end
 # data from URL:https://kru.tomsk.gov.ru/phonebook/department
-Inspector.create(last_name: 'Аксиненко', first_name: 'Сергей', middle_name: 'Владимирович', position: 'Председатель комитета - заместитель начальника управления')
-Inspector.create(last_name: 'Маляр', first_name: 'Павел', middle_name: 'Иванович', position: 'Председатель комитета')
-Inspector.create(last_name: 'Ульянов', first_name: 'Павел', middle_name: 'Владимирович', position: 'Начальник отдела')
-Inspector.create(last_name: 'Шабанова', first_name: 'Ольга', middle_name: 'Ивановна', position: 'И.о. начальника отдела')
-Inspector.create(last_name: 'Веткин', first_name: 'Сергей', middle_name: 'Алексеевич', position: 'Главный специалист')
-Inspector.create(last_name: 'Гуляев', first_name: 'Алексей', middle_name: 'Игоревич', position: 'Консультант')
-Inspector.create(last_name: 'Гусева', first_name: 'Ксения', middle_name: 'Анатольевна', position: 'Главный специалист')
-Inspector.create(last_name: 'Соболева', first_name: 'Вера', middle_name: 'Анатольевна', position: 'Консультант')
-Inspector.create(last_name: 'Бугаева', first_name: 'Татьяна', middle_name: 'Геннадьевна', position: 'Главный специалист')
-Inspector.create(last_name: 'Золотухин', first_name: 'Антон', middle_name: 'Игоревич', position: 'Заместитель председателя комитета')
-Inspector.create(last_name: 'Семиколенов', first_name: 'Игорь', middle_name: 'Владимирович', position: 'Консультант')
-Inspector.create(last_name: 'Сусоев', first_name: 'Владимир', middle_name: 'Михайлович', position: 'Консультант')
-Inspector.create(last_name: 'Горев', first_name: 'Дмитрий', middle_name: 'Васильевич', position: 'Главный специалист')
-Inspector.create(last_name: 'Панова', first_name: 'Евгения', middle_name: 'Николаевна', position: 'Главный специалист')
-Inspector.create(last_name: 'Семин', first_name: 'Станислав', middle_name: 'Олегович', position: 'Консультант')
-Inspector.create(last_name: 'Удут-Пантелиади', first_name: 'Ирина', middle_name: 'Викторовна', position: 'Консультант')
-Inspector.create(last_name: 'Панова', first_name: 'Татьяна', middle_name: 'Владимировна', position: 'Консультант')
-Inspector.create(last_name: 'Пономарева', first_name: 'Алия', middle_name: 'Александровна', position: 'Консультант')
-Inspector.create(last_name: 'Панькова', first_name: 'Олеся', middle_name: 'Васильвена', position: 'Консультант')
-Inspector.create(last_name: 'Трубина', first_name: 'Полина', middle_name: 'Ивановна', position: 'Консультант')
-Inspector.create(last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
-User.create(login:'keva', encrypted_password: '$2a$11$rRKdHLgFeSQYK9wCc1gasurBqwq4XOtUavLMApjvWX3eQJD9kOD62', is_admin: true)
-User.create(login:'user', encrypted_password: '$2a$11$rRKdHLgFeSQYK9wCc1gasurBqwq4XOtUavLMApjvWX3eQJD9kOD62')
-Organization.create(company_name: 'ЗАО «Томский подшипник',last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Дитектор')
-Organization.create(company_name: 'Группа компаний «Томский инструмент', last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Дитектор')
-Organization.create(company_name: 'ФГУП «Томский электротехнический завод',last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Дитектор')
-Organization.create(company_name: 'ОАО «Томский завод им. В.В. Вахрушева',last_name: 'Думина', first_name: 'Юлия', middle_name: 'Анатольевна', position: 'Консультант')
+create_inspector('Аксиненко', 'Сергей', 'Владимирович', 'Председатель комитета - заместитель начальника управления')
+create_inspector('Маляр', 'Павел', 'Иванович', 'Председатель комитета')
+create_inspector('Ульянов', 'Павел', 'Владимирович', 'Начальник отдела')
+create_inspector('Шабанова', 'Ольга', 'Ивановна', 'И.о. начальника отдела')
+create_inspector('Веткин', 'Сергей', 'Алексеевич', 'Главный специалист')
+create_inspector('Гуляев', 'Алексей', 'Игоревич', 'Консультант')
+create_inspector('Гусева', 'Ксения', 'Анатольевна', 'Главный специалист')
+create_inspector('Соболева', 'Вера', 'Анатольевна', 'Консультант')
+create_inspector('Бугаева', 'Татьяна', 'Геннадьевна', 'Главный специалист')
+create_inspector('Золотухин', 'Антон', 'Игоревич', 'Заместитель председателя комитета')
+create_inspector('Семиколенов', 'Игорь', 'Владимирович', 'Консультант')
+create_inspector('Сусоев', 'Владимир', 'Михайлович', 'Консультант')
+create_inspector('Горев', 'Дмитрий', 'Васильевич', 'Главный специалист')
+create_inspector('Панова', 'Евгения', 'Николаевна', 'Главный специалист')
+create_inspector('Семин', 'Станислав', 'Олегович', 'Консультант')
+create_inspector('Удут-Пантелиади', 'Ирина', 'Викторовна', 'Консультант')
+create_inspector('Панова', 'Татьяна', 'Владимировна', 'Консультант')
+create_inspector('Пономарева', 'Алия', 'Александровна', 'Консультант')
+create_inspector('Панькова', 'Олеся', 'Васильвена', 'Консультант')
+create_inspector('Трубина', 'Полина', 'Ивановна', 'Консультант')
+create_inspector('Думина', 'Юлия', 'Анатольевна', 'Консультант')
+
+User.create(login: 'keva', password: '123456', is_admin: true)
+User.create(login: 'user', password: '123456')
+
+# create_organization('ЗАО «Томский подшипник', 'Думина', 'Юлия', 'Анатольевна', 'Дитектор')
+# create_organization('Группа компаний «Томский инструмент', 'Думина', 'Юлия', 'Анатольевна', 'Дитектор')
+100.times do
+  create_organization(FFaker::Company.name, 'Думина', 'Юлия', 'Анатольевна', FFaker::Job.title)
+end
+
+100.times do
+  create_person
+end
+# create_organization('ОАО «Томский завод им. В.В. Вахрушева', 'Думина', 'Юлия', 'Анатольевна', 'Консультант')
+100.times do
+  create_check
+end

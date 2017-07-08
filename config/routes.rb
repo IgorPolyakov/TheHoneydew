@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'dashboard/report'
+
   devise_for :users, skip: [:sessions] 
   unauthenticated do
     as :user do
