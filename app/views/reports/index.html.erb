@@ -25,7 +25,7 @@
 
   <tbody>
     <% @reports.each do |report| %>
-    <tr>
+    <tr role="button"  onclick="window.location.href = '/reports/<%= report.id %>'">
       <td><%= report.number %></td>
       <td><%= report.title_report %></td>
       <td><%= report.deadline %></td>

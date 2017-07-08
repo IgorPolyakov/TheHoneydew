@@ -6,8 +6,7 @@
 
 <table class="table table-hover">
   <thead>
-    <tr class ="first_tr">
-
+    <tr>
       <th>#</th>
       <th><%= t(:case_number)%></th>
       <th><%= t(:check_start)%></th>
@@ -19,16 +18,13 @@
       <th><%= t(:inspector)%></th>
       <th><%= t(:executive)%></th>
       <% if current_user.is_admin == true %>
-        <th colspan="3"></th>
-        <% else %>
-        <th colspan="1"></th>
+        <th colspan="2"></th>
       <% end %>
-
     </tr>
   </thead>
   <tbody>
     <% @checks.each do |check| %>
-    <tr class="green">
+    <tr role="button"  onclick="window.location.href = '/checks/<%= check.id %>'">
       <td> <%= check.case_number %></td>
       <td> <%= check.checks_number %></td>
       <td> <%= check.check_start %></td>
@@ -39,7 +35,6 @@
       <td> <%= check.response_measure %></td>
       <td> <%= Inspector.find_by(id: check.inspector_id).last_name %></td>
       <td> <%= check.executive %></td>
-      <td><%= link_to t(:show), check %></td>
       <% if current_user.is_admin == true %>
         <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
         <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
