@@ -41,8 +41,8 @@
       <td> <%= check.executive %></td>
       <td><%= link_to t(:show), check %></td>
       <% if current_user.is_admin == true %>
-        <td><%= link_to t(:edit), edit_check_path(check) %></td>
-        <td><%= link_to t(:destroy), check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
+        <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
     </tr>
     <% end %>

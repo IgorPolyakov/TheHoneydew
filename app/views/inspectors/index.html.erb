@@ -29,8 +29,8 @@
             <td><%= inspector.position %></td>
             <td><%= link_to t(:show), inspector %></td>
             <% if current_user.is_admin == true %>
-                <td><%= link_to t(:edit), edit_inspector_path(inspector) %></td>
-                <td><%= link_to t(:destroy), inspector, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+                <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, , edit_inspector_path(inspector) %></td>
+                <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, inspector, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
             <% end %>
         </tr>
         <% end %>
