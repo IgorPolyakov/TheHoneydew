@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t(:organizations) %></h1>
+<% if current_user.is_admin == true %>
+  <%= link_to t(:new_organization), new_organization_path, class: 'btn btn-success' %>
+<% end %>
 
 <table class="table table-hover">
   <thead>
@@ -31,9 +34,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<% if current_user.is_admin == true %>
-  <%= link_to t(:new_organization), new_organization_path %>
-<% end %>
