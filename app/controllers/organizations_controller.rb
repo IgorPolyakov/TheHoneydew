@@ -9,7 +9,9 @@ class OrganizationsController < ApplicationController
 
   # GET /organizations/1
   # GET /organizations/1.json
-  def show; end
+  def show
+    @person = Person.find(@organization.person_id).last_name
+  end
 
   # GET /organizations/new
   def new
@@ -68,6 +70,6 @@ class OrganizationsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def organization_params
-    params.require(:organization).permit(:company_name, :first_name, :last_name, :middle_name, :position)
+    params.require(:organization).permit(:company_name, :position, :person_id)
   end
 end

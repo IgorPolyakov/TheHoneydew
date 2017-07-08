@@ -9,8 +9,10 @@ def create_inspector(last, first, middle, position)
   Inspector.create(last_name: last, first_name: first, middle_name: middle, position: position)
 end
 
-def create_organization(company, last, first, middle, position)
-  Organization.create(company_name: company, last_name: last, first_name: first, middle_name: middle, position: position)
+def create_organization
+  tmp = Organization.new(company_name: FFaker::Company.name, position: FFaker::Job.title)
+  tmp.person = Person.find_by(id: rand(Person.first.id..Person.last.id))
+  tmp.save
 end
 
 def create_person
@@ -50,16 +52,14 @@ create_inspector('Думина', 'Юлия', 'Анатольевна', 'Конс
 User.create(login: 'keva', password: '123456', is_admin: true)
 User.create(login: 'user', password: '123456')
 
-# create_organization('ЗАО «Томский подшипник', 'Думина', 'Юлия', 'Анатольевна', 'Дитектор')
-# create_organization('Группа компаний «Томский инструмент', 'Думина', 'Юлия', 'Анатольевна', 'Дитектор')
-100.times do
-  create_organization(FFaker::Company.name, 'Думина', 'Юлия', 'Анатольевна', FFaker::Job.title)
-end
-
 100.times do
   create_person
 end
-# create_organization('ОАО «Томский завод им. В.В. Вахрушева', 'Думина', 'Юлия', 'Анатольевна', 'Консультант')
+
+100.times do
+  create_organization
+end
+
 100.times do
   create_check
 end
