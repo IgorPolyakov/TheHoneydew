@@ -1,16 +1,17 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :set_report, only: %i[show edit update destroy]
 
   before_action :foo
 
   def foo
-    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission),t(:appeal_of_applicant_organization),t(:other)]
+    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission), t(:appeal_of_applicant_organization), t(:other)]
     @result = [t(:off_control), t(:move_to_inner_control)]
   end
+
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.order("updated_at DESC")
+    @reports = Report.order('updated_at DESC')
   end
 
   # GET /reports/1
@@ -82,6 +83,6 @@ class ReportsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
-    params.require(:report).permit(:number, :title_report, :deadline, :inspector_id, :organization_id, :executive, result:[], reason:[])
+    params.require(:report).permit(:number, :title_report, :deadline, :inspector_id, :organization_id, :executive, result: [], reason: [])
   end
 end

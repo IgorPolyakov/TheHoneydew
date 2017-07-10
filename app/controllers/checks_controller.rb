@@ -9,10 +9,11 @@ class ChecksController < ApplicationController
     @response_measure = [t(:determination_of_contracts), t(:disciplinary_action), t(:repayment_of_funds), t(:procuracy), t(:eogv), t(:control_committee), t(:false_facts), t(:others)]
     @direction_status = [t(:for_information), t(:for_accept), t(:for_removal)]
   end
+
   # GET /checks
   # GET /checks.json
   def index
-    @checks = Check.order("updated_at DESC")
+    @checks = Check.order('updated_at DESC')
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
   end
 
@@ -25,8 +26,7 @@ class ChecksController < ApplicationController
   end
 
   # GET /checks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /checks
   # POST /checks.json

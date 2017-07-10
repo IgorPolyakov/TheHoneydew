@@ -1,5 +1,5 @@
 class InspectorsController < ApplicationController
-  before_action :set_inspector, only: [:show, :edit, :update, :destroy]
+  before_action :set_inspector, only: %i[show edit update destroy]
 
   # GET /inspectors
   # GET /inspectors.json
