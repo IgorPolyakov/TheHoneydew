@@ -121,3 +121,5 @@ bower.json
 # End of https://www.gitignore.io/api/rails
 config/database.yml
 config/secrets.yml
+# RubyMine
+.idea/
