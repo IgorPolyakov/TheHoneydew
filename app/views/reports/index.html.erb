@@ -24,20 +24,19 @@
   </thead>
 
   <tbody>
-    <% @reports.each do |report| %>
-    <tr role="button"  onclick="window.location.href = '/reports/<%= report.id %>'">
-      <td><%= report.number %></td>
-      <td><%= report.title_report %></td>
-      <td><%= report.deadline %></td>
-      <td><%= Inspector.find(report.inspector_id).last_name; %></td>
-      <td><%= Organization.find(report.organization_id).company_name; %></td>
-      <td><%= report.executive %></td>
-      <td><%= report.reason %></td>
-      <td><%= report.result %></td>
-      <td><%= link_to t(:show), report %></td>
+    <% @reports.each do |r| %>
+    <tr>
+      <td><%= link_to r.number, report_path(r) %></td>
+      <td><%= link_to r.title_report, report_path(r) %></td>
+      <td><%= link_to r.deadline, report_path(r) %></td>
+      <td><%= link_to Inspector.find(r.inspector_id).last_name, inspector_path(r.inspector_id) %></td>
+      <td><%= link_to Organization.find(r.organization_id).company_name, organization_path(r.organization_id) %></td>
+      <td><%= link_to r.executive, report_path(r) %></td>
+      <td><%= link_to r.reason, report_path(r) %></td>
+      <td><%= link_to r.result, report_path(r) %></td>
       <% if current_user.is_admin == true %>
-        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_report_path(report) %></td>
-        <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, report, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_report_path(r) %></td>
+        <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, r, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
     </tr>
     <% end %>

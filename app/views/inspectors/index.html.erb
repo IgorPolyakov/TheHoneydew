@@ -19,15 +19,15 @@
     </thead>
 
     <tbody>
-        <% @inspectors.each do |inspector| %>
-        <tr role="button"  onclick="window.location.href = '/inspectors/<%= inspector.id %>'">
-            <td><%= inspector.first_name %></td>
-            <td><%= inspector.last_name %></td>
-            <td><%= inspector.middle_name %></td>
-            <td><%= inspector.position %></td>
+        <% @inspectors.each do |i| %>
+        <tr>
+            <td><%= link_to i.first_name, inspector_path(i) %></td>
+            <td><%= link_to i.last_name, inspector_path(i) %></td>
+            <td><%= link_to i.middle_name, inspector_path(i) %></td>
+            <td><%= link_to i.position, inspector_path(i) %></td>
             <% if current_user.is_admin == true %>
-                <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_inspector_path(inspector) %></td>
-                <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, inspector, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+                <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_inspector_path(i) %></td>
+                <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, i, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
             <% end %>
         </tr>
         <% end %>

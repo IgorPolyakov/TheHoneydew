@@ -24,17 +24,17 @@
   </thead>
   <tbody>
     <% @checks.each do |check| %>
-    <tr role="button"  onclick="window.location.href = '/checks/<%= check.id %>'">
-      <td> <%= check.case_number %></td>
-      <td> <%= check.checks_number %></td>
-      <td> <%= check.check_start %></td>
-      <td> <%= check.check_finish %></td>
-      <td> <%= check.check_remark_destroy %></td>
-      <td> <%= check.reason %></td>
-      <td> <%= check.violation %></td>
-      <td> <%= check.response_measure %></td>
-      <td> <%= Inspector.find_by(id: check.inspector_id).last_name %></td>
-      <td> <%= check.executive %></td>
+    <tr>
+      <td> <%= link_to check.case_number, check_path(check) %></td>
+      <td> <%= link_to check.checks_number, check_path(check) %></td>
+      <td> <%= link_to check.check_start, check_path(check) %></td>
+      <td> <%= link_to check.check_finish, check_path(check) %></td>
+      <td> <%= link_to check.check_remark_destroy, check_path(check) %></td>
+      <td> <%= link_to check.reason, check_path(check) %></td>
+      <td> <%= link_to check.violation, check_path(check) %></td>
+      <td> <%= link_to check.response_measure, check_path(check) %></td>
+      <td> <%= link_to Inspector.find_by(id: check.inspector_id).last_name, inspector_path(check.inspector_id) %></td>
+      <td> <%= link_to check.executive, check_path(check) %></td>
       <% if current_user.is_admin == true %>
         <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
         <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>

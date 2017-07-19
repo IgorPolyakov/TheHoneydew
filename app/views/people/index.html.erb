@@ -19,15 +19,15 @@
   </thead>
 
   <tbody>
-    <% @people.each do |person| %>
+    <% @people.each do |p| %>
     <tr>
-    <tr role="button"  onclick="window.location.href = '/people/<%= person.id %>'">
-      <td><%= person.first_name %></td>
-      <td><%= person.last_name %></td>
-      <td><%= person.middle_name %></td>
+    <tr>
+      <td><%= link_to p.first_name, person_path(p) %></td>
+      <td><%= link_to p.last_name, person_path(p)%></td>
+      <td><%= link_to p.middle_name, person_path(p) %></td>
       <% if current_user.is_admin == true %>
-        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_person_path(person) %></td>
-        <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, person, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_person_path(p) %></td>
+        <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, p, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
     </tr>
     <% end %>
