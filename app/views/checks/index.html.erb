@@ -7,6 +7,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th></th>
       <th>#</th>
       <th><%= t(:case_number)%></th>
       <th><%= t(:check_start)%></th>
@@ -25,6 +26,7 @@
   <tbody>
     <% @checks.each do |check| %>
     <tr>
+      <td> <i class="fa fa-check-circle-o fa-5x" style="color:<%= @status %>;font-size:1.5em "></i> </td>
       <td> <%= link_to check.case_number, check_path(check) %></td>
       <td> <%= link_to check.checks_number, check_path(check) %></td>
       <td> <%= link_to check.check_start, check_path(check) %></td>

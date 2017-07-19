@@ -15,6 +15,7 @@ class ChecksController < ApplicationController
   def index
     @checks = Check.sorted
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @status = 'green'
   end
 
   # GET /checks/1
