@@ -1,5 +1,34 @@
 # Change Log
 
+## [v1.0](https://github.com/IgorPolyakov/TheHoneydew/tree/v1.0) (2017-07-03)
+[Full Changelog](https://github.com/IgorPolyakov/TheHoneydew/compare/0.99...v1.0)
+
+**Implemented enhancements:**
+
+- Обновление формы логина [\#33](https://github.com/IgorPolyakov/TheHoneydew/issues/33)
+- Вывод записей проверок и дел от новых к старым [\#19](https://github.com/IgorPolyakov/TheHoneydew/issues/19)
+- Направление материалов для проверки [\#11](https://github.com/IgorPolyakov/TheHoneydew/issues/11)
+- Решить вопросы сроков проверок [\#10](https://github.com/IgorPolyakov/TheHoneydew/issues/10)
+
+**Fixed bugs:**
+
+- Массовое удаление контрольных дел [\#32](https://github.com/IgorPolyakov/TheHoneydew/issues/32)
+- Контрольные дела не редакируются [\#31](https://github.com/IgorPolyakov/TheHoneydew/issues/31)
+- Проверки не редактируются [\#30](https://github.com/IgorPolyakov/TheHoneydew/issues/30)
+- Записи "Организация" не изменяются [\#28](https://github.com/IgorPolyakov/TheHoneydew/issues/28)
+- Должностные лица не изменяются [\#27](https://github.com/IgorPolyakov/TheHoneydew/issues/27)
+- Веб сервер не стартует в режиме develop [\#18](https://github.com/IgorPolyakov/TheHoneydew/issues/18)
+- Изменение записи о проверке - не работает [\#13](https://github.com/IgorPolyakov/TheHoneydew/issues/13)
+
+**Closed issues:**
+
+- Некорректное отображение при создании "Новая проверка" [\#29](https://github.com/IgorPolyakov/TheHoneydew/issues/29)
+- Gem simple\_form \(\> = 0\) более одного раза [\#24](https://github.com/IgorPolyakov/TheHoneydew/issues/24)
+- Запретить методы добавления, изменения и удаления записей для Юзера [\#23](https://github.com/IgorPolyakov/TheHoneydew/issues/23)
+- Сделать формы приятными [\#22](https://github.com/IgorPolyakov/TheHoneydew/issues/22)
+- reports not displayed [\#6](https://github.com/IgorPolyakov/TheHoneydew/issues/6)
+- Deploy :: restart webserver [\#3](https://github.com/IgorPolyakov/TheHoneydew/issues/3)
+
 ## [0.99](https://github.com/IgorPolyakov/TheHoneydew/tree/0.99) (2017-05-29)
 **Closed issues:**
 
