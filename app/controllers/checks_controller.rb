@@ -13,7 +13,7 @@ class ChecksController < ApplicationController
   # GET /checks
   # GET /checks.json
   def index
-    @checks = Check.order('updated_at DESC')
+    @checks = Check.sorted
     @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
   end
 
