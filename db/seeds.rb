@@ -1,9 +1,9 @@
 require 'ffaker'
-Report.destroy_all
+Organization.destroy_all
 Person.destroy_all
+Report.destroy_all
 Check.destroy_all
 Inspector.destroy_all
-Organization.destroy_all
 User.destroy_all
 def create_inspector(last, first, middle, position)
   Inspector.create(last_name: last, first_name: first, middle_name: middle, position: position)
