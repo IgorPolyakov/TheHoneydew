@@ -10,15 +10,25 @@ class Check < ApplicationRecord
     remove_quote(violation, 'violation')
     remove_quote(response_measure, 'response_measure')
     remove_quote(direction_status, 'direction_status')
-    # reason.gsub!(/[\[\]\"]/, '') if attribute_present?('reason')
-    # category.gsub!(/[\[\]\"]/, '') if attribute_present?('category')
-    # violation.gsub!(/[\[\]\"]/, '') if attribute_present?('violation')
-    # response_measure.gsub!(/[\[\]\"]/, '') if attribute_present?('response_measure')
-    # direction_status.gsub!(/[\[\]\"]/, '') if attribute_present?('direction_status')
   end
   scope :sorted, -> {order(updated_at: :desc)}
   belongs_to :inspector
   has_and_belongs_to_many :organizations
   has_and_belongs_to_many :people
   validates :amount, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+  validate :check_start_less_than_check_finish, :check_finish_more_than_check_start, :check_finish_less_than_check_remark_destroy
+
+  private
+  def check_start_less_than_check_finish
+    errors.add(:check_start, "check start less than check finish") unless
+      check_start < check_finish
+  end
+  def check_finish_more_than_check_start
+    errors.add(:check_finish, "check finish more than check start") unless
+      check_start < check_finish
+  end
+  def check_finish_less_than_check_remark_destroy
+    errors.add(:check_remark_destroy, "check finish less than check_remark_destroy") unless
+      check_finish < check_remark_destroy
+  end
 end
