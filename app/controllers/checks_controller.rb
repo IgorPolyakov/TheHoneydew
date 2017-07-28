@@ -78,6 +78,6 @@ class ChecksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def check_params
-    params.require(:check).permit(:amount, :checks_number, :check_start, :check_remark_destroy, :check_finish, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction_status: [] }, :direction_author, :direction_where, :case_number, :number_of_volumes, :for_office, :executive, :inspector_id, organization_ids: [], person_ids: [])
+    params.require(:check).permit(:amount, :checks_number, :check_start, :check_remark_destroy, :check_finish, { reason: [] }, { category: [] }, { violation: [] }, { response_measure: [] }, { direction_status: [] }, :direction_author, :direction_where, :case_number, :number_of_volumes, :for_office, :executive, :controll, :inspector_id, organization_ids: [], person_ids: [])
   end
 end

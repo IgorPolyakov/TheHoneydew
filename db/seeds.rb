@@ -16,11 +16,11 @@ def create_organization
 end
 
 def create_person
-  Person.create!(last_name:  FFaker::NameRU.last_name, first_name: FFaker::NameRU.first_name, middle_name:  FFaker::NameRU.patronymic)
+  Person.create!(last_name: FFaker::NameRU.last_name, first_name: FFaker::NameRU.first_name, middle_name: FFaker::NameRU.patronymic)
 end
 
 def create_check
-  a = Check.new(amount: rand(1..10) ,checks_number: FFaker::Product.model, check_finish: FFaker::Time.date, reason: 'nill', category: 'nill', violation: 'nill', response_measure: 'nill', direction_status: 'nill', case_number: rand(100..999), number_of_volumes: rand(1..12), for_office: true, executive: 'Anonimus', controll: false, direction_author: 'Anonimus', direction_where: '/dev/null', check_start: FFaker:: Time.date, check_remark_destroy: FFaker::Time.date)
+  a = Check.new(amount: rand(1..10), checks_number: FFaker::Product.model, check_finish: FFaker::Time.date, reason: 'nill', category: 'nill', violation: 'nill', response_measure: 'nill', direction_status: 'nill', case_number: rand(100..999), number_of_volumes: rand(1..12), for_office: true, executive: 'Anonimus', controll: rand > 0.5, direction_author: 'Anonimus', direction_where: '/dev/null', check_start: FFaker:: Time.date, check_remark_destroy: FFaker::Time.date)
   a.inspector = Inspector.find_by(id: rand(Inspector.first.id..Inspector.last.id))
   a.organizations << Organization.find_by(id: rand(Organization.first.id..Organization.last.id))
   a.people << Person.find_by(id: rand(Person.first.id..Person.last.id))
