@@ -17,7 +17,7 @@ class ReportsController < ApplicationController
   # GET /reports/1
   # GET /reports/1.json
   def show
-    @inspectors = Inspector.find(@report.inspector_id).last_name
+    @inspectors = Inspector.find(@report.inspector_id).full_name
     @organizations = Organization.find(@report.organization_id).company_name
   end
 

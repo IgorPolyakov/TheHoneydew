@@ -16,7 +16,7 @@
       <th><%= t(:reason) %></th>
       <th><%= t(:result) %></th>
       <% if current_user.is_admin == true %>
-        <th colspan="3"></th>
+        <th colspan="2"></th>
         <% else %>
         <th colspan="1"></th>
       <% end %>
@@ -29,7 +29,7 @@
       <td><%= link_to r.number, report_path(r) %></td>
       <td><%= link_to r.title_report, report_path(r) %></td>
       <td><%= link_to r.deadline, report_path(r) %></td>
-      <td><%= link_to Inspector.find(r.inspector_id).last_name, inspector_path(r.inspector_id) %></td>
+      <td><%= link_to Inspector.find(r.inspector_id).full_name, inspector_path(r.inspector_id) %></td>
       <td><%= link_to Organization.find(r.organization_id).company_name, organization_path(r.organization_id) %></td>
       <td><%= link_to r.executive, report_path(r) %></td>
       <td><%= link_to r.reason, report_path(r) %></td>

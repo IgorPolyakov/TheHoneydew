@@ -27,14 +27,16 @@
     <% @checks.each do |check| %>
     <tr>
       <!-- #TODO: move logic to controller -->
-      <% if !check.controll %>
-      <td> <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i> </td>
-      <% elsif check.check_remark_destroy < DateTime.now.to_date - 1.week %>
-      <td> <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i> </td>
-      <% elsif check.check_remark_destroy < DateTime.now.to_date %>
-      <td> <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i> </td>
+      <% if check.controll %>
+        <% if check.check_remark_destroy > DateTime.now.to_date && check.check_remark_destroy < (DateTime.now.to_date - 1.week) %>
+        <td> <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i> </td>
+        <% elsif  (check.check_remark_destroy > (DateTime.now.to_date - 1.week)) %>
+        <td> <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i> </td>
+        <% else %>
+        <td> <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i> </td>
+        <% end %>
       <% else %>
-      <td> <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i> </td>
+      <td> <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i> </td>
       <% end %>
       <td> <%= link_to check.case_number, check_path(check) %></td>
       <td> <%= link_to check.checks_number, check_path(check) %></td>
@@ -44,7 +46,7 @@
       <td> <%= link_to check.reason, check_path(check) %></td>
       <td> <%= link_to check.violation, check_path(check) %></td>
       <td> <%= link_to check.response_measure, check_path(check) %></td>
-      <td> <%= link_to Inspector.find_by(id: check.inspector_id).last_name, inspector_path(check.inspector_id) %></td>
+      <td> <%= link_to Inspector.find_by(id: check.inspector_id).full_name, inspector_path(check.inspector_id) %></td>
       <td> <%= link_to check.executive, check_path(check) %></td>
       <% if current_user.is_admin == true %>
         <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
