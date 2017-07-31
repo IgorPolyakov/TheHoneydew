@@ -1,9 +1,8 @@
-script: bundle exec rake spec
+script: bundle exec rspec
 language: ruby
 cache: bundler
 before_install: gem install bundler
 bundler_args: --without development
 rvm:
-- 2.2.5
 - 2.3.0
-- 2.4.0
+- 2.4.1
