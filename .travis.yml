@@ -1,8 +1,20 @@
-script: bundle exec rspec
 language: ruby
 cache: bundler
-before_install: gem install bundler
-bundler_args: --without development
+bundler_args: --without guard --deployment
+services:
+  - postgresql
 rvm:
-- 2.3.0
-- 2.4.1
+  - 2.4.1
+before_script:
+  - /bin/cp $TRAVIS_BUILD_DIR/config/database.yml.example $TRAVIS_BUILD_DIR/config/database.yml
+  - /bin/cp $TRAVIS_BUILD_DIR/config/database.yml.example $TRAVIS_BUILD_DIR/config/database.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed
+env:
+  RAILS_ENV=test
+  # FIX: VARIABLE NOT WORK
+  # SECRET_KEY_BASE="$(bundle exec rake secret)"
+  # DEVISE_SECRET_KEY="$(bundle exec rake secret)"
+
+script: bundle exec rspec
