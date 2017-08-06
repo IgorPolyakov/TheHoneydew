@@ -43,5 +43,6 @@ group :test do
   gem 'codeclimate-test-reporter', '~> 1.0.0'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+  gem 'coveralls', require: false
   gem 'simplecov'
 end
