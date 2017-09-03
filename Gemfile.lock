@@ -49,9 +49,6 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
-    bullet (5.6.1)
-      activesupport (>= 3.0.0)
-      uniform_notifier (~> 1.10.0)
     byebug (9.1.0)
     capybara (2.15.1)
       addressable
@@ -231,7 +228,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    uniform_notifier (1.10.0)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -251,7 +247,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   bootstrap-sass
-  bullet
   byebug
   capybara
   codeclimate-test-reporter (~> 1.0.0)
