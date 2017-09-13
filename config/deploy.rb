@@ -78,7 +78,7 @@ task :deploy do
       end
     end
   end
-
+  command %(APP_VERSION="$(git describe --tags)")
   command %(systemctl restart aiskru)
 end
 # For help in making your deploy script, see the Mina documentation:
