@@ -46,7 +46,7 @@ end
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 task :setup do
-  command %(rbenv install 2.4.1)
+  command %(rbenv install 2.4.2)
   # {fetch(:deploy_to)}/#{fetch(:current_path)}
   command %(mkdir -p "#{fetch(:deploy_to)}/shared/config")
   command %(touch "#{fetch(:deploy_to)}/shared/config/database.yml")
