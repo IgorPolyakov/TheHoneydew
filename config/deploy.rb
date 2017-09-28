@@ -62,6 +62,7 @@ task :deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
+    # command %(APP_VERSION="$(git describe --tags)")
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_create'
@@ -73,13 +74,9 @@ task :deploy do
       in_path(fetch(:current_path)) do
         command %(mkdir -p tmp/)
         command %(touch tmp/restart.txt)
-
-        # command %{rails server -}
       end
     end
   end
-  command %(APP_VERSION="$(git describe --tags)")
-  command %(systemctl restart aiskru)
 end
 # For help in making your deploy script, see the Mina documentation:
 #
