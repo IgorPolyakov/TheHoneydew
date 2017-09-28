@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -55,7 +57,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  APP_VERSION = `git describe --tags` unless defined? APP_VERSION
+  APP_VERSION = `git describe --tags`.freeze unless defined? APP_VERSION
   # config.after_initialize do
   #   Bullet.enable = true
   #   Bullet.alert = true

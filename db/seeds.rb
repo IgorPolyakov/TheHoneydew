@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'ffaker'
 Organization.destroy_all
 Person.destroy_all
@@ -10,9 +12,9 @@ def create_inspector(last, first, middle, position)
 end
 
 def create_organization
-  tmp = Organization.new(company_name: FFaker::Company.name, position: FFaker::Job.title)
-  tmp.person = Person.find_by(id: rand(Person.first.id..Person.last.id))
-  tmp.save
+  company = Organization.new(company_name: FFaker::Company.name, position: FFaker::Job.title)
+  company.person = Person.find_by(id: rand(Person.first.id..Person.last.id))
+  company.save
 end
 
 def create_person
@@ -20,11 +22,12 @@ def create_person
 end
 
 def create_check
-  a = Check.new(amount: rand(1..10), checks_number: FFaker::Product.model, check_finish: FFaker::Time.date, reason: 'nill', category: 'nill', violation: 'nill', response_measure: 'nill', direction_status: 'nill', case_number: rand(100..999), number_of_volumes: rand(1..12), for_office: true, executive: 'Anonimus', controll: rand > 0.5, direction_author: 'Anonimus', direction_where: '/dev/null', check_start: FFaker:: Time.date, check_remark_destroy: FFaker::Time.date)
-  a.inspector = Inspector.find_by(id: rand(Inspector.first.id..Inspector.last.id))
-  a.organizations << Organization.find_by(id: rand(Organization.first.id..Organization.last.id))
-  a.people << Person.find_by(id: rand(Person.first.id..Person.last.id))
-  a.save
+  time = Time.now
+  check = Check.new(amount: rand(1..10), checks_number: FFaker::Product.model, check_finish: time + 10.days, reason: 'nill', category: 'nill', violation: 'nill', response_measure: 'nill', direction_status: 'nill', case_number: rand(100..999), number_of_volumes: rand(1..12), for_office: true, executive: 'Anonimus', controll: rand > 0.5, direction_author: 'Anonimus', direction_where: '/dev/null', check_start: time, check_remark_destroy: time + 20.days)
+  check.inspector = Inspector.find_by(id: rand(Inspector.first.id..Inspector.last.id))
+  check.organizations << Organization.find_by(id: rand(Organization.first.id..Organization.last.id))
+  check.people << Person.find_by(id: rand(Person.first.id..Person.last.id))
+  check.save
 end
 # data from URL:https://kru.tomsk.gov.ru/phonebook/department
 create_inspector('Аксиненко', 'Сергей', 'Владимирович', 'Председатель комитета - заместитель начальника управления')

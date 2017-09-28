@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# InspectorsController
 class InspectorsController < ApplicationController
   before_action :set_inspector, only: %i[show edit update destroy]
 
