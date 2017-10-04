@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby2.3
+# frozen_string_literal: true
+
 require 'pathname'
 require 'fileutils'
 include FileUtils

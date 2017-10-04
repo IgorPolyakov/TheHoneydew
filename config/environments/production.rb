@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -18,7 +20,6 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   # fix issuse 53, move ENV['RAILS_SERVE_STATIC_FILES'].present? to TRUE
   config.public_file_server.enabled = true
-
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -42,7 +43,11 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+<<<<<<< HEAD
   # config.force_ssl = true
+=======
+  config.force_ssl = false
+>>>>>>> bcd6b6f0a10d510e3e937f8e4698eca1dc44595c
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.

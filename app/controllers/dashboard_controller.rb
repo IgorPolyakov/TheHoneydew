@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# DashboardController - show current info
 class DashboardController < ApplicationController
   def report; end
 

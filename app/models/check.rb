@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # model describe all check in ai system
 class Check < ApplicationRecord
   def remove_quote(obj, str)

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# ChecksController
 class ChecksController < ApplicationController
   before_action :set_check, only: %i[show edit update destroy]
 

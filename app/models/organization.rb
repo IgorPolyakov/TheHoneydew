@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Organization < ApplicationRecord
   validates :position, :company_name, presence: true
   has_many :reports # , dependent: :destroy

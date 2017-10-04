@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Report < ApplicationRecord
   def remove_quote(obj, str)
     obj.gsub!(/[\[\]\"]/, '') if attribute_present?(str)
