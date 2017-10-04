@@ -14,8 +14,8 @@ require 'mina/rbenv' # for rbenv support. (https://rbenv.org)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
 set :application_name, 'TheHoneydew'
-set :domain, '91.210.186.187'
-# set :domain, 'kru.keva.su'
+# set :domain, '91.210.186.187'
+set :domain, 'kru.keva.su'
 set :deploy_to, '/var/www/project'
 set :shared_path, -> { "#{fetch(:deploy_to)}/shared" }
 set :current_path, -> { "#{fetch(:deploy_to)}/current" }

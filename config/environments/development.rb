@@ -56,12 +56,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-<<<<<<< HEAD
   APP_VERSION = IO.read('.app-version').chomp
-=======
-
-  APP_VERSION = `git describe --tags`.freeze unless defined? APP_VERSION
->>>>>>> bcd6b6f0a10d510e3e937f8e4698eca1dc44595c
   # config.after_initialize do
   #   Bullet.enable = true
   #   Bullet.alert = true
