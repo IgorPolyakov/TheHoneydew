@@ -1,0 +1,27 @@
+[Unit]
+Description=AISKRU
+
+After=network.target
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=deploy
+Group=deploy
+WorkingDirectory=/var/www/project/current
+Environment=RAILS_ENV=production
+PIDFile=/var/www/project/shared/tmp/pids/puma.pid
+#ExecStart=/bin/bash -lc 'RAILS_ENV=production bundle exec puma -e production -d -b unix:///var/www/project/shared/tmp/sockets/puma.sock --pidfile /var/www/project/shared/tmp/pids/puma.pid'
+#ExecStart=/home/deploy/.rbenv/shims/bundle exec puma  -e production -d  config.ru
+ExecStart=/home/deploy/.rbenv/shims/bundle exec puma -e production  ./config.ru --pidfile /var/www/project/shared/tmp/pids/puma.pid -t 2:5 -b unix:///var/www/project/shared/tmp/sockets/puma.sock
+#ExecStart=/home/deploy/.rbenv/shims/bundle exec puma -e production -d -C ./config/puma.rb config.ru --pidfile /var/www/project/shared/tmp/pids/puma.pid
+#ExecReload=/bin/kill -s USR1 $MAINPID
+#ExecStop=/bin/kill -s QUIT $MAINPID
+TimeoutSec=15
+#RestartSec=29s
+#Restart=on-failure
+
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
