@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  scope "(:locale)", :locale => /en|ru/ do
+  scope '(:locale)', locale: /en|ru/ do
     get 'dashboard/report'
 
     devise_for :users, skip: [:sessions]

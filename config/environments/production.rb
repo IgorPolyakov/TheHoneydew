@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -18,7 +20,6 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   # fix issuse 53, move ENV['RAILS_SERVE_STATIC_FILES'].present? to TRUE
   config.public_file_server.enabled = true
-
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier

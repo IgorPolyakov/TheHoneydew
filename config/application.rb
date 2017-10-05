@@ -17,7 +17,7 @@ module TheHoneydew
     config.i18n.fallbacks = true
     config.i18n.enforce_available_locales = false
     config.i18n.default_locale = :ru
-    I18n.config.available_locales = [:en, :ru]
+    I18n.config.available_locales = %i[en ru]
     config.generators.system_tests = nil
     config.generators do |g|
       g.test_framework :rspec
