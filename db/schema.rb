@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20170708062502) do
 
   create_table "reports", id: :serial, force: :cascade do |t|
     t.string "number"
+    t.date "create_report"
     t.date "deadline"
     t.integer "inspector_id"
     t.string "executive"

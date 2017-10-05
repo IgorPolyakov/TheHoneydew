@@ -2,6 +2,7 @@
 <%= f.error_notification %>
 <%= f.input :title_report, placeholder: t(:title_report), label: t(:title_report) %>
 <%= f.input :number, placeholder: t(:number), label: t(:number) %>
+<%= f.input :create_report, label: t(:create_report) %>
 <%= f.input :deadline, label: t(:deadline) %>
 <%= f.input :reason, as: :check_boxes, collection: @reason, label: t(:reason), include_blank: false, include_hidden: false %>
 <%= f.input :result, as: :check_boxes, collection: @result, label: t(:result), include_blank: false, include_hidden: false %>
