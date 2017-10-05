@@ -27,14 +27,14 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
-    @inspectors =  Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
-    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
+    @inspectors =  get_inspectors
+    @organizations = get_organizations
   end
 
   # GET /reports/1/edit
   def edit
-    @inspectors =  Inspector.all.map { |s| ["#{s.last_name} #{s.first_name} - #{s.position}", s.id] }
-    @organizations = Organization.all.map { |s| [s.company_name, s.id] }
+    @inspectors =  get_inspectors
+    @organizations = get_organizations
   end
 
   # POST /reports
@@ -84,6 +84,17 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
 
+  def get_inspectors
+    Inspector.all.map do |inspector|
+      ["#{inspector.last_name} #{inspector.first_name} - #{inspector.position}", inspector.id]
+    end
+  end
+
+  def get_organizations
+    Organization.all.map do |organization|
+      [organization.company_name, organization.id]
+    end
+  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
     params.require(:report).permit(:number, :title_report, :create_report, :deadline, :inspector_id, :organization_id, :executive, result: [], reason: [])

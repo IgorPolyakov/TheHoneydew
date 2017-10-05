@@ -17,7 +17,9 @@ class ChecksController < ApplicationController
   # GET /checks.json
   def index
     @checks = Check.sorted
-    @inspectors = Inspector.all.map { |s| [s.last_name, s.id] }
+    @inspectors = Inspector.all.map do |inspector|
+      [inspector.last_name, inspector.id] 
+    end
   end
 
   # GET /checks/1

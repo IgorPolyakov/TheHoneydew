@@ -19,13 +19,13 @@ module TheHoneydew
     config.i18n.default_locale = :ru
     I18n.config.available_locales = %i[en ru]
     config.generators.system_tests = nil
-    config.generators do |g|
-      g.test_framework :rspec
-      g.integration_tool :rspec
-      g.controller_specs false
-      g.view_specs false
-      g.helper_specs false
-      g.model_specs false
+    config.generators do |config|
+      config.test_framework :rspec
+      config.integration_tool :rspec
+      config.controller_specs false
+      config.view_specs false
+      config.helper_specs false
+      config.model_specs false
     end
   end
 end
