@@ -38,6 +38,16 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= t(:lang) %> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <% if I18n.locale == :en %>
+              <li><%= link_to "Русский", locale: :ru %></li>
+              <% elsif I18n.locale == :ru %>
+              <li><%= link_to "English", locale: :en %></li>
+              <% end %>
+            </ul>
+          </li>
           <li>
             <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %>
           </li>
