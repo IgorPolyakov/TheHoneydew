@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
   before_action :set_checkbox_data
 
   def set_checkbox_data
-    @reason = Report.reason
+    @reason = CheckboxReason.reason
     @result = Report.result
   end
 
@@ -33,8 +33,8 @@ class ReportsController < ApplicationController
 
   # GET /reports/1/edit
   def edit
-    @inspectors =  get_inspectors
-    @organizations = get_organizations
+    @inspectors =  Inspector.get_inspectors
+    @organizations = Organization.get_organizations
   end
 
   # POST /reports

@@ -6,7 +6,7 @@ class ChecksController < ApplicationController
 
   before_action :set_checkbox_data
   def set_checkbox_data
-    @reason = Check.reason
+    @reason = CheckboxReason.reason
     @category = Check.category
     @violation = Check.violation
     @response_measure = Check.response_measure
