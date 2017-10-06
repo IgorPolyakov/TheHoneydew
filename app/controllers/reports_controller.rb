@@ -4,11 +4,11 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
-  before_action :foo
+  before_action :set_checkbox_data
 
-  def foo
-    @reason = [t(:the_qa_and_sar_work_plan), t(:gto_commission), t(:zgto_commission), t(:appeal_of_applicant_organization), t(:other)]
-    @result = [t(:off_control), t(:move_to_inner_control)]
+  def set_checkbox_data
+    @reason = Report.reason
+    @result = Report.result
   end
 
   # GET /reports
@@ -27,8 +27,8 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
-    @inspectors =  get_inspectors
-    @organizations = get_organizations
+    @inspectors =  Inspector.get_inspectors
+    @organizations = Organization.get_organizations
   end
 
   # GET /reports/1/edit
@@ -84,17 +84,6 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
 
-  def get_inspectors
-    Inspector.all.map do |inspector|
-      ["#{inspector.last_name} #{inspector.first_name} - #{inspector.position}", inspector.id]
-    end
-  end
-
-  def get_organizations
-    Organization.all.map do |organization|
-      [organization.company_name, organization.id]
-    end
-  end
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
     params.require(:report).permit(:number, :title_report, :create_report, :deadline, :inspector_id, :organization_id, :executive, result: [], reason: [])

@@ -36,4 +36,59 @@ class Check < ApplicationRecord
     errors.add(:check_remark_destroy, 'check finish less than check_remark_destroy') unless
       check_finish < check_remark_destroy
   end
+
+  def self.reason
+    [
+      I18n.t(:the_qa_and_sar_work_plan),
+      I18n.t(:gto_commission),
+      I18n.t(:zgto_commission),
+      I18n.t(:appeal_of_applicant_organization),
+      I18n.t(:other)
+    ]
+  end
+
+  def self.category
+    [
+      I18n.t(:performance),
+      I18n.t(:preservation_and_use_of_property),
+      I18n.t(:state_municipal_services),
+      I18n.t(:contract_system),
+      I18n.t(:anti_corruption),
+      I18n.t(:for_calls_inappropriate_use_of_budgetary_funds),
+      I18n.t(:challenging_the_actions_of_officials),
+      I18n.t(:others)
+    ]
+  end
+
+  def self.violation
+    [
+      I18n.t(:labor_legislation),
+      I18n.t(:legislation_on_state_and_municipal_services),
+      I18n.t(:legislation_on_the_contract_system),
+      I18n.t(:budget_legislation),
+      I18n.t(:departmental_legislation),
+      I18n.t(:others)
+    ]
+  end
+
+  def self.response_measure
+    [
+      I18n.t(:determination_of_contracts),
+      I18n.t(:disciplinary_action),
+      I18n.t(:repayment_of_funds),
+      I18n.t(:procuracy),
+      I18n.t(:eogv),
+      I18n.t(:control_committee),
+      I18n.t(:false_facts),
+      I18n.t(:others)
+    ]
+  end
+
+  def self.direction_status
+    [
+      I18n.t(:for_information),
+      I18n.t(:for_accept),
+      I18n.t(:for_removal)
+    ]
+  end
 end

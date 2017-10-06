@@ -7,4 +7,10 @@ class Inspector < ApplicationRecord
   def full_name
     "#{last_name} #{first_name} - #{position}"
   end
+
+  def self.get_inspectors
+    all.map do |inspector|
+      ["#{inspector.last_name} #{inspector.first_name} - #{inspector.position}", inspector.id]
+    end
+  end
 end
