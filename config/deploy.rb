@@ -2,10 +2,7 @@
 
 require 'mina/rails'
 require 'mina/git'
-# require 'mina/rvm'
-
-require 'mina/rbenv' # for rbenv support. (https://rbenv.org)
-# require 'mina/rvm'    # for rvm support. (https://rvm.io)
+require 'mina/rbenv'
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -64,7 +61,6 @@ task :deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
-    # command %(APP_VERSION="$(git describe --tags)")
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_create'
@@ -74,8 +70,7 @@ task :deploy do
 
     on :launch do
       in_path(fetch(:current_path)) do
-        command %(mkdir -p tmp/)
-        command %(touch tmp/restart.txt)
+        command %(sudo systemctl resart aiskru.service)
       end
     end
   end
