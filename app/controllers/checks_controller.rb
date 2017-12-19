@@ -16,7 +16,8 @@ class ChecksController < ApplicationController
   # GET /checks
   # GET /checks.json
   def index
-    @checks = Check.sorted
+    @search = Check.ransack(params[:q])
+    @checks = @search.result(distinct: true)
     @inspectors = Inspector.get_inspectors
   end
 

@@ -1,58 +1,85 @@
 <p id="notice"><%= notice %></p>
 <h1><%= t(:checks) %></h1>
-<% if current_user.is_admin == true %>
-<%= link_to t(:new_check), new_check_path, class: 'btn btn-success' %>
+<%= search_form_for @search do |f| %>
+<div class="input-group">
+  <% if current_user.is_admin == true %>
+    <div class="input-group-btn">
+      <%= link_to t(:new_check), new_check_path, class: 'btn btn-success' %>
+    </div>
+  <% end %>
+  <%= f.text_field :reason_or_violation_cont, class: "form-control" %>
+  <div class="input-group-btn">
+    <%= f.submit "Search", class: 'btn btn-default' %>
+  </div>
+</div>
 <% end %>
-
 <table class="table table-hover">
-  <thead>
-    <tr>
-      <th></th>
-      <th>#</th>
-      <th><%= t(:case_number)%></th>
-      <th><%= t(:check_start)%></th>
-      <th><%= t(:check_finish)%></th>
-      <th><%= t(:check_remark_destroy)%></th>
-      <th><%= t(:reason)%></th>
-      <th><%= t(:violation)%></th>
-      <th><%= t(:response_measure)%></th>
-      <th><%= t(:inspector)%></th>
-      <th><%= t(:executive)%></th>
-      <% if current_user.is_admin == true %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
-  </thead>
-  <tbody>
-    <% @checks.each do |check| %>
+<thead>
+  <tr>
+    <th></th>
+    <th>#</th>
+    <th><%= sort_link @search, :case_number, t(:case_number)%></th>
+    <th><%= sort_link @search, :check_start, t(:check_start)%></th>
+    <th><%= sort_link @search, :check_finish, t(:check_finish)%></th>
+    <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy)%></th>
+    <th><%= sort_link @search, :reason, t(:reason)%></th>
+    <th><%= sort_link @search, :violation, t(:violation)%></th>
+    <th><%= sort_link @search, :response_measure, t(:response_measure)%></th>
+    <th><%= sort_link @search, :inspector, t(:inspector)%></th>
+    <th><%= sort_link @search, :executive, t(:executive)%></th>
+    <% if current_user.is_admin == true %>
+      <th colspan="2"></th>
+    <% end %>
+  </tr>
+</thead>
+<tbody>
+  <% @checks.each do |check| %>
     <tr>
       <!-- #TODO: move logic to controller -->
       <% if check.controll %>
         <% if check.check_remark_destroy > DateTime.now.to_date && check.check_remark_destroy < (DateTime.now.to_date - 1.week) %>
-        <td> <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i> </td>
-        <% elsif  (check.check_remark_destroy > (DateTime.now.to_date - 1.week)) %>
-        <td> <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i> </td>
+          <td>
+            <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i>
+          </td>
+          <% elsif  (check.check_remark_destroy > (DateTime.now.to_date - 1.week)) %>
+            <td>
+              <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i>
+            </td>
+          <% else %>
+            <td>
+              <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i>
+            </td>
+          <% end %>
         <% else %>
-        <td> <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i> </td>
+          <td>
+            <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i>
+          </td>
         <% end %>
-      <% else %>
-      <td> <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i> </td>
-      <% end %>
-      <td> <%= link_to check.case_number, check_path(check) %></td>
-      <td> <%= link_to check.checks_number, check_path(check) %></td>
-      <td> <%= link_to check.check_start, check_path(check) %></td>
-      <td> <%= link_to check.check_finish, check_path(check) %></td>
-      <td> <%= link_to check.check_remark_destroy, check_path(check) %></td>
-      <td> <%= link_to check.reason, check_path(check) %></td>
-      <td> <%= link_to check.violation, check_path(check) %></td>
-      <td> <%= link_to check.response_measure, check_path(check) %></td>
-      <td> <%= link_to Inspector.find_by(id: check.inspector_id).full_name, inspector_path(check.inspector_id) %></td>
-      <td> <%= link_to check.executive, check_path(check) %></td>
-      <% if current_user.is_admin == true %>
-        <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
-        <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-      <% end %>
-    </tr>
+        <td>
+          <%= link_to check.case_number, check_path(check) %></td>
+        <td>
+          <%= link_to check.checks_number, check_path(check) %></td>
+        <td>
+          <%= link_to check.check_start, check_path(check) %></td>
+        <td>
+          <%= link_to check.check_finish, check_path(check) %></td>
+        <td>
+          <%= link_to check.check_remark_destroy, check_path(check) %></td>
+        <td>
+          <%= link_to check.reason, check_path(check) %></td>
+        <td>
+          <%= link_to check.violation, check_path(check) %></td>
+        <td>
+          <%= link_to check.response_measure, check_path(check) %></td>
+        <td>
+          <%= link_to Inspector.find_by(id: check.inspector_id).full_name, inspector_path(check.inspector_id) %></td>
+        <td>
+          <%= link_to check.executive, check_path(check) %></td>
+        <% if current_user.is_admin == true %>
+          <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
+          <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+        <% end %>
+      </tr>
     <% end %>
   </tbody>
 </table>

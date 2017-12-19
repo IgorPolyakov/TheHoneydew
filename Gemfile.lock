@@ -1,3 +1,14 @@
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: 724d020442dad60a1a6d9e00bbae7681350c9fb1
+  specs:
+    ransack (1.8.4)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +139,8 @@ GEM
     open4 (1.3.4)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     public_suffix (3.0.1)
     puma (3.11.0)
     rack (2.0.3)
@@ -264,6 +277,7 @@ DEPENDENCIES
   puma
   rails (~> 5.1)
   rails-i18n
+  ransack!
   rspec-rails
   sass-rails
   simple_form
