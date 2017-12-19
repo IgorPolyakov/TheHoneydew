@@ -1,30 +1,40 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t(:reports) %></h1>
-<% if current_user.is_admin == true %>
-  <%= link_to t(:new_report), new_report_path, class: 'btn btn-success' %>
+<%= search_form_for @search do |f| %>
+<div class="input-group">
+  <% if current_user.is_admin == true %>
+    <div class="input-group-btn">
+      <%= link_to t(:new_report), new_report_path, class: 'btn btn-success' %>
+    </div>
+  <% end %>
+  <%= f.text_field :number_or_title_report_or_executive_or_reason_or_result_cont, class: "form-control" %>
+  <div class="input-group-btn">
+    <%= f.submit "Search", class: 'btn btn-default' %>
+  </div>
+</div>
 <% end %>
 <table class="table">
-  <thead>
-    <tr>
-      <th><%= t(:case_number) %></th>
-      <th><%= t(:title_report) %></th>
-      <th><%= t(:deadline) %></th>
-      <th><%= t(:inspector) %></th>
-      <th><%= t(:organization) %></th>
-      <th><%= t(:executive) %></th>
-      <th><%= t(:reason) %></th>
-      <th><%= t(:result) %></th>
-      <% if current_user.is_admin == true %>
-        <th colspan="2"></th>
-        <% else %>
-        <th colspan="1"></th>
-      <% end %>
-    </tr>
-  </thead>
+<thead>
+  <tr>
+    <th><%= sort_link @search, :case_number, t(:case_number) %></th>
+    <th><%= sort_link @search, :title_report, t(:title_report) %></th>
+    <th><%= sort_link @search, :deadline, t(:deadline) %></th>
+    <th><%= sort_link @search, :inspector, t(:inspector) %></th>
+    <th><%= sort_link @search, :organization, t(:organization) %></th>
+    <th><%= sort_link @search, :executive, t(:executive) %></th>
+    <th><%= sort_link @search, :reason, t(:reason) %></th>
+    <th><%= sort_link @search, :result, t(:result) %></th>
+    <% if current_user.is_admin %>
+      <th colspan="2"></th>
+    <% else %>
+      <th colspan="1"></th>
+    <% end %>
+  </tr>
+</thead>
 
-  <tbody>
-    <% @reports.each do |r| %>
+<tbody>
+  <% @reports.each do |r| %>
     <tr>
       <td><%= link_to r.number, report_path(r) %></td>
       <td><%= link_to r.title_report, report_path(r) %></td>
@@ -39,6 +49,6 @@
         <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, r, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
       <% end %>
     </tr>
-    <% end %>
-  </tbody>
+  <% end %>
+</tbody>
 </table>

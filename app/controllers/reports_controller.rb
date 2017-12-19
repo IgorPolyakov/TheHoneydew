@@ -14,7 +14,8 @@ class ReportsController < ApplicationController
   # GET /reports
   # GET /reports.json
   def index
-    @reports = Report.order('created_at DESC')
+    @search = Report.ransack(params[:q])
+    @reports = @search.result(distinct: true).order('created_at DESC')
   end
 
   # GET /reports/1
