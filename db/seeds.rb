@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'ffaker'
 Organization.destroy_all
 Person.destroy_all
 Report.destroy_all

@@ -52,7 +52,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    autoprefixer-rails (7.2.1)
+    autoprefixer-rails (7.2.3)
       execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -100,7 +100,6 @@ GEM
     factory_girl_rails (4.9.0)
       factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
-    ffaker (2.7.0)
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
@@ -197,7 +196,7 @@ GEM
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
     ruby_dep (1.5.0)
-    sass (3.5.3)
+    sass (3.5.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -233,13 +232,13 @@ GEM
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tins (1.16.2)
+    tins (1.16.3)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.0.1)
+    uglifier (4.0.2)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
@@ -262,30 +261,29 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
-  codeclimate-test-reporter (~> 1.0.0)
-  coffee-rails (~> 4.2)
+  codeclimate-test-reporter
+  coffee-rails
   coveralls
   devise
   factory_girl_rails
-  ffaker
   font-awesome-rails
-  jbuilder (~> 2.5)
+  jbuilder
   jquery-rails
   listen
   mina
   pg
   puma
-  rails (~> 5.1)
+  rails
   rails-i18n
   ransack!
   rspec-rails
   sass-rails
   simple_form
   spring
-  spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
-  uglifier (>= 1.3.0)
-  web-console (>= 3.3.0)
+  spring-watcher-listen
+  turbolinks
+  uglifier
+  web-console
 
 BUNDLED WITH
    1.16.0
