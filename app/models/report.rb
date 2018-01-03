@@ -10,6 +10,7 @@ class Report < ApplicationRecord
   end
   belongs_to :inspector # , dependent: :destroy
   belongs_to :organization # , dependent: :destroy иначе удаляет больше одной записи
+  validates :title_report, :number, :executive, presence: true
 
   def self.result
     [
