@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708062502) do
+ActiveRecord::Schema.define(version: 20180103080348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170708062502) do
     t.string "direction_where"
     t.date "check_start"
     t.date "check_remark_destroy"
+    t.string "title_check"
     t.index ["inspector_id"], name: "index_checks_on_inspector_id"
   end
 
