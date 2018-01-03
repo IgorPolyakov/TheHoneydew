@@ -17,7 +17,7 @@ class Check < ApplicationRecord
   belongs_to :inspector
   has_and_belongs_to_many :organizations
   has_and_belongs_to_many :people
-  validates :amount, numericality: { greater_than_or_equal_to: 1, only_integer: true }
+  validates :amount, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 999999999, only_integer: true }
   validate :check_start_less_than_check_finish, :check_finish_more_than_check_start, :check_finish_less_than_check_remark_destroy
 
   private
