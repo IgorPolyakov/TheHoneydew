@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
-ruby '2.4.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
 gem 'devise'
