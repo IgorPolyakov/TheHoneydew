@@ -8,3 +8,8 @@
 How to run develop environment see [this](https://github.com/IgorPolyakov/TheHoneydew/wiki/Run-develop-env).
 
 How to run production environment see [this](https://github.com/IgorPolyakov/TheHoneydew/wiki/Run-production-env).
+
+
+## License
+
+TheHoneydew is released under the [MIT License](https://raw.githubusercontent.com/IgorPolyakov/TheHoneydew/master/LICENSE.md).
