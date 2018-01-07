@@ -40,7 +40,7 @@
                   <li><%= link_to t(:people), people_path %></li>
                   <li><%= link_to t(:organization), organizations_path %></li>
                   <li role="separator" class="divider"></li>
-                  <li class="dropdown-header"><%= APP_VERSION %></li>
+                  <li><%= link_to t(:help), dashboard_info_path %></li>
                 </ul>
               </li>
             </ul>
@@ -59,7 +59,7 @@
                 <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %>
               </li>
             </ul>
-          </div> 
+          </div>
         <% end %>
       </div>
     </nav>

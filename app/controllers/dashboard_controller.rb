@@ -10,4 +10,7 @@ class DashboardController < ApplicationController
     @organization_count = Organization.count
     @inspector_count = Inspector.count
   end
+  def info
+
+  end
 end

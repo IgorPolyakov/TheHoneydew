@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :checks, only: %i[index show]
     resources :people, only: %i[index show]
     get 'dashboard/index'
+    get 'dashboard/info'
 
     root 'dashboard#index'
     resources :organizations, only: %i[index show]
