@@ -4,10 +4,8 @@ bundler_args: --without guard --deployment
 services:
   - postgresql
 rvm:
-  - 2.4.2
+  - 2.5.0
 before_script:
-  - /bin/cp $TRAVIS_BUILD_DIR/config/database.yml.example $TRAVIS_BUILD_DIR/config/database.yml
-  - /bin/cp $TRAVIS_BUILD_DIR/config/database.yml.example $TRAVIS_BUILD_DIR/config/database.yml
   - psql -c 'create database travis_ci_test;' -U postgres
   - bundle exec rake db:migrate
   - bundle exec rake db:seed
