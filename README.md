@@ -5,11 +5,25 @@
 [![Coverage Status](https://coveralls.io/repos/github/IgorPolyakov/TheHoneydew/badge.svg)](https://coveralls.io/github/IgorPolyakov/TheHoneydew)
 [![Dependency Status](https://gemnasium.com/badges/github.com/IgorPolyakov/TheHoneydew.svg)](https://gemnasium.com/github.com/IgorPolyakov/TheHoneydew)
 
-How to run develop environment see [this](https://github.com/IgorPolyakov/TheHoneydew/wiki/Run-develop-env).
-
-How to run production environment see [this](https://github.com/IgorPolyakov/TheHoneydew/wiki/Run-production-env).
 
 
+## Running
+
+Explain how to run the automated tests for this system
+### Build
+```
+sudo docker-compose build
+```
+### Run
+```
+sudo docker-compose up
+```
+
+### Run shell
+```
+sudo docker exec -ti thehoneydew_web_1  /bin/sh
+
+```
 ## License
 
 TheHoneydew is released under the [MIT License](https://raw.githubusercontent.com/IgorPolyakov/TheHoneydew/master/LICENSE.md).
