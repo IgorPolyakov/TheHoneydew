@@ -7,8 +7,8 @@ development:
   <<: *default
   database: TheHoneydew_development
   host: postgres
-  username: <%= ENV.fetch('POSTGRES_USER') %>
-  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 test:
   <<: *default
