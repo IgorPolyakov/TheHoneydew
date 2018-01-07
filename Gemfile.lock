@@ -196,7 +196,7 @@ GEM
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
     ruby_dep (1.5.0)
-    sass (3.5.4)
+    sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -238,6 +238,8 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.3)
+      tzinfo (>= 1.0.0)
     uglifier (4.1.2)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
@@ -257,7 +259,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt (~> 3.1.7)
+  bcrypt
   bootstrap-sass
   byebug
   capybara
@@ -282,8 +284,12 @@ DEPENDENCIES
   spring
   spring-watcher-listen
   turbolinks
+  tzinfo-data
   uglifier
   web-console
 
+RUBY VERSION
+   ruby 2.4.3p205
+
 BUNDLED WITH
-   1.16.0
+   1.16.1

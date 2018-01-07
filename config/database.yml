@@ -6,14 +6,13 @@ default: &default
 development:
   <<: *default
   database: TheHoneydew_development
-  host: localhost
-  username: qwert
-  password: qwert
+  host: postgres
+  username: <%= ENV.fetch('POSTGRES_USER') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
 
 test:
   <<: *default
   database: TheHoneydew_test
 
-
-  production:
-    url: <%= ENV['DATABASE_URL'] %>
+production:
+  url: <%= ENV['DATABASE_URL'] %>

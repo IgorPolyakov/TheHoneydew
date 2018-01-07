@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6.6-alpine
+    environment:
+      - PGDATA=/postgresql
+      - PG_PASSWORD=qwert
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/data/postgresql:/postgresql
+
+  web:
+    build: .
+    command: bundle exec rails s -b 0.0.0.0
+    environment:
+      - RAILS_ENV=development
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=qwert
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
