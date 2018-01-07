@@ -24,6 +24,19 @@ sudo docker-compose up
 sudo docker exec -ti thehoneydew_web_1  /bin/sh
 
 ```
+
+## Deploy
+
+### on Heroku
+
+```
+heroku login
+heroku create
+git push heroku master
+heroku run rake db:migrate
+heroku run rake db:seed
+heroku open
+```
 ## License
 
 TheHoneydew is released under the [MIT License](https://raw.githubusercontent.com/IgorPolyakov/TheHoneydew/master/LICENSE.md).
