@@ -1,4 +1,4 @@
-FROM ruby:2.4.3-alpine
+FROM ruby:2.5-alpine
 
 RUN apk add --update tzdata && \
     cp /usr/share/zoneinfo/Europe/London /etc/localtime && \
