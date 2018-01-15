@@ -1,7 +1,7 @@
 FROM ruby:2.5-alpine
 
 RUN apk add --update tzdata && \
-    cp /usr/share/zoneinfo/Europe/London /etc/localtime && \
+    cp /usr/share/zoneinfo/Asia/Tomsk /etc/localtime && \
     echo "Asia/Tomsk" > /etc/timezone
 
 RUN apk update && apk add nodejs git build-base postgresql-dev
