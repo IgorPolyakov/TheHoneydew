@@ -14,7 +14,7 @@ gem 'jbuilder'
 gem 'jquery-rails'
 gem 'listen'
 gem 'tzinfo-data'
-gem 'pg'
+gem "pg", "< 1.0"
 gem 'puma'
 gem 'rails'
 gem 'rails-i18n'
