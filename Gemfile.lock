@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: be077384c750b86d6975011231b0b8c5aec89b29
+  revision: 8b36204916a0d3c3950cd1fc2e9cdb1f81e61ea5
   specs:
-    ransack (1.8.4)
+    ransack (1.8.6)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       i18n
-      polyamorous (~> 1.3)
+      polyamorous (~> 1.3.2)
 
 GEM
   remote: https://rubygems.org/
@@ -77,7 +77,7 @@ GEM
       thor (~> 0.19.1)
       tins (~> 1.6)
     crass (1.0.3)
-    devise (4.4.0)
+    devise (4.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
@@ -97,7 +97,7 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    i18n (0.9.1)
+    i18n (0.9.3)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -130,10 +130,10 @@ GEM
     open4 (1.3.4)
     orm_adapter (0.5.0)
     pg (0.21.0)
-    polyamorous (1.3.2)
+    polyamorous (1.3.3)
       activerecord (>= 3.0)
     public_suffix (3.0.1)
-    puma (3.11.0)
+    puma (3.11.2)
     rack (2.0.3)
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
@@ -230,9 +230,9 @@ GEM
     turbolinks-source (5.1.0)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    tzinfo-data (1.2017.3)
+    tzinfo-data (1.2018.3)
       tzinfo (>= 1.0.0)
-    uglifier (4.1.3)
+    uglifier (4.1.4)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
