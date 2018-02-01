@@ -37,6 +37,14 @@ heroku run rake db:migrate
 heroku run rake db:seed
 heroku open
 ```
+
+## Locale
+
+Check is everything [OK](https://github.com/glebm/i18n-tasks)?
+```
+i18n-tasks health
+```
+
 ## License
 
 TheHoneydew is released under the [MIT License](https://raw.githubusercontent.com/IgorPolyakov/TheHoneydew/master/LICENSE.md).

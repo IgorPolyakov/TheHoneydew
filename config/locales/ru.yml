@@ -6,7 +6,7 @@ ru:
   are_you_sure: Вы уверены?
   back: Назад
   budget_legislation: бюджетное законодательство
-  case_number: № к. д.
+  case_number: "№ к. д."
   category: Категория проверки
   challenging_the_actions_of_officials: 'для обращений :: оспаривание действий должностных лиц'
   check_created: Проверка успешно создана.
@@ -26,7 +26,6 @@ ru:
   create_report: Дата создания
   deadline: Срок
   departmental_legislation: ведомственное законодательство
-  destroy: Уничтожить
   determination_of_contracts: расторжение трудовых договоров
   direction_author: Направление материалов дела проверки/информационных писем, от кого
   direction_status: Направление материалов дела проверки/информационных писем, тип
@@ -49,6 +48,7 @@ ru:
   for_office: Для служебного пользования
   for_removal: Для устранения нарушений
   gto_commission: поручение ГТО
+  help: Помощь
   inspector: ФИО проверяющего
   inspector_created: Проверяющий успешно создан.
   inspector_destroyed: Проверяющий успешно удален.
@@ -71,6 +71,7 @@ ru:
   number_of_volumes: Количество томов
   off_control: снято с контроля
   organization: Организация
+  organization_and_person: Представитель организации
   organization_created: Организация успешно создана.
   organization_destroyed: Организация успешно удалена.
   organization_updated: Данные организации успешно обновлены.
@@ -100,11 +101,10 @@ ru:
   sign_in: Вход в систему
   sign_out: Выйти из системы
   state_municipal_services: государственные/муниципальные услуги
+  statistic: Генератор отчетов
   the_qa_and_sar_work_plan: план работы КК и ОАР
   title: АИС КРУ
-  title_report: Название дела
   title_check: Название проверки
+  title_report: Название дела
   violation: Установленные нарушения
   zgto_commission: поручение ЗГТО
-  statistic: Генератор отчетов
-  organization_and_person: Представитель организации

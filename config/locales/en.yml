@@ -26,7 +26,6 @@ en:
   create_report: Create report
   deadline: Check expiration date (date of signature)
   departmental_legislation: departmental legislation
-  destroy: Destroy
   determination_of_contracts: termination of employment contracts
   direction_author: Direction of the case, author
   direction_status: Direction of the case review/newsletters
@@ -49,6 +48,7 @@ en:
   for_office: For official use only
   for_removal: To resolve violations
   gto_commission: order GTO
+  help: Help
   inspector: Reviewer NAME
   inspector_created: Inspector was successfully created.
   inspector_destroyed: Inspector was successfully destroyed.
@@ -71,6 +71,7 @@ en:
   number_of_volumes: Number of volumes
   off_control: discontinued controls
   organization: Organization
+  organization_and_person: Representative of the organization
   organization_created: Organization was successfully created.
   organization_destroyed: Organization was successfully destroyed.
   organization_updated: Organization was successfully updated.
@@ -100,11 +101,10 @@ en:
   sign_in: Sign in
   sign_out: Sign out
   state_municipal_services: government/municipal services
+  statistic: Generate report
   the_qa_and_sar_work_plan: the work plan of the QC and SAR
   title: AIS KRU
-  title_report: Report name
   title_check: Check name
+  title_report: Report name
   violation: Confirmed violations
   zgto_commission: order ZGTO
-  statistic: Generate report
-  organization_and_person: Representative of the organization
