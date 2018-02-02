@@ -45,6 +45,14 @@ Check is everything [OK](https://github.com/glebm/i18n-tasks)?
 i18n-tasks health
 ```
 
+## Changelog
+
+All changes you can see [here](https://github.com/IgorPolyakov/TheHoneydew/blob/master/CHANGELOG.md).
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/IgorPolyakov/TheHoneydew/releases).
+
 ## License
 
 TheHoneydew is released under the [MIT License](https://raw.githubusercontent.com/IgorPolyakov/TheHoneydew/master/LICENSE.md).
