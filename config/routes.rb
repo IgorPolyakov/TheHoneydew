@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :direction_statuses
+  resources :response_measures
+  resources :violations
+  resources :reasons
   scope '(:locale)', locale: /en|ru/ do
     get 'dashboard/report'
 
@@ -24,6 +28,7 @@ Rails.application.routes.draw do
       resources :organizations
       resources :reports
       resources :inspectors
+      resources :categories
     end
 
     resources :checks, only: %i[index show]

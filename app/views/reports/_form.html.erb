@@ -4,9 +4,9 @@
 <%= f.input :number, placeholder: t(:number), label: t(:number) %>
 <%= f.input :create_report, label: t(:create_report) %>
 <%= f.input :deadline, label: t(:deadline) %>
-<%= f.input :reason, as: :check_boxes, collection: @reason, label: t(:reason), include_blank: false, include_hidden: false %>
+<%= f.association :reasons, as: :radio_buttons, label_method: :name, label: t(:reason) %>
 <%= f.input :result, as: :check_boxes, collection: @result, label: t(:result), include_blank: false, include_hidden: false %>
-<%= f.association :inspector, label: t(:inspector), :label_method  => lambda { |s| "#{s.last_name} #{s.first_name} - #{s.position}" } %>
+<%= f.association :inspector, label: t(:inspector), label_method: :full_name %>
 <%= f.association :organization, label: t(:organization), label_method:  :company_name  %>
 <%= f.input :executive, label: t(:executive), placeholder: t(:executive) %>
 <%= f.button :submit, t(:save), class: "btn btn-inverse" %>

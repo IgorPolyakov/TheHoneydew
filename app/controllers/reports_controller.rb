@@ -4,13 +4,6 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
 
-  before_action :set_checkbox_data
-
-  def set_checkbox_data
-    @reason = CheckboxReason.reason
-    @result = Report.result
-  end
-
   # GET /reports
   # GET /reports.json
   def index

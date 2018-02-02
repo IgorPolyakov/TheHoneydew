@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103080348) do
+ActiveRecord::Schema.define(version: 20180201232740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_checks", id: false, force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "category_id", null: false
+  end
 
   create_table "checks", id: :serial, force: :cascade do |t|
     t.integer "amount"
@@ -40,6 +51,11 @@ ActiveRecord::Schema.define(version: 20180103080348) do
     t.index ["inspector_id"], name: "index_checks_on_inspector_id"
   end
 
+  create_table "checks_direction_statuses", id: false, force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "direction_status_id", null: false
+  end
+
   create_table "checks_organizations", id: false, force: :cascade do |t|
     t.bigint "check_id", null: false
     t.bigint "organization_id", null: false
@@ -48,6 +64,27 @@ ActiveRecord::Schema.define(version: 20180103080348) do
   create_table "checks_people", id: false, force: :cascade do |t|
     t.bigint "check_id", null: false
     t.bigint "person_id", null: false
+  end
+
+  create_table "checks_reasons", id: false, force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "reason_id", null: false
+  end
+
+  create_table "checks_response_measures", id: false, force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "response_measure_id", null: false
+  end
+
+  create_table "checks_violations", id: false, force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "violation_id", null: false
+  end
+
+  create_table "direction_statuses", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "inspectors", id: :serial, force: :cascade do |t|
@@ -76,6 +113,17 @@ ActiveRecord::Schema.define(version: 20180103080348) do
     t.string "middle_name"
   end
 
+  create_table "reasons", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reasons_reports", id: false, force: :cascade do |t|
+    t.bigint "report_id", null: false
+    t.bigint "reason_id", null: false
+  end
+
   create_table "reports", id: :serial, force: :cascade do |t|
     t.string "number"
     t.date "create_report"
@@ -92,6 +140,12 @@ ActiveRecord::Schema.define(version: 20180103080348) do
     t.index ["organization_id"], name: "index_reports_on_organization_id"
   end
 
+  create_table "response_measures", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "login", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -105,6 +159,12 @@ ActiveRecord::Schema.define(version: 20180103080348) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["login"], name: "index_users_on_login", unique: true
+  end
+
+  create_table "violations", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "checks", "inspectors"

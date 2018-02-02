@@ -43,6 +43,7 @@ group :test do
   gem 'capybara'
   gem 'codeclimate-test-reporter'
   gem 'coveralls', require: false
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
+  gem 'ffaker'
   gem 'rspec-rails'
 end

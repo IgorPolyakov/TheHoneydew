@@ -108,3 +108,8 @@ ru:
   title_report: Название дела
   violation: Установленные нарушения
   zgto_commission: поручение ЗГТО
+  response_measures: response_measures
+  reasons: reasons
+  violations: violations
+  categories: Категории
+  direction_statuses: direction_statuses

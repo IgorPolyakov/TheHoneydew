@@ -7,18 +7,18 @@
 <%= f.input :check_finish, label: t(:check_finish) %>
 <%= f.input :check_remark_destroy, label: t(:check_remark_destroy) %>
 <!-- #TODO Badly dirty hack -->
-<%= f.association :inspector, label: t(:executive), :label_method  => lambda { |s| "#{s.last_name} #{s.first_name} - #{s.position}" } %>
+<%= f.association :inspector, label: t(:executive), label_method: :full_name %>
 <%= f.input :executive, placeholder: t(:inspectors), label: t(:inspectors) %>
 <!-- end -->
 <%= f.association :organizations, as: :select, label_method: :company_name, label: t(:checks_organizations)%>
-<%= f.association :people, as: :select,label_method: :last_name, label: t(:checks_people_organizations)%>
-<%= f.input :reason, label: t(:reason), as: :check_boxes, collection: @reason, include_blank: false, include_hidden: false %>
-<%= f.input :response_measure,label: t(:response_measure), as: :check_boxes, collection: @response_measure, include_blank: false, include_hidden: false  %>
-<%= f.input :violation,label: t(:violation), as: :check_boxes, collection: @violation, include_blank: false, include_hidden: false  %>
-<%= f.input :category,label: t(:category), as: :check_boxes, collection: @category, include_blank: false, include_hidden: false %>
+<%= f.association :people, as: :select, label_method: :last_name, label: t(:checks_people_organizations)%>
+<%= f.association :response_measures, as: :radio_buttons, label_method: :name, label: t(:response_measures) %>
+<%= f.association :reasons, as: :radio_buttons, label_method: :name, label: t(:reasons) %>
+<%= f.association :violations, as: :radio_buttons, label_method: :name, label: t(:violations) %>
+<%= f.association :categories, as: :radio_buttons, label_method: :name, label: t(:categories) %>
+<%= f.association :direction_statuses, as: :radio_buttons, label_method: :name, label: t(:direction_statuses) %>
 <%= f.input :direction_author, label: t(:direction_author) %>
 <%= f.input :direction_where, label: t(:direction_where) %>
-<%= f.input :direction_status,label: t(:direction_status), as: :check_boxes, collection: @direction_status, include_blank: false, include_hidden: false %>
 <%= f.input :case_number, placeholder: t(:case_number), label: t(:case_number) %>
 <%= f.input :number_of_volumes, placeholder: t(:number_of_volumes), label: t(:number_of_volumes) %>
 <%= f.input :for_office, label: t(:for_office) %>

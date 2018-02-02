@@ -4,15 +4,6 @@
 class ChecksController < ApplicationController
   before_action :set_check, only: %i[show edit update destroy]
 
-  before_action :set_checkbox_data
-  def set_checkbox_data
-    @reason = CheckboxReason.reason
-    @category = Check.category
-    @violation = Check.violation
-    @response_measure = Check.response_measure
-    @direction_status = Check.direction_status
-  end
-
   # GET /checks
   # GET /checks.json
   def index
