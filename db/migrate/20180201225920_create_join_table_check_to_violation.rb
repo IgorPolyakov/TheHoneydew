@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateJoinTableCheckToViolation < ActiveRecord::Migration[5.1]
   def change
     create_join_table :checks, :violations do |t|

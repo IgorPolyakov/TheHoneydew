@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateJoinTableCheckToDirectionStatus < ActiveRecord::Migration[5.1]
   def change
     create_join_table :checks, :direction_statuses do |t|

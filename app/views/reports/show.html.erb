@@ -31,11 +31,11 @@
   </p>
   <p>
     <strong><%= t(:reason) %>:</strong>
-    <%= @report.reason %>
+    <%= @report.reason_ids %>
   </p>
   <p>
     <strong><%= t(:result) %>:</strong>
-    <%= @report.result %>
+    <%= @report.result_ids %>
   </p>
 </div>
 <% if current_user.is_admin == true %>

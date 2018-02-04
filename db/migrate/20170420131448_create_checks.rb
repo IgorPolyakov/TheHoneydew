@@ -6,10 +6,6 @@ class CreateChecks < ActiveRecord::Migration[5.0]
       t.integer :amount
       t.string :checks_number
       t.date :deadline
-      t.string :reason
-      t.string :category
-      t.string :violation
-      t.string :response_measure
       t.string :direction
       t.string :case_number
       t.integer :number_of_volumes

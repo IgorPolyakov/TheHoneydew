@@ -7,7 +7,7 @@
       <%= link_to t(:new_check), new_check_path, class: 'btn btn-success' %>
     </div>
   <% end %>
-  <%= f.text_field :reason_or_violation_cont, class: "form-control" %>
+  <%= f.text_field :case_number_cont, class: "form-control" %>
   <div class="input-group-btn">
     <%= f.submit "Search", class: 'btn btn-default' %>
   </div>
@@ -66,11 +66,11 @@
         <td>
           <%= link_to check.check_remark_destroy, check_path(check) %></td>
         <td>
-          <%= link_to check.reason, check_path(check) %></td>
+          <%= link_to check.reasons, check_path(check) %></td>
         <td>
-          <%= link_to check.violation, check_path(check) %></td>
+          <%= link_to check.violations, check_path(check) %></td>
         <td>
-          <%= link_to check.response_measure, check_path(check) %></td>
+          <%= link_to check.response_measures, check_path(check) %></td>
         <td>
           <%= link_to Inspector.find_by(id: check.inspector_id).full_name, inspector_path(check.inspector_id) %></td>
         <td>
