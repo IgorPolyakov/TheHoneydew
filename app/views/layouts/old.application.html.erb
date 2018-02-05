@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t(:title) %></title>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= image_tag("logo.png", :alt => "logo", class: "navbar-brand") %>
+          <%= link_to t(:title), root_path, class: "navbar-brand" %>
+        </div>
+        <% if user_signed_in? %>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to t(:checks), checks_path %>
+              </li>
+              <li>
+                <%= link_to t(:reports), reports_path %>
+              </li>
+              <li>
+                <%= link_to t(:statistic), dashboard_report_path %>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">... <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to t(:inspectors), inspectors_path %></li>
+                  <li><%= link_to t(:people), people_path %></li>
+                  <li><%= link_to t(:organization), organizations_path %></li>
+                  <li role="separator" class="divider"></li>
+                  <li><%= link_to t(:help), dashboard_info_path %></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%= t(:lang) %> <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <% if I18n.locale == :en %>
+                  <li><%= link_to "Русский", locale: :ru %></li>
+                  <% elsif I18n.locale == :ru %>
+                  <li><%= link_to "English", locale: :en %></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li>
+                <%= link_to t(:sign_out), destroy_user_session_path, :method => :delete %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <%= yield %>
+    </div>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+          try {
+            w.yaCounter45451977 = new Ya.Metrika({id: 45451977, clickmap: true, trackLinks: true, accurateTrackBounce: true});
+          } catch (e) {}
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+          s = d.createElement("script"),
+          f = function () {
+            n.parentNode.insertBefore(s, n);
+          };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+          f();
+        }
+      })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/45451977" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+  </body>
+</html>

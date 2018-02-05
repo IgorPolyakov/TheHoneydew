@@ -8,7 +8,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'bcrypt'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'jbuilder'
