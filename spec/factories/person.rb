@@ -8,7 +8,7 @@ FactoryBot.define do
   #   last_name FFaker::Name.last_name
   #   middle_name FFaker::Name.first_name
   # end
-  factory :person_john do
+  factory :person_john, class: Person do
     first_name 'John'
     last_name 'Faker'
     middle_name 'Antuanovich'

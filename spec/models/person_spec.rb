@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe Person, type: :model do
   # some_person = Person.new(first_name: 'nil', last_name: 'nil', middle_name: 'nil')
+  let(:person) { build(:person_john) }
   context 'random' do
-    let(:person) { build(:person_john) }
     it 'ensures first name presence' do
       person.first_name = nil
       expect(person.save).to eq(false)
@@ -22,7 +22,7 @@ RSpec.describe Person, type: :model do
   context 'John' do
     let(:person) { create(:person_john) }
     it 'is show full name' do
-      expect(person).to eq('John Faker Antuanovich')
+      expect(person.full_name).to eq('Faker John Antuanovich')
     end
   end
 end
