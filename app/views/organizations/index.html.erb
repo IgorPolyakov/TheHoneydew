@@ -21,7 +21,7 @@
     <% @organizations.each do |o| %>
       <tr>
         <td><%= link_to o.company_name, organization_path(o) %></td>
-        <td><%= link_to Person.find_by(id: o.person_id).last_name, person_path(o.person_id) %></td>
+        <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
         <td><%= link_to o.position, organization_path(o) %></td>
         <% if current_user.is_admin == true %>
           <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_organization_path(o) %></td>

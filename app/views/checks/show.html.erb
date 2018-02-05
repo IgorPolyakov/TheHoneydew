@@ -67,7 +67,7 @@
 
   <p>
     <strong><%= t(:executive)%>:</strong>
-    <%= Inspector.find_by(id: @check.inspector_id).full_name %>
+    <%= @check.inspector.full_name %>
   </p>
 
   <p>

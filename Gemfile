@@ -27,7 +27,7 @@ gem 'uglifier'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem 'i18n-tasks'
+  gem 'ffaker'
 end
 
 group :development do
@@ -35,6 +35,8 @@ group :development do
   # gem 'bullet'
   gem 'mina'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'i18n-tasks'
+  gem 'rubycritic'
   gem 'spring'
   gem 'spring-watcher-listen'
 end
@@ -44,6 +46,5 @@ group :test do
   gem 'codeclimate-test-reporter'
   gem 'coveralls', require: false
   gem 'factory_bot_rails'
-  gem 'ffaker'
   gem 'rspec-rails'
 end

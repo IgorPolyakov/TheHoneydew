@@ -6,10 +6,8 @@
 <%= f.input :check_start, label: t(:check_start) %>
 <%= f.input :check_finish, label: t(:check_finish) %>
 <%= f.input :check_remark_destroy, label: t(:check_remark_destroy) %>
-<!-- #TODO Badly dirty hack -->
 <%= f.association :inspector, label: t(:executive), label_method: :full_name %>
 <%= f.input :executive, placeholder: t(:inspectors), label: t(:inspectors) %>
-<!-- end -->
 <%= f.association :organizations, as: :select, label_method: :company_name, label: t(:checks_organizations)%>
 <%= f.association :people, as: :select, label_method: :last_name, label: t(:checks_people_organizations)%>
 <%= f.association :response_measures, as: :radio_buttons, label_method: :name, label: t(:response_measures) %>

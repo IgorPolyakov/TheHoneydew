@@ -72,7 +72,7 @@
         <td>
           <%= link_to check.response_measures, check_path(check) %></td>
         <td>
-          <%= link_to Inspector.find_by(id: check.inspector_id).full_name, inspector_path(check.inspector_id) %></td>
+          <%= link_to check.inspector.full_name, inspector_path(check.inspector_id) %></td>
         <td>
           <%= link_to check.executive, check_path(check) %></td>
         <% if current_user.is_admin == true %>
