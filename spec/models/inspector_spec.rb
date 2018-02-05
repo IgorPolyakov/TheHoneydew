@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Inspector, type: :model do
-  let(:some_inspector) { build(:inspector_john) }
+  let(:some_inspector) { build(:inspector_alex) }
   it 'is not valid without first_name' do
     expect(some_inspector).to be_valid
   end

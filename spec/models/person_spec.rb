@@ -3,9 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe Person, type: :model do
-  # some_person = Person.new(first_name: 'nil', last_name: 'nil', middle_name: 'nil')
-  let(:person) { build(:person_john) }
   context 'random' do
+    let(:person) { build(:random_person) }
     it 'ensures first name presence' do
       person.first_name = nil
       expect(person.save).to eq(false)
