@@ -7,13 +7,13 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.json
   def index
-    @organizations = Organization.all
+    @organizations = Organization.all.sorted
   end
 
   # GET /organizations/1
   # GET /organizations/1.json
   def show
-    @person = Person.find(@organization.person_id).last_name
+    @person = @organization.person.full_name
   end
 
   # GET /organizations/new

@@ -8,20 +8,20 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @search = Report.ransack(params[:q])
-    @reports = @search.result(distinct: true).order('created_at DESC')
+    @reports = @search.result(distinct: true).sorted
   end
 
   # GET /reports/1
   # GET /reports/1.json
   def show
-    @inspectors = Inspector.find(@report.inspector_id).full_name
-    @organizations = Organization.find(@report.organization_id).company_name
+    @inspectors = @report.inspector.full_name
+    @organizations = @report.organization.company_name
   end
 
   # GET /reports/new
   def new
     @report = Report.new
-    @inspectors =  Inspector.get_inspectors
+    @inspectors =  Inspector.all.map { |inspector| ["#{inspector.last_name} #{inspector.first_name} - #{inspector.position}", inspector.id] }
     @organizations = Organization.get_organizations
   end
 

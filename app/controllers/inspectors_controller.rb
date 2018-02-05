@@ -7,7 +7,7 @@ class InspectorsController < ApplicationController
   # GET /inspectors
   # GET /inspectors.json
   def index
-    @inspectors = Inspector.all
+    @inspectors = Inspector.all.sorted
   end
 
   # GET /inspectors/1

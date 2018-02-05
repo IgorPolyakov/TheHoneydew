@@ -2,7 +2,6 @@
 
 # model describe all check in ai system
 class Check < ApplicationRecord
-  scope :sorted, -> { order(updated_at: :desc) }
   belongs_to :inspector
   has_and_belongs_to_many :organizations
   has_and_belongs_to_many :people
