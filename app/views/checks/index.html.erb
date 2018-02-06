@@ -1,19 +1,27 @@
 <p id="notice"><%= notice %></p>
 <h1><%= t(:checks) %></h1>
-<%= search_form_for @search do |f| %>
-<div class="input-group">
-  <% if current_user.is_admin == true %>
+<div class="row justify-content-between">
+  <div class="col-lg-2">
+    <% if current_user.is_admin == true %>
     <div class="input-group-btn">
-      <%= link_to t(:new_check), new_check_path, class: 'btn btn-success' %>
+      <%= link_to t(:new_check), new_check_path, class: 'btn btn-outline-success' %>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-lg-3">
+    <%= search_form_for @search do |f| %>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <%= f.text_field :case_number_cont, class: "form-control" %>
+      <label class="btn btn-outline-secondary">
+        <%= f.submit t(:search), type: 'radio' %>
+        <%= t(:search) %>
+      </label>
     </div>
   <% end %>
-  <%= f.text_field :case_number_cont, class: "form-control" %>
-  <div class="input-group-btn">
-    <%= f.submit "Search", class: 'btn btn-default' %>
   </div>
 </div>
-<% end %>
-<table class="table table-hover">
+<br>
+<table class="table">
 <thead>
   <tr>
     <th></th>

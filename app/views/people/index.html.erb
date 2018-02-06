@@ -3,7 +3,7 @@
 <h1><%= t(:people) %></h1>
 
 <% if current_user.is_admin == true %>
-  <%= link_to t(:new_person), new_person_path, class: 'btn btn-success' %>
+  <%= link_to t(:new_person), new_person_path, class: 'btn btn-outline-success' %>
 <% end %>
 
 <table class="table table-hover">

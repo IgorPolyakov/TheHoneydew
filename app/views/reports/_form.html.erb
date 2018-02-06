@@ -9,6 +9,6 @@
 <%= f.association :organization, label: t(:organization), label_method: :company_name %>
 <%= f.association :results, as: :radio_buttons, label: t(:result), label_method: :name %>
 <%= f.input :executive, label: t(:executive), placeholder: t(:executive) %>
-<%= f.button :submit, t(:save), class: "btn btn-inverse" %>
+<%= f.button :submit, t(:save), class: "btn btn-outline-inverse" %>
 <% end %>
 <br>
