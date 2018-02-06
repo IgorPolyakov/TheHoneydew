@@ -3,7 +3,7 @@
 # The "main" locale.
 base_locale: ru
 ## All available locales are inferred from the data by default. Alternatively, specify them explicitly:
-locales: [es, ru]
+locales: [en, ru]
 ## Reporting locale, default: en. Available: en, ru.
 # internal_locale: en
 
@@ -83,9 +83,9 @@ search:
   ## See this example of a custom scanner: https://github.com/glebm/i18n-tasks/wiki/A-custom-scanner-example
 
 ## Google Translate
-# translation:
-#   # Get an API key and set billing info at https://code.google.com/apis/console to use Google Translate
-#   api_key: "AbC-dEf5"
+translation:
+  # Get an API key and set billing info at https://code.google.com/apis/console to use Google Translate
+  api_key: "AIzaSyCauv2HRjprFX3DcGhorJFYGyeVmzvunuc"
 
 ## Do not consider these keys missing:
 # ignore_missing:

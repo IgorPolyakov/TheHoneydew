@@ -7,6 +7,7 @@ en:
   back: Back
   budget_legislation: budget legislation
   case_number: Id control case
+  categories: Categories
   category: Category validation
   challenging_the_actions_of_officials: 'for references: challenging the actions of officials'
   check_created: Check was successfully created.
@@ -29,6 +30,7 @@ en:
   determination_of_contracts: termination of employment contracts
   direction_author: Direction of the case, author
   direction_status: Direction of the case review/newsletters
+  direction_statuses: Direction Status
   direction_where: Direction of the case, where
   disciplinary_action: disciplinary sanctions
   edit: Change
@@ -56,6 +58,7 @@ en:
   inspectors: Validation
   labor_legislation: labour legislation
   lang: Language
+  lang_rus: Lang rus
   last_name: Surname
   legislation_on_state_and_municipal_services: legislation on the State and municipal services
   legislation_on_the_contract_system: legislation on contract system
@@ -88,6 +91,7 @@ en:
   preservation_and_use_of_property: preservation and use of property
   procuracy: 'administrative penalties: prosecutor'
   reason: Base inspection
+  reasons: Causes
   remember_me: Remember me
   repayment_of_funds: return of funds in budget
   report_created: Report was successfully created.
@@ -95,6 +99,7 @@ en:
   report_updated: Report was successfully updated.
   reports: Reports
   response_measure: Response measures
+  response_measures: Response measures
   result: Result
   save: Save
   show: Show
@@ -107,4 +112,5 @@ en:
   title_check: Check name
   title_report: Report name
   violation: Confirmed violations
+  violations: Violations
   zgto_commission: order ZGTO
