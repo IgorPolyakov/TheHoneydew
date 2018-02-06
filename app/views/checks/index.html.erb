@@ -30,9 +30,6 @@
     <th><%= sort_link @search, :check_start, t(:check_start)%></th>
     <th><%= sort_link @search, :check_finish, t(:check_finish)%></th>
     <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy)%></th>
-    <th><%= sort_link @search, :reason, t(:reason)%></th>
-    <th><%= sort_link @search, :violation, t(:violation)%></th>
-    <th><%= sort_link @search, :response_measure, t(:response_measure)%></th>
     <th><%= sort_link @search, :inspector, t(:inspector)%></th>
     <th><%= sort_link @search, :executive, t(:executive)%></th>
     <% if current_user.is_admin == true %>
@@ -73,12 +70,6 @@
           <%= link_to check.check_finish, check_path(check) %></td>
         <td>
           <%= link_to check.check_remark_destroy, check_path(check) %></td>
-        <td>
-          <%= link_to check.reasons, check_path(check) %></td>
-        <td>
-          <%= link_to check.violations, check_path(check) %></td>
-        <td>
-          <%= link_to check.response_measures, check_path(check) %></td>
         <td>
           <%= link_to check.inspector.full_name, inspector_path(check.inspector_id) %></td>
         <td>

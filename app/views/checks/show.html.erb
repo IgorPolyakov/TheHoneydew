@@ -32,22 +32,38 @@
 
   <p>
     <strong><%= t(:reason)%>:</strong>
-    <%= @check.reasons %>
+    <ul>
+      <% @check.reasons.each do |var| %>
+        <li class=""><%= var.name %></li>
+      <% end %>
+    </ul>
   </p>
 
   <p>
     <strong><%= t(:category)%>:</strong>
-    <%= @check.category_ids %>
+    <ul>
+      <% @check.categories.each do |var| %>
+        <li class=""><%= var.name %></li>
+      <% end %>
+    </ul>
   </p>
 
   <p>
     <strong><%= t(:violation)%>:</strong>
-    <%= @check.violations %>
+    <ul>
+      <% @check.violations.each do |var| %>
+        <li class=""><%= var.name %></li>
+      <% end %>
+    </ul>
   </p>
 
   <p>
     <strong><%= t(:response_measure)%>:</strong>
-    <%= @check.response_measures %>
+    <ul>
+      <% @check.response_measures.each do |var| %>
+        <li class=""><%= var.name %></li>
+      <% end %>
+    </ul>
   </p>
 
   <p>
@@ -71,7 +87,8 @@
   </p>
 
   <p>
-    <strong><%= t(:checks_organizations)%>:</strong></p>
+    <strong><%= t(:checks_organizations)%>:</strong>
+  </p>
   <ul>
     <% @check.organizations.each do |var| %>
       <li class=""><%= var.company_name %></li>
@@ -79,7 +96,8 @@
   </ul>
 
   <p>
-    <strong><%= t(:checks_people_organizations)%>:</strong></p>
+    <strong><%= t(:checks_people_organizations)%>:</strong>
+  </p>
   <ul>
     <% @check.people.each do |var| %>
       <li class=""><%= var.last_name %></li>

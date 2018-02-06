@@ -31,11 +31,19 @@
   </p>
   <p>
     <strong><%= t(:reason) %>:</strong>
-    <%= @report.reason_ids %>
+    <ul>
+      <% @report.reasons.each do |var| %>
+        <li class=""><%= var.name %></li>
+      <% end %>
+    </ul>
   </p>
   <p>
     <strong><%= t(:result) %>:</strong>
-    <%= @report.result_ids %>
+    <ul>
+      <% @report.results.each do |var| %>
+        <li class=""><%= var.name %></li>
+      <% end %>
+    </ul>
   </p>
 </div>
 <% if current_user.is_admin == true %>
