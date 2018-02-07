@@ -4,8 +4,8 @@
 <% if current_user.is_admin == true %>
     <%= link_to t(:new_inspector), new_inspector_path, class: 'btn btn-outline-success' %>
 <% end %>
-
-<table class="table table-hover">
+<br>
+<table class="table">
     <thead>
         <tr>
             <th><%= t(:first_name)%></th>
