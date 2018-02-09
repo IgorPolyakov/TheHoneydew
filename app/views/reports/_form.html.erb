@@ -6,7 +6,7 @@
 <%= f.input :deadline, label: t(:deadline) %>
 <%= f.association :reasons, as: :radio_buttons, label_method: :name, label: t(:reason) %>
 <%= f.association :inspector, label: t(:inspector), label_method: :full_name %>
-<%= f.association :organization, label: t(:organization), label_method: :company_name %>
+<%= f.association :organization, label: t(:organization), label_method: :name %>
 <%= f.association :results, as: :radio_buttons, label: t(:result), label_method: :name %>
 <%= f.input :executive, label: t(:executive), placeholder: t(:executive) %>
 <%= f.button :submit, t(:save), class: "btn btn-outline-inverse" %>

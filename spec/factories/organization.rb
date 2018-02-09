@@ -3,7 +3,7 @@
 
 FactoryBot.define do
   factory :random_company, class: Organization do
-    company_name FFaker::Company.name
+    name FFaker::Company.name
     position FFaker::Company.bs
   end
 end

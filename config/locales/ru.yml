@@ -16,7 +16,6 @@ ru:
   checks_number: Номер дела проверки
   checks_organizations: Организации, охваченные проверкой
   checks_people_organizations: Лица, охваченные проверкой
-  company_name: Название компании
   controll: Контроль проверки
   create_report: Дата создания
   deadline: Срок
@@ -44,6 +43,7 @@ ru:
   last_name: Фамилия
   login: Имя пользователя
   middle_name: Отчество
+  name: Название организации
   new_check: Новая проверка
   new_inspector: Добавить проверяющего
   new_organization: Новая организация

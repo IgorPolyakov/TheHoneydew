@@ -15,7 +15,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @inspectors = @report.inspector.full_name
-    @organizations = @report.organization.company_name
+    @organizations = @report.organization.name
   end
 
   # GET /reports/new

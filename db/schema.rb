@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20180204221924) do
   end
 
   create_table "organizations", id: :serial, force: :cascade do |t|
-    t.string "company_name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "position"

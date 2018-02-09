@@ -8,7 +8,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= t(:company_name) %></th>
+      <th><%= t(:name) %></th>
       <th><%= t(:organization_and_person) %></th>
       <th><%= t(:position) %></th>
       <% if current_user.is_admin == true %>
@@ -20,7 +20,7 @@
   <tbody>
     <% @organizations.each do |o| %>
       <tr>
-        <td><%= link_to o.company_name, organization_path(o) %></td>
+        <td><%= link_to o.name, organization_path(o) %></td>
         <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
         <td><%= link_to o.position, organization_path(o) %></td>
         <% if current_user.is_admin == true %>

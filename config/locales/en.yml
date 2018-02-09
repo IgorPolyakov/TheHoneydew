@@ -20,7 +20,6 @@ en:
   checks_number: Case number verification
   checks_organizations: Organizations covered by the test
   checks_people_organizations: Persons covered by the test
-  company_name: The name of the company
   contract_system: the contract system
   control_committee: 'administrative penalties: KRU Supervisory Committee'
   controll: Validation control
@@ -65,6 +64,7 @@ en:
   login: Login
   middle_name: Middle name
   move_to_inner_control: translated into internal control
+  name: The name of the organization
   new_check: New check
   new_inspector: Add reviewer
   new_organization: The new organization
