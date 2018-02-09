@@ -15,7 +15,7 @@ class ReportsController < ApplicationController
   # GET /reports/1.json
   def show
     @inspectors = @report.inspector.full_name
-    @organizations = @report.organization.name
+    @organizations = @report.organization_name
   end
 
   # GET /reports/new
@@ -80,6 +80,6 @@ class ReportsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def report_params
-    params.require(:report).permit(:number, :title_report, :create_report, :deadline, :inspector_id, :organization_id, :executive, {result_ids: []}, {reason_ids: []})
+    params.require(:report).permit(:number, :title_report, :create_report, :deadline, :inspector_id, :organization_id, :executive, { result_ids: [] }, reason_ids: [])
   end
 end
