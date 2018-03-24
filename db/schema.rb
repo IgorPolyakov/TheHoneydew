@@ -53,13 +53,13 @@ ActiveRecord::Schema.define(version: 20180204221924) do
   end
 
   create_table "checks_organizations", id: false, force: :cascade do |t|
-    t.bigint "check_id", null: false
-    t.bigint "organization_id", null: false
+    t.integer "check_id", null: false
+    t.integer "organization_id", null: false
   end
 
   create_table "checks_people", id: false, force: :cascade do |t|
-    t.bigint "check_id", null: false
-    t.bigint "person_id", null: false
+    t.integer "check_id", null: false
+    t.integer "person_id", null: false
   end
 
   create_table "checks_reasons", id: false, force: :cascade do |t|
