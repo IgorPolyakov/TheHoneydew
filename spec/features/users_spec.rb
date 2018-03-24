@@ -7,6 +7,9 @@ describe 'Checking all urls' do
   before(:each) do
     login('alex@mail.ru', 'password')
   end
+  it 'Dashboard' do
+    expect(page).to have_content 'Расширить'
+  end
   it 'Проверки' do
     click_link 'Проверки'
     expect(page).to have_content 'Проверки'
@@ -18,5 +21,17 @@ describe 'Checking all urls' do
   it 'Генератор отчетов' do
     click_link 'Генератор отчетов'
     expect(page).to have_content 'Генератор отчетов'
+  end
+  it 'Проверяющие' do
+    click_link 'Проверяющие'
+    expect(page).to have_content 'Проверяющие'
+  end
+  it 'Должностные лица' do
+    click_link 'Должностные лица'
+    expect(page).to have_content 'Должностные лица'
+  end
+  it 'Организация' do
+    click_link 'Организация'
+    expect(page).to have_content 'Организация'
   end
 end
