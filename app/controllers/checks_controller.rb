@@ -9,7 +9,7 @@ class ChecksController < ApplicationController
   def index
     @search = Check.ransack(params[:q])
     @checks = @search.result(distinct: true)
-    @inspectors = Inspector.get_inspectors
+    @inspectors = Inspector.full_list
   end
 
   # GET /checks/1
@@ -72,6 +72,6 @@ class ChecksController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def check_params
-    params.require(:check).permit(:title_check, :amount, :checks_number, :check_start, :check_remark_destroy, :check_finish, :inspector_id, :executive, { organization_ids: [] }, { person_ids: [] }, { response_measure_ids: [] }, { reason_ids: [] }, { violation_ids: [] }, { category_ids: [] }, { direction_status_ids: [] }, :direction_author, :direction_where, :case_number, :number_of_volumes, :for_office, :controll)
+    params.require(:check).permit(:title_check, :amount, :checks_number, :check_start, :check_remark_destroy, :check_finish, :inspector_id, :executive, { organization_ids: [] }, { person_ids: [] }, { response_measure_ids: [] }, { reason_ids: [] }, { violation_ids: [] }, { category_ids: [] }, { direction_status_ids: [] }, :direction_author, :direction_where, :case_number, :number_of_volumes, :for_office, :control)
   end
 end

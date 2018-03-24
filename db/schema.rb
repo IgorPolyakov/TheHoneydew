@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180204221924) do
     t.datetime "updated_at", null: false
     t.integer "inspector_id"
     t.string "executive"
-    t.boolean "controll"
+    t.boolean "control"
     t.string "direction_author"
     t.string "direction_where"
     t.date "check_start"

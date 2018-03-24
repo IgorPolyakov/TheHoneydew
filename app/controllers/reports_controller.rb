@@ -21,14 +21,14 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
-    @inspectors =  Inspector.all.map { |inspector| ["#{inspector.last_name} #{inspector.first_name} - #{inspector.position}", inspector.id] }
-    @organizations = Organization.get_organizations
+    @inspectors =  Inspector.full_list
+    @organizations = Organization.full_list
   end
 
   # GET /reports/1/edit
   def edit
-    @inspectors =  Inspector.get_inspectors
-    @organizations = Organization.get_organizations
+    @inspectors =  Inspector.full_list
+    @organizations = Organization.full_list
   end
 
   # POST /reports
