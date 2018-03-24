@@ -1,5 +1,30 @@
 # Change Log
 
+## [2.0](https://github.com/IgorPolyakov/TheHoneydew/tree/2.0) (2018-03-24)
+[Full Changelog](https://github.com/IgorPolyakov/TheHoneydew/compare/v1.0...2.0)
+
+**Implemented enhancements:**
+
+- Добавить поиск для "Проверок" [\#72](https://github.com/IgorPolyakov/TheHoneydew/issues/72)
+- Добавить название проверки к "Проверке"  [\#71](https://github.com/IgorPolyakov/TheHoneydew/issues/71)
+- Добавить информации о проекте в README.md [\#69](https://github.com/IgorPolyakov/TheHoneydew/issues/69)
+- Добавить таймаут для сессии [\#51](https://github.com/IgorPolyakov/TheHoneydew/issues/51)
+- Сделать англоязычную версию сайта [\#50](https://github.com/IgorPolyakov/TheHoneydew/issues/50)
+- В контрольных делах, добавить графу "Название дела" [\#49](https://github.com/IgorPolyakov/TheHoneydew/issues/49)
+- Добавить функционал к кнопкам "Расширить" [\#43](https://github.com/IgorPolyakov/TheHoneydew/issues/43)
+- Добавить статус проверки [\#20](https://github.com/IgorPolyakov/TheHoneydew/issues/20)
+
+**Fixed bugs:**
+
+- Некорректное поведение при создании новой проверки [\#67](https://github.com/IgorPolyakov/TheHoneydew/issues/67)
+- Ссылка на "удаление" и "редактирование" обьектов не работает [\#53](https://github.com/IgorPolyakov/TheHoneydew/issues/53)
+- Периодическое отсутствие полей в чекбоксах [\#40](https://github.com/IgorPolyakov/TheHoneydew/issues/40)
+
+**Closed issues:**
+
+- Добавить кнопку "пустого" должностного лица в проверках [\#66](https://github.com/IgorPolyakov/TheHoneydew/issues/66)
+- Удалить автогенерируемые тесты [\#1](https://github.com/IgorPolyakov/TheHoneydew/issues/1)
+
 ## [v1.0](https://github.com/IgorPolyakov/TheHoneydew/tree/v1.0) (2017-07-03)
 [Full Changelog](https://github.com/IgorPolyakov/TheHoneydew/compare/0.99...v1.0)
 
@@ -27,7 +52,6 @@
 - Запретить методы добавления, изменения и удаления записей для Юзера [\#23](https://github.com/IgorPolyakov/TheHoneydew/issues/23)
 - Сделать формы приятными [\#22](https://github.com/IgorPolyakov/TheHoneydew/issues/22)
 - reports not displayed [\#6](https://github.com/IgorPolyakov/TheHoneydew/issues/6)
-- Deploy :: restart webserver [\#3](https://github.com/IgorPolyakov/TheHoneydew/issues/3)
 
 ## [0.99](https://github.com/IgorPolyakov/TheHoneydew/tree/0.99) (2017-05-29)
 **Closed issues:**
