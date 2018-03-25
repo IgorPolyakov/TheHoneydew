@@ -53,6 +53,16 @@ All changes you can see [here](https://github.com/IgorPolyakov/TheHoneydew/blob/
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/IgorPolyakov/TheHoneydew/releases).
 
+## Authors
+
+* **Igor Polyakov** - *initial work* - [IgorPolyakov](https://github.com/IgorPolyakov)
+* **Selivanov Daniil** - *back end & security* - [Layz1337](https://github.com/Layz1337)
+* **Milankovich Margarita** - *back end & database* - [Vexarr](https://github.com/Vexarr)
+* **Malkova Maria** - *front end* - [stelse](https://github.com/stelse)
+* **Andreev Maxim** - *test & locale* - [555Shaman555](https://github.com/555Shaman555)
+
+See also the list of [contributors](https://github.com/IgorPolyakov/TheHoneydew/graphs/contributors) who participated in this project.
+
 ## License
 
 TheHoneydew is released under the [MIT License](https://raw.githubusercontent.com/IgorPolyakov/TheHoneydew/master/LICENSE.md).
