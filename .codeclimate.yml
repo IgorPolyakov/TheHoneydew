@@ -1,5 +1,6 @@
 ---
-engines:
+version: "2"
+plugins:
   brakeman:
     enabled: true
   bundler-audit:
@@ -9,7 +10,7 @@ engines:
     config:
       languages:
       - ruby
-    exclude_paths:
+    exclude_patterns:
       - spec/
   fixme:
     enabled: true
@@ -20,13 +21,7 @@ engines:
         enabled: false
   reek:
     enabled: true
-ratings:
-  paths:
-  - Gemfile.lock
-  - "**.erb"
-  - "**.rb"
-  - "**.rake"
-exclude_paths:
+exclude_patterns:
 - bin/
 - config/
 - public/
