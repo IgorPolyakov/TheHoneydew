@@ -8,7 +8,8 @@ describe 'Checking all urls' do
     login('alex@mail.ru', 'password')
   end
   it 'Dashboard' do
-    expect(page).to have_content 'Расширить'
+    visit root_path
+    expect(page).to have_content 'АИС КРУ'
   end
   it 'Проверки' do
     click_link 'Проверки'
