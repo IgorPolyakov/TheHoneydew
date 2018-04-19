@@ -15,4 +15,7 @@ test:
   database: travis_ci_test
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  <<: *default
+  host: postgres
+  database: TheHoneydew_production
+  # url: <%= ENV['DATABASE_URL'] %>

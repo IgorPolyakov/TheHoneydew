@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   postgres:
     image: postgres:10-alpine
@@ -12,9 +12,9 @@ services:
 
   web:
     build: .
-    command: bundle exec rails s -b 0.0.0.0
+    command: bundle exec rails server
     environment:
-      - RAILS_ENV=development
+      - RAILS_ENV=production
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=qwert
     ports:
