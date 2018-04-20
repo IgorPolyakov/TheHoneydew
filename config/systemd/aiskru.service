@@ -1,0 +1,20 @@
+[Unit]
+Description=AISKRU
+
+After=network.target
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=honeydew
+Group=honeydew
+WorkingDirectory=/home/honeydew/the_honeydew/current
+Environment=RAILS_ENV=production
+#PIDFile=/var/www/project/shared/tmp/pids/puma.pid
+#ExecStart=/home/honeydew/.rbenv/shims/bundle exec puma -e production  ./config.ru --pidfile /var/www/project/shared/tmp/pids/puma.pid -t 2:5 -b unix:///var/www/project/shared/tmp/sockets/puma.sock
+ExecStart=/home/honeydew/.rbenv/shims/bundle exec rails server -e production -p 8080
+Restart=always
+TimeoutSec=15
+
+[Install]
+WantedBy=multi-user.target
