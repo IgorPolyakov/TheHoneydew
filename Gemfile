@@ -9,6 +9,7 @@ end
 
 gem 'bcrypt'
 gem 'bootstrap'
+gem 'bootsnap'
 gem 'devise'
 gem 'font-awesome-rails'
 gem 'jbuilder'
@@ -36,8 +37,8 @@ group :development do
   gem 'mina'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'i18n-tasks'
-  gem 'rubycritic'
   gem 'rubocop'
+  gem 'rubycritic'
   gem 'spring'
   gem 'spring-watcher-listen'
 end
