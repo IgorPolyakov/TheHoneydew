@@ -7,7 +7,8 @@ class OrganizationsController < ApplicationController
   # GET /organizations
   # GET /organizations.json
   def index
-    @organizations = Organization.all.sorted
+    @search = Organization.ransack(params[:q])
+    @organizations = @search.result(distinct: true).sorted
   end
 
   # GET /organizations/1

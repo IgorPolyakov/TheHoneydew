@@ -1,37 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t(:inspectors) %></h1>
-<% if current_user.is_admin == true %>
-    <%= link_to t(:new_inspector), new_inspector_path, class: 'btn btn-outline-success' %>
-<% end %>
+<%= render partial: "shared/searchbar", locals: { path: new_inspector_path, text: t(:new_inspector), search_hash: :first_name_or_last_name_or_middle_name_or_position_cont } %>
 <br>
 <table class="table">
-    <thead>
-        <tr>
-            <th><%= t(:first_name)%></th>
-            <th><%= t(:last_name)%></th>
-            <th><%= t(:middle_name)%></th>
-            <th><%= t(:position)%></th>
-            <% if current_user.is_admin == true %>
-              <th colspan="2"></th>
-            <% end %>
-        </tr>
-    </thead>
+  <thead>
+    <tr>
+      <th><%= t(:first_name)%></th>
+      <th><%= t(:last_name)%></th>
+      <th><%= t(:middle_name)%></th>
+      <th><%= t(:position)%></th>
+      <% if current_user.is_admin == true %>
+        <th colspan="2"></th>
+      <% end %>
+    </tr>
+  </thead>
 
-    <tbody>
-        <% @inspectors.each do |i| %>
-        <tr>
-            <td><%= link_to i.first_name, inspector_path(i) %></td>
-            <td><%= link_to i.last_name, inspector_path(i) %></td>
-            <td><%= link_to i.middle_name, inspector_path(i) %></td>
-            <td><%= link_to i.position, inspector_path(i) %></td>
-            <% if current_user.is_admin == true %>
-                <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_inspector_path(i) %></td>
-                <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, i, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-            <% end %>
-        </tr>
+  <tbody>
+    <% @inspectors.each do |i| %>
+      <tr>
+        <td><%= link_to i.first_name, inspector_path(i) %></td>
+        <td><%= link_to i.last_name, inspector_path(i) %></td>
+        <td><%= link_to i.middle_name, inspector_path(i) %></td>
+        <td><%= link_to i.position, inspector_path(i) %></td>
+        <% if current_user.is_admin == true %>
+          <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_inspector_path(i) %></td>
+          <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, i, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
         <% end %>
-    </tbody>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br>

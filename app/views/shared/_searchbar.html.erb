@@ -1,0 +1,20 @@
+<div class="row justify-content-between">
+  <div class="col-lg-2">
+    <% if current_user.is_admin == true %>
+      <div class="input-group-btn">
+        <%= link_to text, path, class: 'btn btn-outline-success' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-lg-3">
+    <%= search_form_for @search do |f| %>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <%= f.text_field search_hash, class: "form-control" %>
+      <label class="btn btn-outline-secondary">
+        <%= f.submit search_hash, type: 'radio' %>
+        <%= t(:search) %>
+      </label>
+    </div>
+  <% end %>
+</div>
+</div>

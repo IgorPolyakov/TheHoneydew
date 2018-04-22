@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= t(:organizations) %></h1>
-<% if current_user.is_admin == true %>
-  <%= link_to t(:new_organization), new_organization_path, class: 'btn btn-outline-success' %>
-<% end %>
+<%= render partial: "shared/searchbar", locals: {path: new_organization_path, text: t(:new_organization), search_hash: :name_or_position_cont } %>
 <br>
 <table class="table">
   <thead>

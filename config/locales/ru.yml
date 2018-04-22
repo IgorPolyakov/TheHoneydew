@@ -16,7 +16,7 @@ ru:
   checks_number: Номер дела проверки
   checks_organizations: Организации, охваченные проверкой
   checks_people_organizations: Лица, охваченные проверкой
-  controll: Контроль проверки
+  control: Контроль проверки
   create_report: Дата создания
   deadline: Срок
   direction_author: Направление материалов дела проверки/информационных писем, от кого

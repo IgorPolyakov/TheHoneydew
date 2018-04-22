@@ -7,7 +7,8 @@ class InspectorsController < ApplicationController
   # GET /inspectors
   # GET /inspectors.json
   def index
-    @inspectors = Inspector.all.sorted
+    @search = Inspector.ransack(params[:q])
+    @inspectors = @search.result(distinct: true).sorted
   end
 
   # GET /inspectors/1

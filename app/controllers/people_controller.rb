@@ -7,7 +7,8 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.json
   def index
-    @people = Person.all.sorted
+    @search = Person.ransack(params[:q])
+    @people = @search.result(distinct: true).sorted
   end
 
   # GET /people/1
