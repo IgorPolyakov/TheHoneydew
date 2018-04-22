@@ -6,9 +6,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= t(:first_name)%></th>
-      <th><%= t(:last_name)%></th>
-      <th><%= t(:middle_name)%></th>
+      <th><%= t(:first_name) %></th>
+      <th><%= t(:last_name) %></th>
+      <th><%= t(:middle_name) %></th>
       <% if current_user.is_admin == true %>
         <th colspan="2"></th>
       <% end %>
@@ -20,7 +20,7 @@
       <tr>
         <tr>
           <td><%= link_to p.first_name, person_path(p) %></td>
-          <td><%= link_to p.last_name, person_path(p)%></td>
+          <td><%= link_to p.last_name, person_path(p) %></td>
           <td><%= link_to p.middle_name, person_path(p) %></td>
           <% if current_user.is_admin == true %>
             <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_person_path(p) %></td>

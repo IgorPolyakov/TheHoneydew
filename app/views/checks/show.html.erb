@@ -1,37 +1,37 @@
 
 <div class="well well-sm">
   <p>
-    <strong><%= t(:title_check)%>:</strong>
+    <strong><%= t(:title_check) %>:</strong>
     <%= @check.title_check %>
   </p>
 
   <p>
-    <strong><%= t(:amount)%>:</strong>
+    <strong><%= t(:amount) %>:</strong>
     <%= @check.amount %>
   </p>
 
   <p>
-    <strong><%= t(:checks_number)%>:</strong>
+    <strong><%= t(:checks_number) %>:</strong>
     <%= @check.checks_number %>
   </p>
 
   <p>
-    <strong><%= t(:check_start)%>:</strong>
+    <strong><%= t(:check_start) %>:</strong>
     <%= @check.check_start %>
   </p>
 
   <p>
-    <strong><%= t(:check_finish)%>:</strong>
+    <strong><%= t(:check_finish) %>:</strong>
     <%= @check.check_finish %>
   </p>
 
   <p>
-    <strong><%= t(:check_remark_destroy)%>:</strong>
+    <strong><%= t(:check_remark_destroy) %>:</strong>
     <%= @check.check_remark_destroy %>
   </p>
 
   <p>
-    <strong><%= t(:reason)%>:</strong>
+    <strong><%= t(:reason) %>:</strong>
     <ul>
       <% @check.reasons.each do |var| %>
         <li class=""><%= var.name %></li>
@@ -40,7 +40,7 @@
   </p>
 
   <p>
-    <strong><%= t(:category)%>:</strong>
+    <strong><%= t(:category) %>:</strong>
     <ul>
       <% @check.categories.each do |var| %>
         <li class=""><%= var.name %></li>
@@ -49,7 +49,7 @@
   </p>
 
   <p>
-    <strong><%= t(:violation)%>:</strong>
+    <strong><%= t(:violation) %>:</strong>
     <ul>
       <% @check.violations.each do |var| %>
         <li class=""><%= var.name %></li>
@@ -58,7 +58,7 @@
   </p>
 
   <p>
-    <strong><%= t(:response_measure)%>:</strong>
+    <strong><%= t(:response_measure) %>:</strong>
     <ul>
       <% @check.response_measures.each do |var| %>
         <li class=""><%= var.name %></li>
@@ -67,27 +67,27 @@
   </p>
 
   <p>
-    <strong><%= t(:direction_author)%>:</strong>
+    <strong><%= t(:direction_author) %>:</strong>
     <%= @check.direction_author %>
   </p>
 
   <p>
-    <strong><%= t(:direction_where)%>:</strong>
+    <strong><%= t(:direction_where) %>:</strong>
     <%= @check.direction_where %>
   </p>
 
   <p>
-    <strong><%= t(:direction_status)%>:</strong>
+    <strong><%= t(:direction_status) %>:</strong>
     <%= @check.direction_status %>
   </p>
 
   <p>
-    <strong><%= t(:executive)%>:</strong>
+    <strong><%= t(:executive) %>:</strong>
     <%= @check.inspector.full_name %>
   </p>
 
   <p>
-    <strong><%= t(:checks_organizations)%>:</strong>
+    <strong><%= t(:checks_organizations) %>:</strong>
   </p>
   <ul>
     <% @check.organizations.each do |var| %>
@@ -96,7 +96,7 @@
   </ul>
 
   <p>
-    <strong><%= t(:checks_people_organizations)%>:</strong>
+    <strong><%= t(:checks_people_organizations) %>:</strong>
   </p>
   <ul>
     <% @check.people.each do |var| %>
@@ -105,22 +105,22 @@
   </ul>
 
   <p>
-    <strong><%= t(:case_number)%>:</strong>
+    <strong><%= t(:case_number) %>:</strong>
     <%= @check.case_number %>
   </p>
 
   <p>
-    <strong><%= t(:number_of_volumes)%>:</strong>
+    <strong><%= t(:number_of_volumes) %>:</strong>
     <%= @check.number_of_volumes %>
   </p>
 
   <p>
-    <strong><%= t(:for_office)%>:</strong>
+    <strong><%= t(:for_office) %>:</strong>
     <%= @check.for_office %>
   </p>
 
   <p>
-    <strong><%= t(:control)%>:</strong>
+    <strong><%= t(:control) %>:</strong>
     <%= @check.control %>
   </p>
 </div>

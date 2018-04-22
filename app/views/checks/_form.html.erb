@@ -8,8 +8,8 @@
 <%= f.input :check_remark_destroy, label: t(:check_remark_destroy) %>
 <%= f.association :inspector, label: t(:executive), label_method: :full_name %>
 <%= f.input :executive, placeholder: t(:inspectors), label: t(:inspectors) %>
-<%= f.association :organizations, as: :select, label_method: :name, label: t(:checks_organizations)%>
-<%= f.association :people, as: :select, label_method: :last_name, label: t(:checks_people_organizations)%>
+<%= f.association :organizations, as: :select, label_method: :name, label: t(:checks_organizations) %>
+<%= f.association :people, as: :select, label_method: :last_name, label: t(:checks_people_organizations) %>
 <%= f.association :response_measures, as: :radio_buttons, label_method: :name, label: t(:response_measures) %>
 <%= f.association :reasons, as: :radio_buttons, label_method: :name, label: t(:reasons) %>
 <%= f.association :violations, as: :radio_buttons, label_method: :name, label: t(:violations) %>
@@ -21,6 +21,6 @@
 <%= f.input :number_of_volumes, placeholder: t(:number_of_volumes), label: t(:number_of_volumes) %>
 <%= f.input :for_office, label: t(:for_office) %>
 <%= f.input :control, label: t(:control) %>
-<%= f.button :submit , t(:save), class: "btn btn-outline-inverse"%>
+<%= f.button :submit , t(:save), class: "btn btn-outline-inverse" %>
 <% end %>
 <br>

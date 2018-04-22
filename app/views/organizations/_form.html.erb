@@ -1,7 +1,7 @@
 <%= simple_form_for @organization do |f| %>
 <%= f.error_notification %>
 <%= f.input :name, placeholder: t(:name), label: t(:name) %>
-<%= f.association :person, label: t(:organization_and_person), :label_method  => lambda { |s| "#{s.last_name} #{s.first_name} #{s.middle_name}" }  %>
+<%= f.association :person, label: t(:organization_and_person), :label_method => lambda { |s| "#{s.last_name} #{s.first_name} #{s.middle_name}" } %>
 <%= f.input :position, placeholder: t(:position), label: t(:position) %>
 <%= f.button :submit, t(:save), class: "btn btn-outline-inverse" %>
 <% end %>

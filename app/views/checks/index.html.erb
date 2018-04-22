@@ -6,12 +6,12 @@
     <tr>
       <th></th>
       <th>#</th>
-      <th><%= sort_link @search, :case_number, t(:case_number)%></th>
-      <th><%= sort_link @search, :check_start, t(:check_start)%></th>
-      <th><%= sort_link @search, :check_finish, t(:check_finish)%></th>
-      <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy)%></th>
-      <th><%= sort_link @search, :inspector, t(:inspector)%></th>
-      <th><%= sort_link @search, :executive, t(:executive)%></th>
+      <th><%= sort_link @search, :case_number, t(:case_number) %></th>
+      <th><%= sort_link @search, :check_start, t(:check_start) %></th>
+      <th><%= sort_link @search, :check_finish, t(:check_finish) %></th>
+      <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy) %></th>
+      <th><%= sort_link @search, :inspector, t(:inspector) %></th>
+      <th><%= sort_link @search, :executive, t(:executive) %></th>
       <% if current_user.is_admin == true %>
         <th colspan="2"></th>
       <% end %>
