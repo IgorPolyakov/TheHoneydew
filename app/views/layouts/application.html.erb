@@ -20,48 +20,23 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <%= image_tag("logo.png", :alt => "logo", class: "navbar-brand") %>
       <%= link_to t(:title), root_path, class: "navbar-brand" %>
-
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><%= link_to t(:checks), checks_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to t(:reports), reports_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to t(:statistic), dashboard_report_path, class: 'nav-link' %></li>
-          <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="dropdown_left" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown_left">
-              <%= link_to t(:inspectors), inspectors_path, class: 'dropdown-item' %>
-              <%= link_to t(:people), people_path, class: 'dropdown-item' %>
-              <%= link_to t(:organization), organizations_path, class: 'dropdown-item' %>
-              <%= link_to t(:help), dashboard_info_path, class: 'dropdown-item' %>
-            </div>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="dropdown_right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown_right">
-              <% if I18n.locale == :en %>
-                <%= link_to t(:lang_rus), {locale: :ru}, class: 'dropdown-item' %>
-                <% elsif I18n.locale == :ru %>
-                  <%= link_to (:lang_eng), {locale: :en}, class: 'dropdown-item' %>
-                <% end %>
-              </div>
-            </li>
-            <li class="nav-item"><%= link_to t(:sign_out), destroy_user_session_path, class: 'nav-link', :method => :delete %></li>
-          </ul>
+      <% if current_user %>
+        <%= render partial: "shared/navbar_login" %>
+      <% else %>
+        <%= render partial: "shared/navbar_logout" %>
+      <% end %>
+    </nav>
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+      <% elsif alert %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
         </div>
-      </nav>
-      <% if notice %>
-        <div class="alert alert-success" role="alert">
-          <%= notice %>
-        </div>
-        <% elsif alert %>
-          <div class="alert alert-danger" role="alert">
-            <%= alert %>
-          </div>
-        <% end %>
-        <main role="main" class="container">
-          <%= yield %>
-        </main>
-      </body>
-    </html>
+      <% end %>
+      <main role="main" class="container">
+        <%= yield %>
+      </main>
+    </body>
+  </html>
