@@ -8,12 +8,11 @@
   </div>
   <div class="col-lg-3">
     <%= search_form_for @search do |f| %>
-    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <div class="input-group">
       <%= f.text_field search_hash, class: "form-control" %>
-      <label class="btn btn-outline-secondary">
-        <%= f.submit search_hash, type: 'radio' %>
-        <%= t(:search) %>
-      </label>
+      <div class="input-group-append">
+        <%= f.submit search_hash, class: "btn btn-outline-secondary", value: t(:search) %>
+      </div>
     </div>
   <% end %>
 </div>
