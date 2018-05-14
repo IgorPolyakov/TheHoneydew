@@ -21,10 +21,7 @@
         <td><%= link_to i.last_name, inspector_path(i) %></td>
         <td><%= link_to i.middle_name, inspector_path(i) %></td>
         <td><%= link_to i.position, inspector_path(i) %></td>
-        <% if current_user.is_admin == true %>
-          <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_inspector_path(i) %></td>
-          <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, i, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-        <% end %>
+        <%= render partial: "edit_destroy", locals: {obj: i, edit_obj: edit_inspector_path(i) } %>
       </tr>
     <% end %>
   </tbody>

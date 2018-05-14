@@ -27,10 +27,7 @@
         <td><%= link_to Inspector.find(r.inspector_id).full_name, inspector_path(r.inspector_id) %></td>
         <td><%= link_to Organization.find(r.organization_id).name, organization_path(r.organization_id) %></td>
         <td><%= link_to r.executive, report_path(r) %></td>
-        <% if current_user.is_admin == true %>
-          <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_report_path(r) %></td>
-          <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, r, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-        <% end %>
+        <%= render partial: "edit_destroy", locals: {obj: r, edit_obj: edit_report_path(r) } %>
       </tr>
     <% end %>
   </tbody>

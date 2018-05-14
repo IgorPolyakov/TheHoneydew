@@ -19,10 +19,7 @@
         <td><%= link_to o.name, organization_path(o) %></td>
         <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
         <td><%= link_to o.position, organization_path(o) %></td>
-        <% if current_user.is_admin == true %>
-          <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_organization_path(o) %></td>
-          <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, o, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-        <% end %>
+        <%= render partial: "edit_destroy", locals: {obj: o, edit_obj: edit_organization_path(o) } %>
       </tr>
     <% end %>
   </tbody>

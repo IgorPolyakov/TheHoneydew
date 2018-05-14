@@ -20,10 +20,7 @@
           <td><%= link_to p.first_name, person_path(p) %></td>
           <td><%= link_to p.last_name, person_path(p) %></td>
           <td><%= link_to p.middle_name, person_path(p) %></td>
-          <% if current_user.is_admin == true %>
-            <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_person_path(p) %></td>
-            <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, p, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-          <% end %>
+          <%= render partial: "edit_destroy", locals: {obj: p, edit_obj: edit_person_path(p) } %>
         </tr>
       <% end %>
     </tbody>

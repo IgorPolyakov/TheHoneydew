@@ -54,10 +54,7 @@
             <%= link_to check.inspector.full_name, inspector_path(check.inspector_id) %></td>
           <td>
             <%= link_to check.executive, check_path(check) %></td>
-          <% if current_user.is_admin == true %>
-            <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_check_path(check) %></td>
-            <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, check, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
-          <% end %>
+          <%= render partial: "edit_destroy", locals: {obj: check, edit_obj: edit_check_path(check) } %>
         </tr>
       <% end %>
     </tbody>

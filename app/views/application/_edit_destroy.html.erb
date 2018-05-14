@@ -1,0 +1,4 @@
+<% if current_user.is_admin == true %>
+  <td><%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, edit_obj %></td>
+  <td><%= link_to '<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, obj, method: :delete, data: { confirm: t(:are_you_sure) } %></td>
+<% end %>
