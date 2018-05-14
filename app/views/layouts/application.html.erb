@@ -21,9 +21,9 @@
       <%= image_tag("logo.png", :alt => "logo", class: "navbar-brand") %>
       <%= link_to t(:title), root_path, class: "navbar-brand" %>
       <% if current_user %>
-        <%= render partial: "shared/navbar_login" %>
+        <%= render "navbar_login" %>
       <% else %>
-        <%= render partial: "shared/navbar_logout" %>
+        <%= render "navbar_logout" %>
       <% end %>
     </nav>
     <% if notice %>
