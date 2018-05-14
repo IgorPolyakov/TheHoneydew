@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <%= render partial: 'card', locals: {icon: 'fa-users', title: t(:organizations), path: organizations_path, count: @organization_count} %>
-    <%= render partial: 'card', locals: {icon: 'fa-address-card-o', title: t(:inspectors), path: inspectors_path, count: @inspector_count} %>
-    <%= render partial: 'card', locals: {icon: 'fa-comments', title: t(:checks), path: checks_path, count: @check_count} %>
-    <%= render partial: 'card', locals: {icon: 'fa-barcode', title: t(:reports), path: reports_path, count: @report_count} %>
+    <%= render 'card', icon: 'fa-users', title: t(:organizations), path: organizations_path, count: @organization_count %>
+    <%= render 'card', icon: 'fa-address-card-o', title: t(:inspectors), path: inspectors_path, count: @inspector_count %>
+    <%= render 'card', icon: 'fa-comments', title: t(:checks), path: checks_path, count: @check_count %>
+    <%= render 'card', icon: 'fa-barcode', title: t(:reports), path: reports_path, count: @report_count %>
   </div>
 </div>

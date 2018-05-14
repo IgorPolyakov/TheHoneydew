@@ -1,27 +1,27 @@
 <h1><%= t(:people) %></h1>
-<%= render partial: "searchbar", locals: {path: new_person_path, text: t(:new_person), search_hash: :first_name_or_last_name_or_middle_name_cont } %>
+<%= render partial: "searchbar", locals: {search: @search, path: new_person_path, text: t(:new_person), search_hash: :first_name_or_last_name_or_middle_name_cont} %>
 <br>
 <table class="table">
   <thead>
-    <tr>
-      <th><%= t(:first_name) %></th>
-      <th><%= t(:last_name) %></th>
-      <th><%= t(:middle_name) %></th>
-      <% if current_user.is_admin == true %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
+  <tr>
+    <th><%= t(:first_name) %></th>
+    <th><%= t(:last_name) %></th>
+    <th><%= t(:middle_name) %></th>
+    <% if current_user.is_admin == true %>
+      <th colspan="2"></th>
+    <% end %>
+  </tr>
   </thead>
 
   <tbody>
-    <% @people.each do |p| %>
-      <tr>
-        <tr>
-          <td><%= link_to p.first_name, person_path(p) %></td>
-          <td><%= link_to p.last_name, person_path(p) %></td>
-          <td><%= link_to p.middle_name, person_path(p) %></td>
-          <%= render partial: "edit_destroy", locals: {obj: p, edit_obj: edit_person_path(p) } %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @people.each do |p| %>
+    <tr>
+    <tr>
+      <td><%= link_to p.first_name, person_path(p) %></td>
+      <td><%= link_to p.last_name, person_path(p) %></td>
+      <td><%= link_to p.middle_name, person_path(p) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: p, edit_obj: edit_person_path(p)} %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

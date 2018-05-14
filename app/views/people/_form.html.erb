@@ -1,7 +1,7 @@
 <%= simple_form_for @person do |f| %>
-<%= f.error_notification %>
-<%= f.input :last_name, placeholder: t(:last_name), label: t(:last_name) %>
-<%= f.input :first_name, placeholder: t(:first_name), label: t(:first_name) %>
-<%= f.input :middle_name, placeholder: t(:middle_name), label: t(:middle_name) %>
-<%= f.button :submit, t(:save), class: "btn btn-outline-inverse" %>
+  <%= f.error_notification %>
+  <%= f.input :last_name, placeholder: t(:last_name), label: t(:last_name) %>
+  <%= f.input :first_name, placeholder: t(:first_name), label: t(:first_name) %>
+  <%= f.input :middle_name, placeholder: t(:middle_name), label: t(:middle_name) %>
+  <%= f.button :submit, t(:save), class: "btn btn-outline-inverse" %>
 <% end %>

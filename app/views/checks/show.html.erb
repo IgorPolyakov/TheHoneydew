@@ -1,4 +1,3 @@
-
 <div class="well well-sm">
   <p>
     <strong><%= t(:title_check) %>:</strong>
@@ -32,38 +31,38 @@
 
   <p>
     <strong><%= t(:reason) %>:</strong>
-    <ul>
-      <% @check.reasons.each do |var| %>
-        <li class=""><%= var.name %></li>
-      <% end %>
-    </ul>
+  <ul>
+    <% @check.reasons.each do |var| %>
+      <li class=""><%= var.name %></li>
+    <% end %>
+  </ul>
   </p>
 
   <p>
     <strong><%= t(:category) %>:</strong>
-    <ul>
-      <% @check.categories.each do |var| %>
-        <li class=""><%= var.name %></li>
-      <% end %>
-    </ul>
+  <ul>
+    <% @check.categories.each do |var| %>
+      <li class=""><%= var.name %></li>
+    <% end %>
+  </ul>
   </p>
 
   <p>
     <strong><%= t(:violation) %>:</strong>
-    <ul>
-      <% @check.violations.each do |var| %>
-        <li class=""><%= var.name %></li>
-      <% end %>
-    </ul>
+  <ul>
+    <% @check.violations.each do |var| %>
+      <li class=""><%= var.name %></li>
+    <% end %>
+  </ul>
   </p>
 
   <p>
     <strong><%= t(:response_measure) %>:</strong>
-    <ul>
-      <% @check.response_measures.each do |var| %>
-        <li class=""><%= var.name %></li>
-      <% end %>
-    </ul>
+  <ul>
+    <% @check.response_measures.each do |var| %>
+      <li class=""><%= var.name %></li>
+    <% end %>
+  </ul>
   </p>
 
   <p>

@@ -1,34 +1,34 @@
 <h1><%= t(:reports) %></h1>
-<%= render partial: "searchbar", locals: {path: new_report_path, text: t(:new_report), search_hash: :title_report_cont } %>
+<%= render partial: "searchbar", locals: {search: @search, path: new_report_path, text: t(:new_report), search_hash: :title_report_cont } %>
 <br>
 <table class="table">
   <thead>
-    <tr>
-      <th><%= sort_link @search, :case_number, t(:case_number) %></th>
-      <th><%= sort_link @search, :title_report, t(:title_report) %></th>
-      <th><%= sort_link @search, :deadline, t(:deadline) %></th>
-      <th><%= sort_link @search, :inspector, t(:inspector) %></th>
-      <th><%= sort_link @search, :organization, t(:organization) %></th>
-      <th><%= sort_link @search, :executive, t(:executive) %></th>
-      <% if current_user.is_admin %>
-        <th colspan="2"></th>
-      <% else %>
-        <th colspan="1"></th>
-      <% end %>
-    </tr>
+  <tr>
+    <th><%= sort_link @search, :case_number, t(:case_number) %></th>
+    <th><%= sort_link @search, :title_report, t(:title_report) %></th>
+    <th><%= sort_link @search, :deadline, t(:deadline) %></th>
+    <th><%= sort_link @search, :inspector, t(:inspector) %></th>
+    <th><%= sort_link @search, :organization, t(:organization) %></th>
+    <th><%= sort_link @search, :executive, t(:executive) %></th>
+    <% if current_user.is_admin %>
+      <th colspan="2"></th>
+    <% else %>
+      <th colspan="1"></th>
+    <% end %>
+  </tr>
   </thead>
 
   <tbody>
-    <% @reports.each do |r| %>
-      <tr>
-        <td><%= link_to r.number, report_path(r) %></td>
-        <td><%= link_to r.title_report, report_path(r) %></td>
-        <td><%= link_to r.deadline, report_path(r) %></td>
-        <td><%= link_to Inspector.find(r.inspector_id).full_name, inspector_path(r.inspector_id) %></td>
-        <td><%= link_to Organization.find(r.organization_id).name, organization_path(r.organization_id) %></td>
-        <td><%= link_to r.executive, report_path(r) %></td>
-        <%= render partial: "edit_destroy", locals: {obj: r, edit_obj: edit_report_path(r) } %>
-      </tr>
-    <% end %>
+  <% @reports.each do |r| %>
+    <tr>
+      <td><%= link_to r.number, report_path(r) %></td>
+      <td><%= link_to r.title_report, report_path(r) %></td>
+      <td><%= link_to r.deadline, report_path(r) %></td>
+      <td><%= link_to r.inspector.full_name, inspector_path(r.inspector_id) %></td>
+      <td><%= link_to r.organization.name, organization_path(r.organization_id) %></td>
+      <td><%= link_to r.executive, report_path(r) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: r, edit_obj: edit_report_path(r)} %>
+    </tr>
+  <% end %>
   </tbody>
 </table>

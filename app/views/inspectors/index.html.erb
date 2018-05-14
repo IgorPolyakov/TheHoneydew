@@ -1,29 +1,29 @@
 <h1><%= t(:inspectors) %></h1>
-<%= render partial: "searchbar", locals: { path: new_inspector_path, text: t(:new_inspector), search_hash: :first_name_or_last_name_or_middle_name_or_position_cont } %>
+<%= render partial: "searchbar", locals: {search: @search, path: new_inspector_path, text: t(:new_inspector), search_hash: :first_name_or_last_name_or_middle_name_or_position_cont } %>
 <br>
 <table class="table">
   <thead>
-    <tr>
-      <th><%= t(:first_name) %></th>
-      <th><%= t(:last_name) %></th>
-      <th><%= t(:middle_name) %></th>
-      <th><%= t(:position) %></th>
-      <% if current_user.is_admin == true %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
+  <tr>
+    <th><%= t(:first_name) %></th>
+    <th><%= t(:last_name) %></th>
+    <th><%= t(:middle_name) %></th>
+    <th><%= t(:position) %></th>
+    <% if current_user.is_admin == true %>
+      <th colspan="2"></th>
+    <% end %>
+  </tr>
   </thead>
 
   <tbody>
-    <% @inspectors.each do |i| %>
-      <tr>
-        <td><%= link_to i.first_name, inspector_path(i) %></td>
-        <td><%= link_to i.last_name, inspector_path(i) %></td>
-        <td><%= link_to i.middle_name, inspector_path(i) %></td>
-        <td><%= link_to i.position, inspector_path(i) %></td>
-        <%= render partial: "edit_destroy", locals: {obj: i, edit_obj: edit_inspector_path(i) } %>
-      </tr>
-    <% end %>
+  <% @inspectors.each do |i| %>
+    <tr>
+      <td><%= link_to i.first_name, inspector_path(i) %></td>
+      <td><%= link_to i.last_name, inspector_path(i) %></td>
+      <td><%= link_to i.middle_name, inspector_path(i) %></td>
+      <td><%= link_to i.position, inspector_path(i) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: i, edit_obj: edit_inspector_path(i)} %>
+    </tr>
+  <% end %>
   </tbody>
 </table>
 

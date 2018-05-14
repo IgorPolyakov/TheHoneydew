@@ -1,26 +1,26 @@
 <h1><%= t(:organizations) %></h1>
-<%= render partial: "searchbar", locals: {path: new_organization_path, text: t(:new_organization), search_hash: :name_or_position_cont } %>
+<%= render partial: "searchbar", locals: {search: @search, path: new_organization_path, text: t(:new_organization), search_hash: :name_or_position_cont} %>
 <br>
 <table class="table">
   <thead>
-    <tr>
-      <th><%= t(:name) %></th>
-      <th><%= t(:organization_and_person) %></th>
-      <th><%= t(:position) %></th>
-      <% if current_user.is_admin == true %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
+  <tr>
+    <th><%= t(:name) %></th>
+    <th><%= t(:organization_and_person) %></th>
+    <th><%= t(:position) %></th>
+    <% if current_user.is_admin == true %>
+      <th colspan="2"></th>
+    <% end %>
+  </tr>
   </thead>
 
   <tbody>
-    <% @organizations.each do |o| %>
-      <tr>
-        <td><%= link_to o.name, organization_path(o) %></td>
-        <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
-        <td><%= link_to o.position, organization_path(o) %></td>
-        <%= render partial: "edit_destroy", locals: {obj: o, edit_obj: edit_organization_path(o) } %>
-      </tr>
-    <% end %>
+  <% @organizations.each do |o| %>
+    <tr>
+      <td><%= link_to o.name, organization_path(o) %></td>
+      <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
+      <td><%= link_to o.position, organization_path(o) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: o, edit_obj: edit_organization_path(o)} %>
+    </tr>
+  <% end %>
   </tbody>
 </table>
