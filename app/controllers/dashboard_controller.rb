@@ -11,5 +11,10 @@ class DashboardController < ApplicationController
     @inspector_count = Inspector.count
   end
 
-  def info; end
+  def info
+    @app = APP_VERSION
+    @rails = Rails::VERSION::STRING
+    @ruby = RUBY_VERSION
+    @bundler = ENV['BUNDLER_VERSION']
+  end
 end
