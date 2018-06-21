@@ -21,13 +21,13 @@ class ReportsController < ApplicationController
   # GET /reports/new
   def new
     @report = Report.new
-    @inspectors =  Inspector.full_list
+    @inspectors = Inspector.full_list
     @organizations = Organization.full_list
   end
 
   # GET /reports/1/edit
   def edit
-    @inspectors =  Inspector.full_list
+    @inspectors = Inspector.full_list
     @organizations = Organization.full_list
   end
 

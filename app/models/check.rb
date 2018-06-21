@@ -17,17 +17,14 @@ class Check < ApplicationRecord
   private
 
   def check_start_less_than_check_finish
-    errors.add(:check_start, 'check start less than check finish') unless
-      check_start < check_finish
+    errors.add(:check_start, 'check start less than check finish') unless check_start < check_finish
   end
 
   def check_finish_more_than_check_start
-    errors.add(:check_finish, 'check finish more than check start') unless
-      check_start < check_finish
+    errors.add(:check_finish, 'check finish more than check start') unless check_start < check_finish
   end
 
   def check_finish_less_than_check_remark_destroy
-    errors.add(:check_remark_destroy, 'check finish less than check_remark_destroy') unless
-      check_finish < check_remark_destroy
+    errors.add(:check_remark_destroy, 'check finish less than check_remark_destroy') unless check_finish < check_remark_destroy
   end
 end

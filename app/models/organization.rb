@@ -5,6 +5,7 @@ class Organization < ApplicationRecord
   has_many :reports # , dependent: :destroy
   has_and_belongs_to_many :checks
   belongs_to :person
+
   def self.full_list
     all.map do |organization|
       [organization.name, organization.id]

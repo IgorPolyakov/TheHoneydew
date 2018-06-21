@@ -3,59 +3,59 @@
 <br>
 <table class="table">
   <thead>
-    <tr>
-      <th></th>
-      <th>#</th>
-      <th><%= sort_link @search, :case_number, t(:case_number) %></th>
-      <th><%= sort_link @search, :check_start, t(:check_start) %></th>
-      <th><%= sort_link @search, :check_finish, t(:check_finish) %></th>
-      <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy) %></th>
-      <th><%= sort_link @search, :inspector, t(:inspector) %></th>
-      <th><%= sort_link @search, :executive, t(:executive) %></th>
-      <% if current_user.is_admin == true %>
-        <th colspan="2"></th>
-      <% end %>
-    </tr>
+  <tr>
+    <th></th>
+    <th>#</th>
+    <th><%= sort_link @search, :case_number, t(:case_number) %></th>
+    <th><%= sort_link @search, :check_start, t(:check_start) %></th>
+    <th><%= sort_link @search, :check_finish, t(:check_finish) %></th>
+    <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy) %></th>
+    <th><%= sort_link @search, :inspector, t(:inspector) %></th>
+    <th><%= sort_link @search, :executive, t(:executive) %></th>
+    <% if current_user.is_admin == true %>
+      <th colspan="2"></th>
+    <% end %>
+  </tr>
   </thead>
   <tbody>
-    <% @checks.each do |check| %>
-      <tr>
-        <!-- #TODO: move logic to controller -->
-        <% if check.control %>
-          <% if check.check_remark_destroy > DateTime.now.to_date && check.check_remark_destroy < (DateTime.now.to_date - 1.week) %>
-            <td>
-              <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i>
-            </td>
-            <% elsif (check.check_remark_destroy > (DateTime.now.to_date - 1.week)) %>
-              <td>
-                <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i>
-              </td>
-            <% else %>
-              <td>
-                <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i>
-              </td>
-            <% end %>
-          <% else %>
-            <td>
-              <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i>
-            </td>
-          <% end %>
+  <% @checks.each do |check| %>
+    <tr>
+      <!-- #TODO: move logic to controller -->
+      <% if check.control %>
+        <% if check.check_remark_destroy > DateTime.now.to_date && check.check_remark_destroy < (DateTime.now.to_date - 1.week) %>
           <td>
-            <%= link_to check.case_number, check_path(check) %></td>
+            <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i>
+          </td>
+        <% elsif (check.check_remark_destroy > (DateTime.now.to_date - 1.week)) %>
           <td>
-            <%= link_to check.checks_number, check_path(check) %></td>
+            <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i>
+          </td>
+        <% else %>
           <td>
-            <%= link_to check.check_start, check_path(check) %></td>
-          <td>
-            <%= link_to check.check_finish, check_path(check) %></td>
-          <td>
-            <%= link_to check.check_remark_destroy, check_path(check) %></td>
-          <td>
-            <%= link_to check.inspector.full_name, inspector_path(check.inspector_id) %></td>
-          <td>
-            <%= link_to check.executive, check_path(check) %></td>
-          <%= render partial: "edit_destroy", locals: {obj: check, edit_obj: edit_check_path(check)} %>
-        </tr>
+            <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i>
+          </td>
+        <% end %>
+      <% else %>
+        <td>
+          <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i>
+        </td>
       <% end %>
-    </tbody>
-  </table>
+      <td>
+        <%= link_to check.case_number, check_path(check) %></td>
+      <td>
+        <%= link_to check.checks_number, check_path(check) %></td>
+      <td>
+        <%= link_to check.check_start, check_path(check) %></td>
+      <td>
+        <%= link_to check.check_finish, check_path(check) %></td>
+      <td>
+        <%= link_to check.check_remark_destroy, check_path(check) %></td>
+      <td>
+        <%= link_to check.inspector.full_name, inspector_path(check.inspector_id) %></td>
+      <td>
+        <%= link_to check.executive, check_path(check) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: check, edit_obj: edit_check_path(check)} %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
