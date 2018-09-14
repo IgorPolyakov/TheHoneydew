@@ -14,6 +14,18 @@ class Check < ApplicationRecord
   validates :amount, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 999_999_999, only_integer: true }
   validate :check_start_less_than_check_finish, :check_finish_more_than_check_start, :check_finish_less_than_check_remark_destroy
 
+  def status
+    return 'secondary' if under_control?
+
+    if check_remark_destroy > Time.zone.now.to_date && check_remark_destroy < (Time.zone.now.to_date - 1.week)
+      'warning'
+    elsif check_remark_destroy > (Time.zone.now.to_date - 1.week)
+      'success'
+    else
+      'danger'
+    end
+  end
+
   private
 
   def check_start_less_than_check_finish
@@ -26,5 +38,9 @@ class Check < ApplicationRecord
 
   def check_finish_less_than_check_remark_destroy
     errors.add(:check_remark_destroy, 'check finish less than check_remark_destroy') unless check_finish < check_remark_destroy
+  end
+
+  def under_control?
+    control
   end
 end

@@ -1,30 +1,15 @@
 <h1><%= t(:inspectors) %></h1>
 <%= render partial: "searchbar", locals: {search: @search, path: new_inspector_path, text: t(:new_inspector), search_hash: :first_name_or_last_name_or_middle_name_or_position_cont} %>
 <br>
-<table class="table">
-  <thead>
-  <tr>
-    <th><%= t(:first_name) %></th>
-    <th><%= t(:last_name) %></th>
-    <th><%= t(:middle_name) %></th>
-    <th><%= t(:position) %></th>
-    <% if current_user.is_admin == true %>
-      <th colspan="2"></th>
-    <% end %>
-  </tr>
-  </thead>
-
-  <tbody>
+<div class="list-group">
   <% @inspectors.each do |i| %>
-    <tr>
-      <td><%= link_to i.first_name, inspector_path(i) %></td>
-      <td><%= link_to i.last_name, inspector_path(i) %></td>
-      <td><%= link_to i.middle_name, inspector_path(i) %></td>
-      <td><%= link_to i.position, inspector_path(i) %></td>
-      <%= render partial: "edit_destroy", locals: {obj: i, edit_obj: edit_inspector_path(i)} %>
-    </tr>
+    <%= link_to inspector_path(i), class: 'list-group-item list-group-item-action flex-column align-items-start' do %>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><%= i.full_name %></h5>
+        <small class="text-muted"><%= "#{i.reports.count}/#{i.checks.count}" %></small>
+      </div>
+      <small class="text-muted"><%= i.position %></small>
+    <% end %>
   <% end %>
-  </tbody>
-</table>
-
+</div>
 <br>

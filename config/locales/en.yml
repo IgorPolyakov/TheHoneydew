@@ -50,14 +50,14 @@ en:
   for_removal: To resolve violations
   gto_commission: order GTO
   help: Help
-  inspector: Reviewer NAME
+  inspector: Reviewer name
   inspector_created: Inspector was successfully created.
   inspector_destroyed: Inspector was successfully destroyed.
   inspector_updated: Inspector was successfully updated.
   inspectors: Validation
   labor_legislation: labour legislation
   lang: Language
-  lang_rus: Lang rus
+  language: Russian
   last_name: Surname
   legislation_on_state_and_municipal_services: legislation on the State and municipal services
   legislation_on_the_contract_system: legislation on contract system

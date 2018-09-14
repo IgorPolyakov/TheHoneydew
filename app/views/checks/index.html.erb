@@ -1,61 +1,27 @@
 <h1><%= t(:checks) %></h1>
 <%= render partial: "searchbar", locals: {search: @search, path: new_check_path, text: t(:new_report), search_hash: :case_number_cont} %>
 <br>
-<table class="table">
-  <thead>
-  <tr>
-    <th></th>
-    <th>#</th>
-    <th><%= sort_link @search, :case_number, t(:case_number) %></th>
-    <th><%= sort_link @search, :check_start, t(:check_start) %></th>
-    <th><%= sort_link @search, :check_finish, t(:check_finish) %></th>
-    <th><%= sort_link @search, :check_remark_destroy, t(:check_remark_destroy) %></th>
-    <th><%= sort_link @search, :inspector, t(:inspector) %></th>
-    <th><%= sort_link @search, :executive, t(:executive) %></th>
-    <% if current_user.is_admin == true %>
-      <th colspan="2"></th>
-    <% end %>
-  </tr>
-  </thead>
-  <tbody>
-  <% @checks.each do |check| %>
-    <tr>
-      <!-- #TODO: move logic to controller -->
-      <% if check.control %>
-        <% if check.check_remark_destroy > DateTime.now.to_date && check.check_remark_destroy < (DateTime.now.to_date - 1.week) %>
-          <td>
-            <i class="fa fa-question-circle-o fa-5x" style="color:orange;font-size:1.5em "></i>
-          </td>
-        <% elsif (check.check_remark_destroy > (DateTime.now.to_date - 1.week)) %>
-          <td>
-            <i class="fa fa-check-circle-o fa-5x" style="color:green;font-size:1.5em "></i>
-          </td>
-        <% else %>
-          <td>
-            <i class="fa fa-times-circle-o fa-5x" style="color:red;font-size:1.5em "></i>
-          </td>
-        <% end %>
-      <% else %>
-        <td>
-          <i class="fa fa-circle-o  fa-5x" style="color:grey;font-size:1.5em "></i>
-        </td>
-      <% end %>
-      <td>
-        <%= link_to check.case_number, check_path(check) %></td>
-      <td>
-        <%= link_to check.checks_number, check_path(check) %></td>
-      <td>
-        <%= link_to check.check_start, check_path(check) %></td>
-      <td>
-        <%= link_to check.check_finish, check_path(check) %></td>
-      <td>
-        <%= link_to check.check_remark_destroy, check_path(check) %></td>
-      <td>
-        <%= link_to check.inspector.full_name, inspector_path(check.inspector_id) %></td>
-      <td>
-        <%= link_to check.executive, check_path(check) %></td>
-      <%= render partial: "edit_destroy", locals: {obj: check, edit_obj: edit_check_path(check)} %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+<% @checks.each do |check| %>
+  <div class="card border-<%= check.status %> mb-3">
+    <div class="card-body">
+      <span class="badge float-sm-right"><%= l check.updated_at, format: :short %></span>
+      <h5 class="card-title"><%= "\# #{check.case_number} - #{check.title_check}" %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= "#{check.check_start} / #{check.check_finish} / #{check.check_remark_destroy}" %></h6>
+      <p class="card-text"> <%= "#{t(:amount)} - #{check.amount}" %> </p>
+      <div class="collapse" id="collapse_list_<%= check.id %>">
+        <p class="card-text"> <%= "#{t(:checks_number)} - #{check.checks_number}" %> </p>
+        <p class="card-text"> <%= "#{t(:direction_status)} - #{check.direction_status}" %> </p>
+        <p class="card-text"> <%= "#{t(:number_of_volumes)} - #{check.number_of_volumes}" %> </p>
+        <p class="card-text"> <%= "#{t(:for_office)} - #{check.for_office}" %> </p>
+        <p class="card-text"> <%= "#{t(:executive)} - #{check.executive}" %> </p>
+        <p class="card-text"> <%= "#{t(:control)} - #{check.control}" %> </p>
+        <p class="card-text"> <%= "#{t(:direction_author)} - #{check.direction_author}" %> </p>
+        <p class="card-text"> <%= "#{t(:direction_where)} - #{check.direction_where}" %> </p>
+      </div>
+      <a data-toggle="collapse" href="#collapse_list_<%= check.id %>">+</a>
+      <%= link_to check.inspector.full_name, inspector_path(check.inspector_id), class: 'card-link' %>
+      <%= link_to '->', check_path(check), class: 'card-link' %>
+    </div>
+  </div>
+  <br>
+<% end %>

@@ -5,7 +5,11 @@ class Inspector < ApplicationRecord
   has_many :checks # , dependent: :destroy
   has_many :reports # , dependent: :destroy
   def full_name
-    "#{last_name} #{first_name} - #{position}"
+    "#{last_name} #{first_name}"
+  end
+
+  def full_name_with_position
+    "#{full_name} - #{position}"
   end
 
   def self.full_list

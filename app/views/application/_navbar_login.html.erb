@@ -18,9 +18,9 @@
       <a href="#" class="nav-link dropdown-toggle" id="dropdown_right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">...</a>
       <div class="dropdown-menu" aria-labelledby="dropdown_right">
         <% if I18n.locale == :en %>
-          <%= link_to t(:lang_rus), {locale: :ru}, class: 'dropdown-item' %>
+          <%= link_to t(:language), {locale: :ru}, class: 'dropdown-item' %>
         <% elsif I18n.locale == :ru %>
-          <%= link_to (:lang_eng), {locale: :en}, class: 'dropdown-item' %>
+          <%= link_to t(:language), {locale: :en}, class: 'dropdown-item' %>
         <% end %>
       </div>
     </li>
