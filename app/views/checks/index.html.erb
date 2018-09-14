@@ -1,5 +1,5 @@
 <h1><%= t(:checks) %></h1>
-<%= render partial: "searchbar", locals: {search: @search, path: new_check_path, text: t(:new_report), search_hash: :case_number_cont} %>
+<%= render partial: "searchbar", locals: {search: @search, path: new_check_path, text: t(:new_check), search_hash: :case_number_cont} %>
 <br>
 <% @checks.each do |check| %>
   <div class="card border-<%= check.status %> mb-3">
