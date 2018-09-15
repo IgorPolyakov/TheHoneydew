@@ -17,6 +17,9 @@ RSpec.describe Inspector, type: :model do
     expect(some_inspector).to be_valid
   end
   it 'is show full name' do
-    expect(some_inspector.full_name).to eq('Mirror Alex - Worker')
+    expect(some_inspector.full_name).to eq('Mirror Alex')
+  end
+  it 'is show full name with position' do
+    expect(some_inspector.full_name_with_position).to eq('Mirror Alex - Worker')
   end
 end
