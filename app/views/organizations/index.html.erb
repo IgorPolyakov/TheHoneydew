@@ -1,26 +1,15 @@
 <h1><%= t(:organizations) %></h1>
 <%= render partial: "searchbar", locals: {search: @search, path: new_organization_path, text: t(:new_organization), search_hash: :name_or_position_cont} %>
-<br>
-<table class="table">
-  <thead>
-  <tr>
-    <th><%= t(:name) %></th>
-    <th><%= t(:organization_and_person) %></th>
-    <th><%= t(:position) %></th>
-    <% if current_user.is_admin == true %>
-      <th colspan="2"></th>
-    <% end %>
-  </tr>
-  </thead>
 
-  <tbody>
+<br>
+<div class="list-group">
   <% @organizations.each do |o| %>
-    <tr>
-      <td><%= link_to o.name, organization_path(o) %></td>
-      <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
-      <td><%= link_to o.position, organization_path(o) %></td>
-      <%= render partial: "edit_destroy", locals: {obj: o, edit_obj: edit_organization_path(o)} %>
-    </tr>
+    <%= link_to organization_path(o), class: 'list-group-item list-group-item-action flex-column align-items-start' do %>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><%= o.name %></h5>
+      </div>
+      <small class="text-muted"><%= "#{o.person.full_name} - #{o.position}"  %></small>
+    <% end %>
   <% end %>
-  </tbody>
-</table>
+</div>
+<br>

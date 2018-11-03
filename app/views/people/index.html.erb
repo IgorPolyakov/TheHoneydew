@@ -1,27 +1,13 @@
 <h1><%= t(:people) %></h1>
 <%= render partial: "searchbar", locals: {search: @search, path: new_person_path, text: t(:new_person), search_hash: :first_name_or_last_name_or_middle_name_cont} %>
 <br>
-<table class="table">
-  <thead>
-  <tr>
-    <th><%= t(:first_name) %></th>
-    <th><%= t(:last_name) %></th>
-    <th><%= t(:middle_name) %></th>
-    <% if current_user.is_admin == true %>
-      <th colspan="2"></th>
-    <% end %>
-  </tr>
-  </thead>
-
-  <tbody>
+<div class="list-group">
   <% @people.each do |p| %>
-    <tr>
-    <tr>
-      <td><%= link_to p.first_name, person_path(p) %></td>
-      <td><%= link_to p.last_name, person_path(p) %></td>
-      <td><%= link_to p.middle_name, person_path(p) %></td>
-      <%= render partial: "edit_destroy", locals: {obj: p, edit_obj: edit_person_path(p)} %>
-    </tr>
+    <%= link_to person_path(p), class: 'list-group-item list-group-item-action flex-column align-items-start' do %>
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"><%= p.full_name %></h5>
+      </div>
+    <% end %>
   <% end %>
-  </tbody>
-</table>
+</div>
+<br>
