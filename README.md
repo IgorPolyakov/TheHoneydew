@@ -4,42 +4,28 @@
 [![Build Status](https://travis-ci.org/IgorPolyakov/TheHoneydew.svg?branch=master)](https://travis-ci.org/IgorPolyakov/TheHoneydew)
 [![Coverage Status](https://coveralls.io/repos/github/IgorPolyakov/TheHoneydew/badge.svg)](https://coveralls.io/github/IgorPolyakov/TheHoneydew)
 
-## Running
+## HOW TO
 
-Explain how to run the automated tests for this system
-### Build
-```
-sudo docker-compose build
-```
-### Run
-```
-sudo docker-compose up
-```
+Run [developer environment](https://github.com/IgorPolyakov/TheHoneydew/wiki/Run-develop-env).
 
-### Run shell
-```
-sudo docker exec -ti thehoneydew_web_1  /bin/sh
+Run [production environment](https://github.com/IgorPolyakov/TheHoneydew/wiki/Run-production-env).
+
+Deploy on Heroku.
 
 ```
-
-## Deploy
-
-### on Heroku
-
-```
-heroku login
-heroku create
-git push heroku master
-heroku run rake db:migrate
-heroku run rake db:seed
-heroku open
+$ heroku login
+$ heroku create
+$ git push heroku master
+$ heroku run rake db:migrate
+$ heroku run rake db:seed
+$ heroku open
 ```
 
 ## Locale
 
 Check is everything [OK](https://github.com/glebm/i18n-tasks)?
 ```
-i18n-tasks health
+$ i18n-tasks health
 ```
 
 ## Changelog
@@ -52,11 +38,11 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Igor Polyakov** - *initial work* - [IgorPolyakov](https://github.com/IgorPolyakov)
-* **Selivanov Daniil** - *back end & security* - [Layz1337](https://github.com/Layz1337)
-* **Milankovich Margarita** - *back end & database* - [Vexarr](https://github.com/Vexarr)
-* **Malkova Maria** - *front end* - [stelse](https://github.com/stelse)
-* **Andreev Maxim** - *test & locale* - [555Shaman555](https://github.com/555Shaman555)
+*   **Igor Polyakov** - *initial work* - [IgorPolyakov](https://github.com/IgorPolyakov)
+*   **Selivanov Daniil** - *back end & security* - [Layz1337](https://github.com/Layz1337)
+*   **Milankovich Margarita** - *back end & database* - [Vexarr](https://github.com/Vexarr)
+*   **Malkova Maria** - *front end* - [stelse](https://github.com/stelse)
+*   **Andreev Maxim** - *test & locale* - [555Shaman555](https://github.com/555Shaman555)
 
 See also the list of [contributors](https://github.com/IgorPolyakov/TheHoneydew/graphs/contributors) who participated in this project.
 
