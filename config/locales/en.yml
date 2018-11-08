@@ -112,6 +112,8 @@ en:
   title: AIS KRU
   title_check: Check name
   title_report: Report name
+  under_construction: Under construction
   violation: Confirmed violations
   violations: Violations
+  wait_label: Wait
   zgto_commission: order ZGTO

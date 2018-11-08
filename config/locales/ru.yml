@@ -112,6 +112,8 @@ ru:
   title: АИС КРУ
   title_check: Название проверки
   title_report: Название дела
+  under_construction: Раздел еще не закончен
   violation: Установленные нарушения
   violations: Нарушения
+  wait_label: Ожидайте
   zgto_commission: order ZGTO
