@@ -1,5 +1,30 @@
 # Change Log
 
+## [2.1](https://github.com/IgorPolyakov/TheHoneydew/tree/2.1) (2018-11-08)
+[Full Changelog](https://github.com/IgorPolyakov/TheHoneydew/compare/2.0...2.1)
+
+**Implemented enhancements:**
+
+- Переименовать кнопку добавления в разделе Проверки [\#85](https://github.com/IgorPolyakov/TheHoneydew/issues/85)
+- Рефакторинг view search bar [\#79](https://github.com/IgorPolyakov/TheHoneydew/issues/79)
+- Обновить Rails до версии 5.2 [\#77](https://github.com/IgorPolyakov/TheHoneydew/issues/77)
+- Добавить Rails Version на страницу info [\#76](https://github.com/IgorPolyakov/TheHoneydew/issues/76)
+- New front-end [\#63](https://github.com/IgorPolyakov/TheHoneydew/issues/63)
+- Deploy :: restart webserver [\#3](https://github.com/IgorPolyakov/TheHoneydew/issues/3)
+
+**Fixed bugs:**
+
+- Не работает поиск [\#83](https://github.com/IgorPolyakov/TheHoneydew/issues/83)
+- Mina setup copy bad config file [\#61](https://github.com/IgorPolyakov/TheHoneydew/issues/61)
+
+**Merged pull requests:**
+
+- Update ffaker: 2.9.0 → 2.10.0 \(minor\) [\#90](https://github.com/IgorPolyakov/TheHoneydew/pull/90) ([depfu[bot]](https://github.com/apps/depfu))
+- Update capybara: 3.2.1 → 3.4.2 \(minor\) [\#89](https://github.com/IgorPolyakov/TheHoneydew/pull/89) ([depfu[bot]](https://github.com/apps/depfu))
+- Update uglifier: 4.1.12 → 4.1.17 \(patch\) [\#88](https://github.com/IgorPolyakov/TheHoneydew/pull/88) ([depfu[bot]](https://github.com/apps/depfu))
+- Update bootstrap: 4.1.1 → 4.1.3 \(patch\) [\#87](https://github.com/IgorPolyakov/TheHoneydew/pull/87) ([depfu[bot]](https://github.com/apps/depfu))
+- Update bootsnap: 1.3.0 → 1.3.1 \(patch\) [\#86](https://github.com/IgorPolyakov/TheHoneydew/pull/86) ([depfu[bot]](https://github.com/apps/depfu))
+
 ## [2.0](https://github.com/IgorPolyakov/TheHoneydew/tree/2.0) (2018-03-24)
 [Full Changelog](https://github.com/IgorPolyakov/TheHoneydew/compare/v1.0...2.0)
 
