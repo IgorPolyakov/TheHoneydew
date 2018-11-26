@@ -2,8 +2,9 @@
 
 # InspectorsController
 class InspectorsController < ApplicationController
-  before_action :set_inspector, only: %i[show edit update destroy]
-
+  protect_from_forgery
+  before_action :set_inspector, only: %i[show edit update destroy]   
+  
   # GET /inspectors
   # GET /inspectors.json
   def index
@@ -21,13 +22,14 @@ class InspectorsController < ApplicationController
   end
 
   # GET /inspectors/1/edit
-  def edit; end
+  def edit
+    authorize @inspector
+  end
 
   # POST /inspectors
   # POST /inspectors.json
   def create
     @inspector = Inspector.new(inspector_params)
-
     respond_to do |format|
       if @inspector.save
         format.html { redirect_to @inspector, notice: t(:inspector_created) }
@@ -57,6 +59,7 @@ class InspectorsController < ApplicationController
   # DELETE /inspectors/1.json
   def destroy
     @inspector.destroy
+    authorize(inspector, :destroy?)
     respond_to do |format|
       format.html { redirect_to inspectors_url, notice: t(:inspector_destroyed) }
       format.json { head :no_content }

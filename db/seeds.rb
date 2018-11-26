@@ -4,7 +4,7 @@
   {
     login: 'keva',
     password: 'KeV@1SLifE',
-    is_admin: true
+    is_admin: true,
   },
   {
     login: 'user',
@@ -16,7 +16,7 @@
   User.create(
     login: name[:login],
     password: name[:password],
-    is_admin: name[:is_admin]
+    admin: name[:is_admin]
   )
 end
 
