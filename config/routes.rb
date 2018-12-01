@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       end
     end
 
-    authenticate :user, ->(u) { u.is_admin == true } do
+    authenticate :user do
       resources :checks
       resources :people
       resources :organizations

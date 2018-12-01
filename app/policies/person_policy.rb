@@ -1,4 +1,4 @@
-class InspectorPolicy <ApplicationPolicy
+class PersonPolicy <ApplicationPolicy
 
    def destroy?
    	  user.is_admin?

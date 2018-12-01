@@ -18,12 +18,8 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }.merge options
   end
 
-  #def pundit_user
-  #  AuthorizationContext.new(current_user)
-  #end
-
   def user_not_authorized
-    flash[:alert] = 'У вас нет прав сделать это.'
+    flash[:alert] = I18n.t 'controllers.access_denied'
     redirect_back(fallback_location: root_path)
   end
 

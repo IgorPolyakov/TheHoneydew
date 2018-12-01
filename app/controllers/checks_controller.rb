@@ -21,7 +21,9 @@ class ChecksController < ApplicationController
   end
 
   # GET /checks/1/edit
-  def edit; end
+  def edit
+    authorize @check
+  end
 
   # POST /checks
   # POST /checks.json
@@ -57,6 +59,7 @@ class ChecksController < ApplicationController
   # DELETE /checks/1.json
   def destroy
     @check.destroy
+    authorize(check, :destroy?)
     respond_to do |format|
       format.html { redirect_to checks_url, notice: t(:check_destroyed) }
       format.json { head :no_content }

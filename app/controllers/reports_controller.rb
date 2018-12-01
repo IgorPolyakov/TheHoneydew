@@ -29,6 +29,7 @@ class ReportsController < ApplicationController
   def edit
     @inspectors = Inspector.full_list
     @organizations = Organization.full_list
+    authorize @report
   end
 
   # POST /reports
@@ -65,6 +66,7 @@ class ReportsController < ApplicationController
   # DELETE /reports/1.json
   def destroy
     @report.destroy
+    authorize(report, :destroy?)
     respond_to do |format|
       format.html { redirect_to reports_url, notice: t(:report_destroyed) }
       format.json { head :no_content }

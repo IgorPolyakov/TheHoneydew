@@ -117,3 +117,5 @@ en:
   violations: Violations
   wait_label: Wait
   zgto_commission: order ZGTO
+  controllers:
+    access_denied: "Access denied!"
