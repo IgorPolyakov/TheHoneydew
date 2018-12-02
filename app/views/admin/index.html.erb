@@ -35,18 +35,18 @@
   </thead>
 
   <tbody>
-  <% @users.each do |u| %> 
+  <% @users.each do |u| %>
     <tr>
       <td><%= link_to u.id, user_path(u) %></td>
       <td><%= link_to u.login, user_path(u) %></td>
-      <td><%= link_to u.is_admin, user_path(u) %></td>
+      <td> <input type="checkbox" disabled <%= u.is_admin ? 'checked' : '' %>></td>
       <td><%= link_to u.current_sign_in_at, user_path(u) %></td>
       <td><%= link_to u.last_sign_in_at, user_path(u) %></td>
       <%= render partial: "edit_destroy", locals: {obj: u, edit_obj: edit_user_path(u)} %>
     </tr>
   <% end %>
   </tbody>
-</table> 
+</table>
   </div>
   <div class="tab-pane" id="organizations" role="tabpanel" aria-labelledby="organizations-tab">
     <table class="table">
@@ -59,7 +59,7 @@
   </thead>
 
   <tbody>
-  <% @organizations.each do |o| %> 
+  <% @organizations.each do |o| %>
     <tr>
       <td><%= link_to o.name, organization_path(o) %></td>
       <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
