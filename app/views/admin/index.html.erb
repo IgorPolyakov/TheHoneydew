@@ -1,0 +1,183 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link" id="users-tab" data-toggle="tab" href="#users" role="tab" aria-controls="users" aria-selected="true"><%= t(:users) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="organizations-tab" data-toggle="tab" href="#organizations" role="tab" aria-controls="organizations" aria-selected="false"><%= t(:organizations) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="inspectors-tab" data-toggle="tab" href="#inspectors" role="tab" aria-controls="inspectors" aria-selected="false"><%= t(:inspectors) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="people-tab" data-toggle="tab" href="#people" role="tab" aria-controls="people" aria-selected="false"><%= t(:people) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="checks-tab" data-toggle="tab" href="#checks" role="tab" aria-controls="checks" aria-selected="false"><%= t(:checks) %></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="reports-tab" data-toggle="tab" href="#reports" role="tab" aria-controls="reports" aria-selected="false"><%= t(:reports) %></a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="users" role="tabpanel" aria-labelledby="users-tab">
+    <table class="table">
+  <thead>
+  <tr>
+    <th><%= t(:id) %></th>
+    <th><%= t(:login) %></th>
+    <th><%= t(:is_admin) %></th>
+    <th><%= t(:current_sign_in_at) %></th>
+    <th><%= t(:last_sign_in_at) %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |u| %> 
+    <tr>
+      <td><%= link_to u.id, user_path(u) %></td>
+      <td><%= link_to u.login, user_path(u) %></td>
+      <td><%= link_to u.is_admin, user_path(u) %></td>
+      <td><%= link_to u.current_sign_in_at, user_path(u) %></td>
+      <td><%= link_to u.last_sign_in_at, user_path(u) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: u, edit_obj: edit_user_path(u)} %>
+    </tr>
+  <% end %>
+  </tbody>
+</table> 
+  </div>
+  <div class="tab-pane" id="organizations" role="tabpanel" aria-labelledby="organizations-tab">
+    <table class="table">
+  <thead>
+  <tr>
+    <th><%= t(:name) %></th>
+    <th><%= t(:organization_and_person) %></th>
+    <th><%= t(:position) %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @organizations.each do |o| %> 
+    <tr>
+      <td><%= link_to o.name, organization_path(o) %></td>
+      <td><%= link_to o.person.full_name, person_path(o.person_id) %></td>
+      <td><%= link_to o.position, organization_path(o) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: o, edit_obj: edit_organization_path(o)} %>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+  </div>
+  <div class="tab-pane" id="inspectors" role="tabpanel" aria-labelledby="inspectors-tab">
+  <table class="table">
+  <thead>
+  <tr>
+    <th><%= t(:id) %></th>
+    <th><%= t(:last_name) %></th>
+    <th><%= t(:first_name) %></th>
+    <th><%= t(:middle_name) %></th>
+    <th><%= t(:position) %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @inspectors.each do |i| %>
+    <tr>
+    <tr>
+      <td><%= link_to i.id, inspector_path(i) %></td>
+      <td><%= link_to i.last_name, inspector_path(i) %></td>
+      <td><%= link_to i.first_name, inspector_path(i) %></td>
+      <td><%= link_to i.middle_name, inspector_path(i) %></td>
+      <td><%= link_to i.position, inspector_path(i) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: i, edit_obj: edit_inspector_path(i)} %>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+  </div>
+  <div class="tab-pane" id="people" role="tabpanel" aria-labelledby="people-tab">
+    <table class="table">
+  <thead>
+  <tr>
+    <th><%= t(:id) %></th>
+    <th><%= t(:last_name) %></th>
+    <th><%= t(:first_name) %></th>
+    <th><%= t(:middle_name) %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @people.each do |p| %>
+    <tr>
+    <tr>
+      <td><%= link_to p.id, person_path(p) %></td>
+      <td><%= link_to p.last_name, person_path(p) %></td>
+      <td><%= link_to p.first_name, person_path(p) %></td>
+      <td><%= link_to p.middle_name, person_path(p) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: p, edit_obj: edit_person_path(p)} %>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+  </div>
+<div class="tab-pane" id="checks" role="tabpanel" aria-labelledby="checks-tab">
+  <table class="table">
+  <thead>
+  <tr>
+    <th><%= t(:title_check) %></th>
+    <th><%= t(:case_number) %></th>
+    <th><%= t(:check_start) %></th>
+    <th><%= t(:check_finish) %></th>
+    <th><%= t(:check_remark_destroy) %></th>
+    <th><%= t(:amount) %></th>
+    <th><%= t(:inspector) %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @checks.each do |c| %>
+    <tr>
+    <tr>
+      <td><%= link_to c.title_check, check_path(c) %></td>
+      <td><%= link_to c.case_number, check_path(c) %></td>
+      <td><%= link_to c.check_start, check_path(c) %></td>
+      <td><%= link_to c.check_finish, check_path(c) %></td>
+      <td><%= link_to c.check_remark_destroy, check_path(c) %></td>
+      <td><%= link_to c.amount, check_path(c) %></td>
+      <td><%= link_to c.inspector.full_name, inspector_path(c.id) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: c, edit_obj: edit_check_path(c)} %>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+  </div>
+<div class="tab-pane" id="reports" role="tabpanel" aria-labelledby="reports-tab">
+  <table class="table">
+  <thead>
+  <tr>
+    <th><%= sort_link @search, :case_number, t(:case_number) %></th>
+    <th><%= sort_link @search, :title_report, t(:title_report) %></th>
+    <th><%= sort_link @search, :deadline, t(:deadline) %></th>
+    <th><%= sort_link @search, :inspector, t(:inspector) %></th>
+    <th><%= sort_link @search, :organization, t(:organization) %></th>
+    <th><%= sort_link @search, :executive, t(:executive) %></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @reports.each do |r| %>
+    <tr>
+      <td><%= link_to r.number, report_path(r) %></td>
+      <td><%= link_to r.title_report, report_path(r) %></td>
+      <td><%= link_to r.deadline, report_path(r) %></td>
+      <td><%= link_to r.inspector.full_name, inspector_path(r.inspector_id) %></td>
+      <td><%= link_to r.organization.name, organization_path(r.organization_id) %></td>
+      <td><%= link_to r.executive, report_path(r) %></td>
+      <%= render partial: "edit_destroy", locals: {obj: r, edit_obj: edit_report_path(r)} %>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+</div>

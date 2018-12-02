@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'admin/index'
+  get 'users/index'
   resources :direction_statuses
   resources :response_measures
   resources :violations
@@ -22,7 +24,18 @@ Rails.application.routes.draw do
       end
     end
 
-    authenticate :user do
+    authenticate :user, -> (u) {u.is_admin == true} do
+      resources :checks
+      resources :people
+      resources :organizations
+      resources :reports
+      resources :inspectors
+      resources :categories
+      resources :users
+      resource  :admin
+    end
+
+authenticate :user, -> (u) {u.is_admin == false} do
       resources :checks
       resources :people
       resources :organizations

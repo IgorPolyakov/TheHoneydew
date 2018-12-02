@@ -1,0 +1,27 @@
+<div class="well well-sm">
+  <p>
+    <strong><%= t(:id) %>:</strong>
+    <%= @user.id %>
+  </p>
+  <p>
+    <strong><%= t(:login) %>:</strong>
+    <%= @user.login %>
+  </p>
+  <p>
+    <strong><%= t(:is_admin) %>:</strong>
+    <%= @user.is_admin %>
+  </p>
+   <p>
+    <strong><%= t(:current_sign_in_at) %>:</strong>
+    <%= @user.current_sign_in_at %>
+  </p>
+   <p>
+    <strong><%= t(:last_sign_in_at) %>:</strong>
+    <%= @user.last_sign_in_at %>
+  </p>
+</div>
+<% if current_user.is_admin == true %>
+  <%= link_to t(:edit), edit_user_path(@user) %>
+  |
+<% end %>
+<%= link_to t(:back), admin_index_path %>

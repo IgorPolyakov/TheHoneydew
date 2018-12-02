@@ -1,0 +1,6 @@
+<%= simple_form_for @user do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :login, placeholder: t(:login), label: t(:login) %>
+  <%= f.input :is_admin, placeholder: t(:is_admin), label: t(:is_admin) %>
+  <%= f.button :submit, t(:save), class: "btn btn-outline-inverse" %>
+<% end %>

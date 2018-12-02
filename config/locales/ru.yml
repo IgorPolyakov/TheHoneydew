@@ -1,5 +1,6 @@
 ---
 ru:
+  admin_panel: Панель управления
   amount: Количество проверок
   anti_corruption: combating corruption
   appeal_of_applicant_organization: treatment of applicant/organization
@@ -113,6 +114,7 @@ ru:
   title_check: Название проверки
   title_report: Название дела
   under_construction: Раздел еще не закончен
+  users: Пользователи
   violation: Установленные нарушения
   violations: Нарушения
   wait_label: Ожидайте
