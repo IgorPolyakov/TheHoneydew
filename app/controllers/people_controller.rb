@@ -59,9 +59,9 @@ class PeopleController < ApplicationController
   # DELETE /people/1.json
   def destroy
     @person.destroy
-    authorize(person, :destroy?)
+    authorize(@person, :destroy?)
     respond_to do |format|
-      format.html { redirect_to people_url, notice: t(:person_destroyed) }
+      format.html { redirect_back fallback_location: :back, notice: t(:person_destroyed) }
       format.json { head :no_content }
     end
   end

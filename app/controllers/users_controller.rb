@@ -48,7 +48,7 @@ class UsersController < ApplicationController
     @user.destroy
     authorize(@user, :destroy?)
     respond_to do |format|
-      format.html { redirect_to users_url, notice: t(:user_destroyed) }
+      format.html { redirect_back fallback_location: :back, notice: t(:user_destroyed) }
       format.json { head :no_content }
     end
   end

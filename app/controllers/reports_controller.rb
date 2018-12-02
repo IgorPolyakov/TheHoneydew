@@ -66,9 +66,9 @@ class ReportsController < ApplicationController
   # DELETE /reports/1.json
   def destroy
     @report.destroy
-    authorize(report, :destroy?)
+    authorize(@report, :destroy?)
     respond_to do |format|
-      format.html { redirect_to reports_url, notice: t(:report_destroyed) }
+      format.html { redirect_back fallback_location: :back, notice: t(:report_destroyed) }
       format.json { head :no_content }
     end
   end

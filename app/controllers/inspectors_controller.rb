@@ -59,9 +59,9 @@ class InspectorsController < ApplicationController
   # DELETE /inspectors/1.json
   def destroy
     @inspector.destroy
-    authorize(inspector, :destroy?)
+    authorize(@inspector, :destroy?)
     respond_to do |format|
-      format.html { redirect_to inspectors_url, notice: t(:inspector_destroyed) }
+      format.html { redirect_back fallback_location: :back, notice: t(:inspector_destroyed) }
       format.json { head :no_content }
     end
   end
