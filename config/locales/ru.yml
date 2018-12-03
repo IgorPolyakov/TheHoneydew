@@ -25,6 +25,7 @@ ru:
   control: Контроль проверки
   control_committee: 'administrative penalties: KRU Supervisory Committee'
   create_report: Дата создания
+  current_sign_in_at: Время текущего входа
   deadline: Срок
   departmental_legislation: departmental legislation
   determination_of_contracts: termination of employment contracts
@@ -38,6 +39,7 @@ ru:
   edit_organization: Редактирование данных организации
   edit_person: Редактирование данных должностного лица
   edit_report: Редактирование отчета
+  edit_user: Редактирование данных пользователя
   editing_check: Редактирование данных проверки
   eogv: 'administrative punishment: IOGV'
   executive: Ответственный исполнитель
@@ -56,10 +58,12 @@ ru:
   inspector_destroyed: Проверяющий успешно удален.
   inspector_updated: Данные проверяющего успешно обновлены.
   inspectors: Проверяющие
+  is_admin: Права администратора
   labor_legislation: labour legislation
   lang: Язык
   language: Английский
   last_name: Фамилия
+  last_sign_in_at: Время последнего входа
   legislation_on_state_and_municipal_services: legislation on the State and municipal services
   legislation_on_the_contract_system: legislation on contract system
   login: Имя пользователя

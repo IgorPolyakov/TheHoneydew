@@ -1,5 +1,6 @@
 ---
 en:
+  admin_panel: Control panel
   amount: Number of verifications
   anti_corruption: combating corruption
   appeal_of_applicant_organization: treatment of applicant/organization
@@ -24,6 +25,7 @@ en:
   control_committee: 'administrative penalties: KRU Supervisory Committee'
   control: Validation control
   create_report: Create report
+  current_sign_in_at: Current sign in at
   deadline: Check expiration date (date of signature)
   departmental_legislation: departmental legislation
   determination_of_contracts: termination of employment contracts
@@ -37,6 +39,7 @@ en:
   edit_organization: Editing Organization
   edit_person: Change the data officer
   edit_report: Edit a report
+  edit_user: Change user data
   editing_check: Edit checking
   eogv: 'administrative punishment: IOGV'
   executive: Champion
@@ -55,10 +58,12 @@ en:
   inspector_destroyed: Inspector was successfully destroyed.
   inspector_updated: Inspector was successfully updated.
   inspectors: Validation
+  is_admin: Admin rights
   labor_legislation: labour legislation
   lang: Language
   language: Russian
   last_name: Surname
+  last_sign_in_at: Last sign in at
   legislation_on_state_and_municipal_services: legislation on the State and municipal services
   legislation_on_the_contract_system: legislation on contract system
   login: Login
@@ -113,6 +118,7 @@ en:
   title_check: Check name
   title_report: Report name
   under_construction: Under construction
+  users: Users
   violation: Confirmed violations
   violations: Violations
   wait_label: Wait
