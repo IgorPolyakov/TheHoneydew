@@ -44,6 +44,12 @@ authenticate :user, -> (u) {u.is_admin == false} do
       resources :categories
     end
 
+resources :reports do
+  collection do
+    get 'download_pdf'
+  end
+end
+
     resources :checks, only: %i[index show]
     resources :people, only: %i[index show]
     get 'dashboard/index'
