@@ -24,7 +24,7 @@ Rails.application.routes.draw do
       end
     end
 
-    authenticate :user, -> (u) {u.is_admin == true} do
+    authenticate :user, ->(u) { u.is_admin == true } do
       resources :checks
       resources :people
       resources :organizations
@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       resource  :admin
     end
 
-authenticate :user, -> (u) {u.is_admin == false} do
+    authenticate :user, ->(u) { u.is_admin == false } do
       resources :checks
       resources :people
       resources :organizations
@@ -43,12 +43,6 @@ authenticate :user, -> (u) {u.is_admin == false} do
       resources :inspectors
       resources :categories
     end
-
-resources :reports do
-  collection do
-    get 'download_pdf'
-  end
-end
 
     resources :checks, only: %i[index show]
     resources :people, only: %i[index show]

@@ -9,15 +9,6 @@ class ReportsController < ApplicationController
   def index
     @search = Report.ransack(params[:q])
     @reports = @search.result(distinct: true).sorted
-
-    #@regions = Region.all # Should return two region objects :)
-  
-    respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @reports }
-        format.pdf    # <---------- This will handle the pdf response
-    end
-
   end
 
   # GET /reports/1
@@ -25,6 +16,13 @@ class ReportsController < ApplicationController
   def show
     @inspectors = @report.inspector.full_name
     @organizations = @report.organization_name
+    respond_to do |format|
+      format.html
+      format.json { render :show, location: @report }
+      format.pdf do
+        send_data @report.create_pdf
+      end
+    end
   end
 
   # GET /reports/new
@@ -44,24 +42,14 @@ class ReportsController < ApplicationController
   # POST /reports
   # POST /reports.json
   def create
-   # @report = Report.new(report_params)
-    @reports = Report.all
+    @report = Report.new(report_params)
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, notice: t(:report_created) }
         format.json { render :show, status: :created, location: @report }
-        format.pdf do 
-          #Prawn::Document.generate("Report.pdf") do 
-                  #  text "Hello World"
-                 # end
-          send_data("Report.pdf", filename: 'Report.pdf', type: 'application/pdf')
-        end
-      end
       else
         format.html { render :new }
         format.json { render json: @report.errors, status: :unprocessable_entity }
-        format.pdf do           
-          send_data("Report.pdf", filename: 'Report.pdf', type: 'application/pdf')
       end
     end
   end
