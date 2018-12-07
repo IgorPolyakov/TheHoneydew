@@ -27,6 +27,7 @@
       <td><%= link_to r.inspector.full_name, inspector_path(r.inspector_id) %></td>
       <td><%= link_to r.organization.name, organization_path(r.organization_id) %></td>
       <td><%= link_to r.executive, report_path(r) %></td>
+      <td><%= link_to '<i class="fa fa-file-text" aria-hidden="true"></i>'.html_safe, report_path(r, format: :pdf) %></td>
       <%= render partial: "edit_destroy", locals: {obj: r, edit_obj: edit_report_path(r)} %>
     </tr>
   <% end %>

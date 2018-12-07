@@ -63,7 +63,7 @@ class OrganizationsController < ApplicationController
     @organization.destroy
     authorize(@organization, :destroy?)
     respond_to do |format|
-      format.html { redirect_to organizations_url, notice: t(:organization_destroyed) }
+      format.html { redirect_back fallback_location: :back, notice: t(:organization_destroyed) }
       format.json { head :no_content }
     end
   end

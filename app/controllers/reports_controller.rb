@@ -16,6 +16,13 @@ class ReportsController < ApplicationController
   def show
     @inspectors = @report.inspector.full_name
     @organizations = @report.organization_name
+    respond_to do |format|
+      format.html
+      format.json { render :show, location: @report }
+      format.pdf do
+        send_data @report.create_pdf
+      end
+    end
   end
 
   # GET /reports/new
@@ -36,7 +43,6 @@ class ReportsController < ApplicationController
   # POST /reports.json
   def create
     @report = Report.new(report_params)
-
     respond_to do |format|
       if @report.save
         format.html { redirect_to @report, notice: t(:report_created) }
