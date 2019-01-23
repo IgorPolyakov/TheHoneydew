@@ -10,17 +10,17 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en|ru/ do
     get 'dashboard/report'
 
-    devise_for :users, skip: [:sessions]
+    devise_for :users,  skip: [:sessions]
     unauthenticated do
       as :user do
-        get '', to: 'devise/sessions#new', as: :new_user_session
-        post '', to: 'devise/sessions#create', as: :user_session
+        get '', to: 'custom_sessions#new', as: :new_user_session
+        post '', to: 'custom_sessions#create', as: :user_session
       end
     end
 
     authenticated do
       as :user do
-        delete '', to: 'devise/sessions#destroy', as: :destroy_user_session
+        delete '', to: 'custom_sessions#destroy', as: :destroy_user_session
       end
     end
 

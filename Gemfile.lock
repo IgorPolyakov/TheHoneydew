@@ -141,6 +141,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       terminal-table (>= 1.5.1)
     ice_nine (0.11.2)
+    ipstack (0.1.1)
+      nokogiri (~> 1.8.0)
     jaro_winkler (1.5.1)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
@@ -356,6 +358,7 @@ DEPENDENCIES
   ffaker
   font-awesome-rails
   i18n-tasks
+  ipstack
   jbuilder
   jquery-rails
   listen
