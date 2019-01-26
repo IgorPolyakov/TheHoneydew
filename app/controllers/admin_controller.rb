@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class AdminController < ApplicationController
   def index
     @search = User.ransack(params[:q])
     @users = @search.result(distinct: true).sorted
 
-	@search = Person.ransack(params[:q])
+    @search = Person.ransack(params[:q])
     @people = @search.result(distinct: true).sorted
 
     @search = Organization.ransack(params[:q])
@@ -20,5 +22,4 @@ class AdminController < ApplicationController
 
     authorize @users
   end
-
 end

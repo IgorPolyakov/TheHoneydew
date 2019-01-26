@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
     @report_count = Report.count
     @organization_count = Organization.count
     @inspector_count = Inspector.count
-    #wait[:notice] = (t:wait_label)
+    # wait[:notice] = (t:wait_label)
   end
 
   def info

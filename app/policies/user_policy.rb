@@ -1,5 +1,6 @@
-class UserPolicy <ApplicationPolicy
+# frozen_string_literal: true
 
+class UserPolicy < ApplicationPolicy
   def index?
     user.is_admin?
   end
@@ -16,5 +17,4 @@ class UserPolicy <ApplicationPolicy
   def edit?
     user.is_admin?
   end
-
 end

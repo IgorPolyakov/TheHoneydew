@@ -1,11 +1,11 @@
-class PersonPolicy <ApplicationPolicy
+# frozen_string_literal: true
 
-   def destroy?
-   	  user.is_admin?
-   end
+class PersonPolicy < ApplicationPolicy
+  def destroy?
+    user.is_admin?
+  end
 
-   def edit?
-	  user.is_admin?
-   end
-
+  def edit?
+    user.is_admin?
+  end
 end

@@ -1,7 +1,7 @@
-class AdminPolicy <ApplicationPolicy
+# frozen_string_literal: true
 
-   def index?
-   	  user.is_admin?
-   end
-
+class AdminPolicy < ApplicationPolicy
+  def index?
+    user.is_admin?
+  end
 end

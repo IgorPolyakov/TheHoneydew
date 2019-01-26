@@ -4,7 +4,7 @@ class Inspector < ApplicationRecord
   validates :first_name, :last_name, :position, :middle_name, presence: true
   has_many :checks # , dependent: :destroy
   has_many :reports # , dependent: :destroy
- #belongs_to :user
+  # belongs_to :user
 
   def full_name
     "#{last_name} #{first_name}"

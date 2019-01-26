@@ -4,12 +4,12 @@
   {
     login: 'keva',
     password: 'KeV@1SLifE',
-    is_admin: true,
+    is_admin: true
   },
   {
     login: 'nikel',
     password: '123456789',
-    is_admin: true,
+    is_admin: true
   },
   {
     login: 'user',
@@ -18,6 +18,7 @@
   }
 ].each do |name|
   next if User.exists?(login: name[:login])
+
   User.create(
     login: name[:login],
     password: name[:password],
@@ -154,6 +155,7 @@ end
   }
 ].each do |info|
   next if Inspector.exists?(last_name: info[:last_name])
+
   Inspector.create(
     last_name: info[:last_name],
     first_name: info[:first_name],
@@ -173,6 +175,7 @@ end
   'другие'
 ].each do |name|
   next if Category.exists?(name: name)
+
   Category.create(name: name)
 end
 
@@ -185,6 +188,7 @@ end
   'другие'
 ].each do |name|
   next if Violation.exists?(name: name)
+
   Violation.create(name: name)
 end
 
@@ -199,6 +203,7 @@ end
   'другие'
 ].each do |name|
   next if ResponseMeasure.exists?(name: name)
+
   ResponseMeasure.create(name: name)
 end
 
@@ -208,6 +213,7 @@ end
   'Для устранения нарушений'
 ].each do |name|
   next if DirectionStatus.exists?(name: name)
+
   DirectionStatus.create(name: name)
 end
 
@@ -219,6 +225,7 @@ end
   'другое'
 ].each do |name|
   next if Reason.exists?(name: name)
+
   Reason.create(name: name)
 end
 
@@ -227,5 +234,6 @@ end
   'переведено на внутренний контроль'
 ].each do |name|
   next if Result.exists?(name: name)
+
   Result.create(name: name)
 end

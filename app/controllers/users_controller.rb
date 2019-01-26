@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   protect_from_forgery
-  before_action :set_user, only: %i[show edit update destroy]   
-  
+  before_action :set_user, only: %i[show edit update destroy]
+
   # GET /users
   # GET /users.json
   def index
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-     authorize @user
+    authorize @user
   end
 
   # GET /users/new
@@ -26,7 +28,7 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create;  end
+  def create; end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -62,7 +64,7 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    #params.require(:user).permit(:id, :login, :is_admin, :current_sign_in_at, :last_sign_in_at)
+    # params.require(:user).permit(:id, :login, :is_admin, :current_sign_in_at, :last_sign_in_at)
     params.require(:user).permit(:id, :login, :is_admin, :current_sign_in_at, :last_sign_in_at, :latitude_sign_in, :longitude_sign_in)
   end
 end

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_action :set_locale
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized  
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
 
@@ -22,5 +22,4 @@ class ApplicationController < ActionController::Base
     flash[:alert] = I18n.t 'controllers.access_denied'
     redirect_back(fallback_location: root_path)
   end
-
 end

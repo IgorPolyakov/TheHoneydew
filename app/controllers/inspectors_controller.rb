@@ -3,8 +3,8 @@
 # InspectorsController
 class InspectorsController < ApplicationController
   protect_from_forgery
-  before_action :set_inspector, only: %i[show edit update destroy]   
-  
+  before_action :set_inspector, only: %i[show edit update destroy]
+
   # GET /inspectors
   # GET /inspectors.json
   def index
@@ -77,4 +77,4 @@ class InspectorsController < ApplicationController
   def inspector_params
     params.require(:inspector).permit(:first_name, :last_name, :middle_name, :position)
   end
-end 
+end

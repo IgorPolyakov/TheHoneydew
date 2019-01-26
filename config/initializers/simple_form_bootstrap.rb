@@ -38,6 +38,7 @@ SimpleForm.setup do |config|
     b.use :html5
     b.use :placeholder
     break if type == :boolean
+
     b.optional :maxlength
     b.optional :minlength
     unless type == :file

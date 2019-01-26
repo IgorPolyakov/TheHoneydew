@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en|ru/ do
     get 'dashboard/report'
 
-    devise_for :users,  skip: [:sessions]
+    devise_for :users, skip: [:sessions]
     unauthenticated do
       as :user do
         get '', to: 'custom_sessions#new', as: :new_user_session
