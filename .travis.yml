@@ -1,6 +1,6 @@
 language: ruby
 cache: bundler
-bundler_args: --without guard --deployment
+bundler_args: --jobs=$(nproc) --retry=3
 services:
   - postgresql
 rvm:
@@ -16,4 +16,3 @@ env:
   RAILS_ENV=test
 
 script: bundle exec rspec
-
