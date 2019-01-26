@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-
+require 'net/http'
+require 'json'
 # Main devise class
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -10,4 +11,5 @@ class User < ApplicationRecord
  #has_many :reports#, dependent: :destroy and :edit
  #has_many :people#, dependent: :destroy and :edit
  #has_many :organizations#, dependent: :destroy and :edit
+
 end

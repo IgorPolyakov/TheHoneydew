@@ -7,6 +7,11 @@
     is_admin: true,
   },
   {
+    login: 'nikel',
+    password: '123456789',
+    is_admin: true,
+  },
+  {
     login: 'user',
     password: 'Mu$t@Ng_V0',
     is_admin: false
@@ -16,7 +21,7 @@
   User.create(
     login: name[:login],
     password: name[:password],
-    admin: name[:is_admin]
+    is_admin: name[:is_admin]
   )
 end
 

@@ -32,6 +32,13 @@
     <th><%= t(:current_sign_in_at) %></th>
     <th><%= t(:last_sign_in_at) %></th>
   </tr>
+  <style>
+    #map
+    {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
   </thead>
 
   <tbody>
@@ -45,6 +52,44 @@
       <%= render partial: "edit_destroy", locals: {obj: u, edit_obj: edit_user_path(u)} %>
     </tr>
   <% end %>
+  <!--отображение карты-->
+    <tr>
+      <td colspan="5">
+        <div id="map"></div>
+
+        <script>
+          function initMap()
+          {
+            var element = document.getElementById('map');
+            var options = {
+              zoom: 3,
+              center: {lat: 56.49771, lng: 84.97437}
+            };
+
+            var myMap = new google.maps.Map(element, options);
+
+            <% @users.each do |u| %>
+              addMarker({
+                shirina: <%= u.latitude_sign_in %>,
+                dolgota: <%= u.longitude_sign_in %>,
+              })
+            <% end %>
+
+            function addMarker(tmp){
+              var marker = new google.maps.Marker({
+                position: {lat: tmp.shirina, lng: tmp.dolgota},
+                map: myMap
+              });
+            }
+          }
+          </script>
+
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCetFagiHeWOsuhYt0l5X0kalTHkyipqt8&callback=initMap"
+          async defer></script>
+        </td>
+    </tr>
+    <!--отображение карты закончено-->
   </tbody>
 </table>
   </div>
