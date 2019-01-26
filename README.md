@@ -43,8 +43,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 *   **Milankovich Margarita** - *back end & database* - [Vexarr](https://github.com/Vexarr)
 *   **Malkova Maria** - *front end* - [stelse](https://github.com/stelse)
 *   **Andreev Maxim** - *test & locale* - [555Shaman555](https://github.com/555Shaman555)
-
-See also the list of [contributors](https://github.com/IgorPolyakov/TheHoneydew/graphs/contributors) who participated in this project.
+*   **Alexey Semenkov** *new auth* - [TrickyF0x](https://github.com/TrickyF0x)
+*   **Nadezhda Kukushkina** *frontend of admin part* - [KukushkinaN](https://github.com/KukushkinaN)
+*   **Vladimir Niemisto** *admin part & deploy* - [VladimirNikel](https://github.com/VladimirNikel)
 
 ## License
 
