@@ -1,4 +1,4 @@
-FROM ruby:2.5.1-alpine
+FROM ruby:2.5.3-alpine
 
 RUN apk add --update tzdata && \
     cp /usr/share/zoneinfo/Asia/Tomsk /etc/localtime && \
