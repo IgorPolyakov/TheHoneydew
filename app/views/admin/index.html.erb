@@ -31,7 +31,6 @@
     <th><%= t(:is_admin) %></th>
     <th><%= t(:current_sign_in_at) %></th>
     <th><%= t(:last_sign_in_at) %></th>
-    <th><%= t(:current_sign_in_ip) %></th>
   </tr>
   <style>
     #map
@@ -50,7 +49,6 @@
       <td> <input type="checkbox" disabled <%= u.is_admin ? 'checked' : '' %>></td>
       <td><%= link_to u.current_sign_in_at, user_path(u) %></td>
       <td><%= link_to u.last_sign_in_at, user_path(u) %></td>
-      <td><%= link_to u.current_sign_in_ip, user_path(u) %></td>
       <%= render partial: "edit_destroy", locals: {obj: u, edit_obj: edit_user_path(u)} %>
     </tr>
   <% end %>
@@ -74,11 +72,7 @@
               addMarker({
                 shirina: <%= u.latitude_sign_in %>,
                 dolgota: <%= u.longitude_sign_in %>,
-                //inf: <%= link_to u.current_sign_in_ip, user_path(u) %>
               })
-              //addMarker(<%= u.latitude_sign_in %>, <%= u.longitude_sign_in %>)
-              //addMarker(<%= link_to u.latitude_sign_in, user_path(u) %>, <%= link_to u.longitude_sign_in, user_path(u) %>, <%= link_to u.current_sign_in_ip, user_path(u) %>)
-              //, <%= u.current_sign_in_ip %>
             <% end %>
 
             function addMarker(tmp){
@@ -86,13 +80,6 @@
                 position: {lat: tmp.shirina, lng: tmp.dolgota},
                 map: myMap
               });
-              var InfoWindow = new google.maps.InfoWindow({
-                content: '154'
-                //content: tmp.inf
-              });
-              marker.addListener('click', function(){
-                InfoWindow.open(myMap, marker);
-              })
             }
           }
           </script>
@@ -100,13 +87,6 @@
           <script async defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCetFagiHeWOsuhYt0l5X0kalTHkyipqt8&callback=initMap"
           async defer></script>
-
-
-          <script async defer
-          src="http://api.ipstack.com/check?access_key=d7349c126fc66c4abde362e4a04ce4f1"
-          async defer></script>
-          <!--&output=json-->
-
         </td>
     </tr>
     <!--отображение карты закончено-->
