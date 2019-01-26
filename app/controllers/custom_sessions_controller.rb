@@ -4,7 +4,6 @@ require 'ipstack/api'
 class CustomSessionsController < Devise::SessionsController
 	def create
 		super 
-		puts "\n\n‿︵‿ヽ(°□° )ノ︵‿︵Получилось!‿︵‿ヽ(°□° )ノ︵‿︵\n"
 		ip = current_user.current_sign_in_ip.to_s
 		result = Ipstack::API.standard(ip)
 		data_hash = JSON.parse(result.to_json)
